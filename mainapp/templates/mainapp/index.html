@@ -1,0 +1,1455 @@
+{% extends 'mainapp/base.html' %} {% load static %} {% block content %}
+
+<div class="elfsight-app-dd751d5b-1414-4652-bade-735da680f2a6"></div>
+<!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-5GN92RJ"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="mobileNav"
+  aria-labelledby="mobileNavLabel"
+>
+  <div class="offcanvas-header">
+    <a href="" class="brand">
+      <picture>
+        <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
+      </picture>
+    </a>
+
+    <button
+      class="hamburger hamburger--collapse is-active pe-0"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileNav"
+      aria-controls="mobileNav"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="main-nav">
+      <ul class="text-left menu">
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
+        >
+          <a
+            href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/"
+            >Beerbox</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
+        >
+          <a href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+            >Beers</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
+        >
+          <a
+            href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/"
+            >Flavor profiles</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
+        >
+          <a href="https://www.thebeerbox.nl/over-ons/">About Us</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="list-unstyled menu additional-nav">
+      <li>
+        <a
+          href="#"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#modalUserAccount"
+          aria-controls="modalUserAccount"
+          class="button is-hollow"
+          >Log in</a
+        >
+      </li>
+      <li>
+        <ul
+          class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center"
+        >
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.facebook.com/thebeerbox.nl"
+              class="link"
+              title="Facebook"
+              target="blank"
+              ><i class="icon icon-facebook icon-xxlarge" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.instagram.com/thebeerbox.nl/"
+              class="link"
+              title="Instagram"
+              target="blank"
+              ><i
+                class="icon icon-instagram icon-xxlarge"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </li>
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.linkedin.com/company/the-beerbox/"
+              class="link"
+              title="LinkedIn"
+              target="blank"
+              ><i class="icon icon-linkedin icon-xxlarge" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="modal fade" tabindex="-1" id="checkAgeModal">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <picture>
+          <img src="{% static 'images/habesha.png' %}" alt="The Beerbox" />
+        </picture>
+      </div>
+      <div class="modal-body">
+        <p class="h3 text-base d-block">Are you 18 years or older?</p>
+        <p class="h3 text-base d-none">Sorry! You are not yet 18.</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="button"
+          data-bs-dismiss="modal"
+          data-verify=""
+        >
+          I am over 18
+        </button>
+        <a href="" class="button is-brown">I am under 18</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="offcanvas offcanvas-account offcanvas-end"
+  tabindex="-1"
+  id="modalUserAccount"
+  aria-labelledby="modalUserAccountLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      class="hamburger hamburger--collapse is-active"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#modalUserAccount"
+      aria-controls="modalUserAccount"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="container-xxl">
+      <div class="row g-5">
+        <div class="col-24 col-lg-12">
+          <h3 class="text-base text-primary">create an account</h3>
+          <div class="section-form">
+            <form
+              class="kaliforms-form-container bootstrap-wrapper"
+              data-form-id="41"
+              style="opacity: 0"
+            >
+              <div
+                id="kaliforms-global-error-message-41"
+                class="global-error-message"
+              ></div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-6">
+                  <label for="textbox1"
+                    >First name <span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="textbox1"
+                    type="text"
+                    id="textbox1"
+                    name="firstname"
+                    data-properties.type="text"
+                    placeholder="First name"
+                    required=""
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="textbox12"
+                    >Last name <span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="textbox2"
+                    type="text"
+                    id="textbox12"
+                    name="lastname"
+                    data-properties.type="text"
+                    placeholder="Last Name"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label for="textbox123"
+                    >User name<span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="textbox3"
+                    type="text"
+                    id="textbox123"
+                    name="username"
+                    data-properties.type="text"
+                    placeholder="User name"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label for="email4"
+                    >E-mail <span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="email4"
+                    type="email"
+                    id="email4"
+                    name="email"
+                    placeholder="E-mail"
+                    required=""
+                    class="input"
+                  />
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label for="password5"
+                    >password<span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="password5"
+                    type="password"
+                    id="password5"
+                    name="password"
+                    value="password"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label for="password6">
+                    repeat password
+                    <span class="kali-required-mark"></span></label
+                  ><input
+                    data-internal-id="password6"
+                    type="password"
+                    id="password6"
+                    name="passwordr"
+                    value="password"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label class="checkbox-label"
+                    ><input
+                      data-internal-id="termsandconditions7"
+                      type="checkbox"
+                      id="termsAndConditions7"
+                      name="termsAndConditions"
+                      data-termstype="url"
+                      data-termsurl="http://www.thebeerbox.test/algemene-voorwaarden"
+                      required=""
+                      value="yes"
+                    /><span style="position: relative; bottom: 3px"
+                      ><span class="kali-required-mark"></span>
+                      <a
+                        href="http://www.thebeerbox.test/algemene-voorwaarden"
+                        target="_blank"
+                        >I agree to the terms and conditions</a
+                      ></span
+                    ></label
+                  >
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <input
+                    data-internal-id="submitbutton8"
+                    type="submit"
+                    id="submitButton8"
+                    data-style="default"
+                    name="submitButton8"
+                    class="input"
+                    value="Register"
+                  />
+                </div>
+              </div>
+              <!-- This form was built using Kali Forms -->
+            </form>
+          </div>
+        </div>
+
+        <div class="col-24 col-lg-12">
+          <h3 class="text-base text-primary">I already have an account</h3>
+          <div class="section-form">
+            <form
+              name="loginform"
+              id="loginform"
+              action="https://www.thebeerbox.nl/beheer/"
+              method="post"
+            >
+              <p class="login-username">
+                <label for="user">User name or e-mail address</label>
+                <input
+                  type="text"
+                  name="log"
+                  id="user"
+                  autocomplete="username"
+                  class="input"
+                  value=""
+                  size="20"
+                />
+              </p>
+              <p class="login-password">
+                <label for="pass">password</label>
+                <input
+                  type="password"
+                  name="pwd"
+                  id="pass"
+                  autocomplete="current-password"
+                  spellcheck="false"
+                  class="input"
+                  value=""
+                  size="20"
+                />
+              </p>
+              <p class="login-remember">
+                <label
+                  ><input
+                    name="rememberme"
+                    type="checkbox"
+                    id="rememberme"
+                    value="forever"
+                  />
+                  Remember me</label
+                >
+              </p>
+              <p class="login-submit">
+                <input
+                  type="submit"
+                  name="wp-submit"
+                  id="wp-submit"
+                  class="button button-primary"
+                  value="Log In"
+                />
+                <input
+                  type="hidden"
+                  name="redirect_to"
+                  value="https://www.thebeerbox.nl/mijn-account/"
+                />
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="offcanvas offcanvas-minicart offcanvas-end"
+  tabindex="-1"
+  id="modalMinicart"
+  aria-labelledby="modalMinicartLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      class="hamburger hamburger--collapse is-active"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#modalMinicart"
+      aria-controls="modalMinicart"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="container-xxl">
+      <h3 class="text-base text-primary">Shopping cart</h3>
+      <div class="offcanvas-minicart">
+        <p class="woocommerce-mini-cart__empty-message">
+          No products in the shopping cart.
+        </p>
+      </div>
+      <div class="vstack woocommerce-buttons">
+        <a
+          href="javascript:;"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#modalMinicart"
+          aria-controls="modalMinicart"
+          class="button is-hollow"
+          >Continue shopping</a
+        >
+        <a
+          href="https://www.thebeerbox.nl/winkelwagen/"
+          class="button is-hollow"
+          >To settle</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<main id="main" role="main">
+  <div class="container-xxl">
+    <div class="section-content">
+      <div class="woocommerce-notices-wrapper"></div>
+    </div>
+  </div>
+
+  <section class="section-hero-cta pt-0 pb-0" data-bgcolor="dark">
+    <picture>
+      <img
+        src="{% static 'images/banner1.jpg' %}"
+        alt="Bierbox op een plateau in de stad Groningen gevuld met 6 lokale speciaalbieren"
+      />
+    </picture>
+
+    <div class="section-content">
+      <div class="container-xxl">
+        <h1
+          class="text-warning bold"
+          style="background-color: black; border: yellow"
+        >
+          Local specialty beers and specialty beer boxes
+        </h1>
+
+        <div class="lead">
+          <p>Discover the taste of locally brewed specialty beer</p>
+        </div>
+
+        <a
+          class="button"
+          href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+          target="_self"
+          title="Ontdek alle speciaalbieren"
+          >Discover all special beers</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="section-product-slider" data-bgcolor="dark">
+    <div class="container-xxl">
+      <div class="section-content">
+        <div class="row justify-content-center">
+          <div class="col-24">
+            <h2 class="text-primary h2">Special beer offers</h2>
+            
+            <div class="swiper slider-product">
+              <div class="swiper-wrapper">
+                {% for b in beer %}
+                <div class="swiper-slide product-beers">
+                  <div class="card-beerbox">
+                    <header>
+                      <div>
+                        <div class="hstack stack-exclude gap-2">
+                          <label>Offer</label>
+                        </div>
+                        <picture class="taste">
+                          <img
+                            class="lazyload"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                            alt="Hopbel in amber/oranje kleur als aanwijzing van het smaakprofiel Smooth &amp; amber"
+                          />
+                        </picture>
+                      </div>
+                    </header>
+
+                    <a
+                      href="https://www.thebeerbox.nl/bier/weerwater/"
+                      class="picture"
+                    >
+                      <picture class="ratio ratio-4x3">
+                        <img
+                          class="lazyload"
+                          data-src="{{b.image.url}}"
+                          alt="De Kemphaan - Weerwater lentebok"
+                        />
+                      </picture>
+                    </a>
+
+                    <a
+                      href="https://www.thebeerbox.nl/bier/weerwater/"
+                      class="h4 text-base text-white"
+                      >{{b.name}} </a
+                    >
+                    <p class="pricing"><s>{{b.abv}} birr</s> <span>{{b.price}} birr</span></p>
+                    <div class="add-to-cart-wrapper">
+                      <form
+                        class="cart cell"
+                        action="https://www.thebeerbox.nl/bier/weerwater/"
+                        method="post"
+                        enctype="multipart/form-data"
+                      >
+                        <div class="d-none">
+                          <div class="quantity">
+                            <label
+                              class="screen-reader-text"
+                              for="quantity_66a646aa0fa7b"
+                              >De Kemphaan - Weerwater aantal</label
+                            >
+                            <input
+                              type="number"
+                              id="quantity_66a646aa0fa7b"
+                              class="input-text qty text"
+                              name="quantity"
+                              value="1"
+                              aria-label="Productaantal"
+                              size="4"
+                              min="1"
+                              max="5"
+                              step="1"
+                              placeholder=""
+                              inputmode="numeric"
+                              autocomplete="off"
+                            />
+                          </div>
+                        </div>
+                        <input type="hidden" name="add-to-cart" value="11055" />
+                        <button
+                          type="submit"
+                          name="add-to-cart"
+                          value="11055"
+                          class="single_add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                        >
+                          Add
+                        </button>
+                      </form>
+                    </div>
+                    <a
+                      href="https://www.thebeerbox.nl/bier/weerwater/"
+                      class="button is-hollow is-compact is-border-compact"
+                      title="Bekijken"
+                      >look More</a
+                    >
+                  </div>
+                </div>
+                {% endfor %}
+                
+                
+              </div>
+            </div>
+            
+            <div class="slider-product-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-collection">
+    <div class="container-xxl">
+      <div class="section-content">
+        <h2>Our collection</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|5989|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/11/IMG-20230106-WA0008.jpg"
+                  alt="IPA blikken in een stelling"
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Blond &amp; Hoppy</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|5994|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/08/13-januari-scaled.jpg"
+                  alt="Grutte Pier Blond. De eigenaar heeft de fles en een bier in de handen."
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Easy &amp; Fresh</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|5998|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Bier-Brouwerij-Utrecht.jpeg"
+                  alt="Blond Bier inschenken Brouwerij Eleven - The Beerbox"
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Elegant &amp; Light</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|6002|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/07/MVI_0536.00_01_58_11.Still009.jpg"
+                  alt="Foto donkere bieren The Beerbox Stout, Quadrupel, Porter, Baltic Porter,"
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Intense &amp; Bold</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|6006|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/IMG_20210112_143416-scaled.jpg"
+                  alt="Kaapse Emmer ingeschonken bij de Maas in Rotterdam. Online verkrijgbaar bij The Beerbox"
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Smooth &amp; Amber</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              class="card-image-cta"
+              href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/?filter-field-beer_product_tasteprofile=|6010|"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/11/collectencta_dark.jpg"
+                  alt="Een donker stout bier wordt ingeschonken in een speciaalbierglas."
+                />
+              </picture>
+
+              <div class="card-content">
+                <p class="mb-0">Strong &amp; Dark</p>
+
+                <i class="icon icon-chevron"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="section-button">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg d-none d-lg-block">
+              <hr />
+            </div>
+            <div class="col-auto">
+              <a
+                href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+                class="button"
+                >Bekijk alle bieren</a
+              >
+            </div>
+            <div class="col-lg d-none d-lg-block">
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="section-product-slider has-overlay has-chalk-bg"
+    data-bgcolor="dark"
+  >
+    <div class="container-xxl">
+      <div class="section-content">
+        <div class="row justify-content-center">
+          <div class="col-24">
+            <h2 class="text-primary h2">New special drinks</h2>
+
+            <div class="swiper slider-product">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide product-beers">
+                  <div class="card-beerbox">
+                    <header>
+                      <div>
+                        <div class="hstack stack-exclude gap-2">
+                          <label>offers</label>
+                        </div>
+                        <picture class="taste">
+                          <img
+                            class="lazyload"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Strong-Dark.svg"
+                            alt="Hopbel in bruine kleur als aanwijzing van het smaakprofiel Strong &amp; Dark"
+                          />
+                        </picture>
+                      </div>
+                    </header>
+
+                    <a
+                      href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                      class="picture"
+                    >
+                      <picture class="ratio ratio-4x3">
+                        <img
+                          class="lazyload"
+                          data-src="/static/images/arada.png"
+                          alt=""
+                        />
+                      </picture>
+                    </a>
+
+                    <a
+                      href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                      class="h4 text-base text-white"
+                      >Arada</a
+                    >
+                    <p class="pricing"><s>40 birr</s> <span>35 birr</span></p>
+                    <div class="add-to-cart-wrapper">
+                      <form
+                        class="cart cell"
+                        action="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                        method="post"
+                        enctype="multipart/form-data"
+                      >
+                        <div class="d-none">
+                          <div class="quantity">
+                            <label
+                              class="screen-reader-text"
+                              for="quantity_66a646aa1329c"
+                              >Maallust - Veldwachter Bock aantal</label
+                            >
+                            <input
+                              type="number"
+                              id="quantity_66a646aa1329c"
+                              class="input-text qty text"
+                              name="quantity"
+                              value="1"
+                              aria-label="Productaantal"
+                              size="4"
+                              min="1"
+                              max="16"
+                              step="1"
+                              placeholder=""
+                              inputmode="numeric"
+                              autocomplete="off"
+                            />
+                          </div>
+                        </div>
+                        <input type="hidden" name="add-to-cart" value="11989" />
+                        <button
+                          type="submit"
+                          name="add-to-cart"
+                          value="11989"
+                          class="single_add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                        >
+                          Add
+                        </button>
+                      </form>
+                    </div>
+                    <a
+                      href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                      class="button is-hollow is-compact is-border-compact"
+                      title="Bekijken"
+                      >See More</a
+                    >
+                  </div>
+                </div>
+                
+               
+              </div>
+            </div>
+            <div class="slider-product-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-image-out-container">
+    <div class="container-xxl">
+      <div class="card-wrapper">
+        <div class="row">
+          <div class="col-24">
+            <h2> advertizment</h2>
+
+            <p class="text-medium">
+              Hét craft bier magazine van Nederland heeft begin maart de
+              achttiende editie de wijde wereld ingeslingerd! Verrijk jezelf bij
+              de The Beerbox van deze fonkelnieuwe Hopster #18 en lees alles
+              over de (nieuwe) speciaalbieren die in deze zomereditie van het
+              magazine worden uitgelicht. Grijp niet mis; de voorraad is
+              beperkt!
+            </p>
+
+            <a
+              class="button"
+              href="https://www.thebeerbox.nl/bier/hopster-16/"
+              target="_self"
+            >
+              Bestel Hopster #17
+            </a>
+          </div>
+        </div>
+        <div class="image-wrapper">
+          <picture class="cover">
+            <img
+              class="lazyload"
+              data-src="https://www.thebeerbox.nl/content/uploads/2024/07/hopstercover-nr18.png"
+              alt="Hopster #18 is een onafhankelijk magazine met verhalen over de wereld van het Nederlandse craft bier met informatie over speciaalbieren. zomereditie, juni cover afbeelding"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-slider-partners" data-bgcolor="cream">
+    <div class="container-xxl">
+      <h2 class="text-base">
+        De <span>brouwerijen</span> waar wij mee samenwerken
+      </h2>
+      <div class="swiper slider-partners">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/breugem-bier/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/06/Breugem-bier.png"
+                  alt="Het logo van brouwerij Breugem bier uit Noord-Holland"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/berging-brouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/06/Berging.png"
+                  alt="Het Logo van Berging Brouwerij uit Purmerend"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-lost/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/06/LOST.png"
+                  alt="Het logo van brouwerij LOST uit Uitgeest"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/de-kemphaan-almere/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/06/De-Kemphaan-The-Beerbox.png"
+                  alt="Logo van Stadsbrouwerij De Kemphaan uit Almere"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/hert-bier/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/05/Hert-bier-logo-logo-1.png"
+                  alt="Het logo van brouwerij Hert Bier uit Putten."
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/papas-aan-de-fles/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img class="lazyload"
+                data-src="https://www.thebeerbox.nl/content/uploads/2023/05/Papas-aan-de-fles-logoMolen-1.png"
+                alt="Logo" s="" van="" papa's="" aan="" de="" fles.'="">
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/othmar-bierbrouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Othmar-Logo-3.png"
+                  alt="Logo van Othmar Brouwerij uit Ootmarsum"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/kaapse-brouwers/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Kaapse-Brouwers-Logo.png"
+                  alt="Logo Kaapse Brouwers. Speciaalbier online bestellen bij The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-eleven/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Eleven-logo.png"
+                  alt="Logo Brouwerij Eleven - bieren online kopen bij The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-rolduc/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Rolduc.png"
+                  alt="Rolduc Logo | bierbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/bruut-bier/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/04/Bruut-Bier.png"
+                  alt="Bruut Bier | The Beerbox | bierbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-de-koningshoeven-la-trappe/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/03/La-trappe-logo.png"
+                  alt="Brouwerij La trappe logo bij The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/vandestreek-bier/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/03/vandestreekLogo.png"
+                  alt="VandeStreek bieren nu verkrijgbaar bij The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/davo-bieren/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/03/DAVO-Logo.png"
+                  alt="DAVO Logo – the beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/low-five-brewing/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/03/Low-Five-Brewing-logo.png"
+                  alt="Low Five Brewing logo"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/achterhoeksgenot/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/02/Achterhoeksgenot.png"
+                  alt="Achterhoeksgenot"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/berghoeve-brouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/02/Berghoeve-logo-1.png"
+                  alt="Logo Berghoeve brouwerij - The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/moersleutel/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/02/Moersleutel-logo-nname-blackimage-1.png"
+                  alt="Moersleutel logo zwart – The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-volendam/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/02/VDBrouwerij_Logo.png"
+                  alt="VDBrouwerij_Logo"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/graansilo/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Graansilo2.png"
+                  alt="Graansilo-thebeerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-deprael/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/01/De-Prael.png"
+                  alt="De Prael logo – the beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/het-zotte-kalf/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/01/image.png"
+                  alt="Hetzottekalf-thebeerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/van-moll-craft-beer/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/12/van-Moll.png"
+                  alt="van Moll"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-de-molen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/12/De-Molen.png"
+                  alt="De Molen"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/gula-beers/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/12/Gula-Beers-1.png"
+                  alt="Gula Beers 1"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-bello/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/12/Bello.png"
+                  alt="Bello"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/gulpener/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/12/Gulpener.png"
+                  alt="Gulpener logo – The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-maallust/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/11/nectar-utrecht-pils-bier-brouwerij-nederland-veenhuizen-maallust-logo-01-300x300-1.png"
+                  alt="nectar-utrecht-pils-bier-brouwerij-nederland-veenhuizen-maallust-logo-01-300×300"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/grunnbier-groningse-bierbrouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/08/Grunn.png"
+                  alt="Grunn"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/het-brouwdok/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/08/Brouwdok.png"
+                  alt="Brouwdok"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-dokkum/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/08/Brouwerij-Dockum.png"
+                  alt="Brouwerij Dockum"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/gruttepier-brouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/08/Grutte-Pier.png"
+                  alt="Grutte Pier logo – the beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/floem-craft-beer-brouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/06/Floem.png"
+                  alt="Floem"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-hoogkerk-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/05/Hoogkerk.png"
+                  alt="Hoogkerk"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/de-vrolijcke-joncker-brouwerij-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/05/Vrolijcke-Joncker.png"
+                  alt="Vrolijcke Joncker"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/folkingebrew-brouwerij-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/05/Folkingebrew.png"
+                  alt="Folkingebrew"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/eggens-craft-beer-brouwerij-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/05/Eggens.png"
+                  alt="Eggens"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/brouwerij-allema-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/04/Allema.png"
+                  alt="Allema"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/baxbier-groningen-brouwerij/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/04/Baxbier.png"
+                  alt="Baxbier"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a
+              href="https://www.thebeerbox.nl/brouwerijen/martinus-brouwerij-groningen/"
+              class="card-partner-logo"
+            >
+              <picture>
+                <img
+                  class="lazyload"
+                  data-src="https://www.thebeerbox.nl/content/uploads/2022/03/Martinus.png"
+                  alt="Martinus"
+                />
+              </picture>
+            </a>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <a
+          class="button"
+          href="https://www.thebeerbox.nl/brouwerijen/"
+          target="_self"
+          >Ontdek alle brouwerijen</a
+        >
+      </div>
+
+      <div class="swiper-btn swiper-btn-prev">
+        <i class="icon icon-chevron flipped" aria-hidden="true"></i>
+      </div>
+      <div class="swiper-btn swiper-btn-next">
+        <i class="icon icon-chevron" aria-hidden="true"></i>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- footer -->
+
+{% endblock content %}

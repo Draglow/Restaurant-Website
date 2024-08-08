@@ -1,0 +1,183 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+    
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+        <a href="https://www.thebeerbox.nl" class="brand">
+            <picture>
+                <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
+            </picture>
+        </a>
+
+        <button class="hamburger hamburger--collapse is-active pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="main-nav"><ul class="text-left menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"><a href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/">Bierboxen</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"><a href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/">Bieren</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"><a href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/">Smaakprofielen</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-23 current_page_item menu-item-11160"><a href="https://www.thebeerbox.nl/over-ons/" aria-current="page">Over ons</a></li>
+</ul></div>
+        <ul class="list-unstyled menu additional-nav">
+            <li>
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#modalUserAccount" aria-controls="modalUserAccount" class="button is-hollow">Inloggen</a>
+            </li>
+            <li>
+                <ul class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center">
+                                            <li><a rel="noopener nofollow" href="https://www.facebook.com/thebeerbox.nl" class="link" title="Facebook" target="blank"><i class="icon icon-facebook icon-xxlarge" aria-hidden="true"></i></a></li>
+                                            <li><a rel="noopener nofollow" href="https://www.instagram.com/thebeerbox.nl/" class="link" title="Instagram" target="blank"><i class="icon icon-instagram icon-xxlarge" aria-hidden="true"></i></a></li>
+                                            <li><a rel="noopener nofollow" href="https://www.linkedin.com/company/the-beerbox/" class="link" title="LinkedIn" target="blank"><i class="icon icon-linkedin icon-xxlarge" aria-hidden="true"></i></a></li>
+                                    </ul>
+            </li>
+        </ul>
+    </div>
+</div>        <div class="modal fade" tabindex="-1" id="checkAgeModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <picture>
+                        <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
+                    </picture>
+                </div>
+                <div class="modal-body">
+                    <p class="h3 text-base d-block">Ben je 18 jaar of ouder?</p>
+                                            <p class="h3 text-base d-none">Helaas! Je bent nog geen 18.</p>
+                                    </div>
+                <div class="modal-footer">
+                                            <button type="button" class="button" data-bs-dismiss="modal" data-verify="">Ik ben ouder dan 18</button>
+                                            <a href="https://www.nix18.nl/" class="button is-brown">Ik ben onder de 18</a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-account offcanvas-end" tabindex="-1" id="modalUserAccount" aria-labelledby="modalUserAccountLabel">
+    <div class="offcanvas-header">
+        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalUserAccount" aria-controls="modalUserAccount">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-xxl">
+            <div class="row g-5">
+                <div class="col-24 col-lg-12">
+                    <h3 class="text-base text-primary">Ik wil een account aanmaken</h3>
+                    <div class="section-form">
+                        <form class="kaliforms-form-container bootstrap-wrapper  " data-form-id="41" style="opacity:0"><div id="kaliforms-global-error-message-41" class="global-error-message"></div><div class="row kali-form-field-row"><div class="col-12 col-md-6 "><label for="textbox1">Voornaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox1" type="text" id="textbox1" name="firstname" data-properties.type="text" placeholder="Voornaam" required=""></div><div class="col-12 col-md-6 "><label for="textbox12">Achternaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox2" type="text" id="textbox12" name="lastname" data-properties.type="text" placeholder="Achternaam" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="textbox123">Gebruikersnaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox3" type="text" id="textbox123" name="username" data-properties.type="text" placeholder="Gebruikersnaam" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="email4">E-mail <span class="kali-required-mark"></span></label><input data-internal-id="email4" type="email" id="email4" name="email" placeholder="E-mail" required="" class="input"></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="password5">Wachtwoord <span class="kali-required-mark"></span></label><input data-internal-id="password5" type="password" id="password5" name="password" value="password" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="password6">Herhaal wachtwoord <span class="kali-required-mark"></span></label><input data-internal-id="password6" type="password" id="password6" name="passwordr" value="password" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label class="checkbox-label"><input data-internal-id="termsandconditions7" type="checkbox" id="termsAndConditions7" name="termsAndConditions" data-termstype="url" data-termsurl="http://www.thebeerbox.test/algemene-voorwaarden" required="" value="yes"><span style="position:relative;bottom:3px"><span class="kali-required-mark"></span> <a href="http://www.thebeerbox.test/algemene-voorwaarden" target="_blank">Ik ga akkoord met de voorwaarden</a></span></label></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><input data-internal-id="submitbutton8" type="submit" id="submitButton8" data-style="default" name="submitButton8" class="input" value="Aanmelden"></div></div><!-- This form was built using Kali Forms --></form>                    </div>
+                </div>
+
+                <div class="col-24 col-lg-12">
+                    <h3 class="text-base text-primary">Ik heb al een account</h3>
+                    <div class="section-form">
+                        <form name="loginform" id="loginform" action="https://www.thebeerbox.nl/beheer/" method="post"><p class="login-username">
+				<label for="user">Gebruikersnaam of e-mailadres</label>
+				<input type="text" name="log" id="user" autocomplete="username" class="input" value="" size="20">
+			</p><p class="login-password">
+				<label for="pass">Wachtwoord</label>
+				<input type="password" name="pwd" id="pass" autocomplete="current-password" spellcheck="false" class="input" value="" size="20">
+			</p><p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Onthoud mij</label></p><p class="login-submit">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Inloggen">
+				<input type="hidden" name="redirect_to" value="https://www.thebeerbox.nl/mijn-account/">
+			</p></form>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    <div class="offcanvas offcanvas-minicart offcanvas-end" tabindex="-1" id="modalMinicart" aria-labelledby="modalMinicartLabel">
+    <div class="offcanvas-header">
+        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalMinicart" aria-controls="modalMinicart">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-xxl">
+            <h3 class="text-base text-primary">Winkelwagen</h3>
+            <div class="offcanvas-minicart">
+                
+
+	<p class="woocommerce-mini-cart__empty-message">Geen producten in de winkelwagen.</p>
+
+
+    
+            </div>
+            <div class="vstack woocommerce-buttons">
+                <a href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#modalMinicart" aria-controls="modalMinicart" class="button is-hollow">Verder winkelen</a>
+                <a href="https://www.thebeerbox.nl/winkelwagen/" class="button is-hollow">Afrekenen</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <main id="main" role="main">
+                    <div class="container-xxl">
+                <div class="section-content">
+                    <div class="woocommerce-notices-wrapper"></div>
+                </div>
+            </div>
+        
+<section class="section-hero pt-0 pb-0">
+      <picture>
+      <img src="{% static 'images/demo-blog-scaled.jpg' %}" alt="Proost - The Beerbox - de bierbox">    </picture>
+  
+  <div class="section-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-24">
+          <h1 class="text-primary">Over The Beerbox</h1>
+        </div>
+      </div>
+          </div>
+  </div>
+</section>    <section class="section-content-with-image" data-bgcolor="dark">
+        <div class="container-xxl">
+            <div class="section-content">
+                <div class="vstack">
+                    
+                        <div class="row justify-content-center">
+                            <div class="col-24 col-lg-20">
+                                <div class="row position-relative">
+                                    <div class="col-24 col-lg-14">
+                                        <div class="card-content-background">
+                                                                                            <h2 class="text-primary">Over ons</h2>
+                                                <span class="underline"></span>
+                                            
+                                            <p>Op een zwoele zomeravond met de smaakpapillen gereed voor een paar overheerlijke speciaalbieren stonden we letterlijk voor een probleem, het schap met bier. Want welk biertje hebben we nog niet gehad én welke zullen we deze keer eens gaan kiezen? Door de enorme toename van brouwers en nieuwe bieren zagen we door de bieren het hop niet meer. We besloten hier wat mee te gaan doen en in maart 2021 ontstonden de ideeën over het willen starten van een onderneming.</p>
+<p>Met onze passie voor ondernemen kwamen we na diverse avonden sparren uit op een concreet plan, namelijk een onderneming dat zich richt op het faciliteren van abonnementen op lokaal speciaalbier.</p>
+<p>Al snel zijn we het gewoon gaan DOEN! Met The Beerbox als resultaat. Vanaf dat moment werken wij met ontzettend veel energie aan The Beerbox, zodat wij iedereen kennis kunnen laten maken met de unieke smaken van lokaal speciaalbier. Want zeg nou zelf, had jij het overzicht nog?</p>
+<p><strong>Hoe we dit doen en wat ons uniek maakt.</strong></p>
+<p>Toen we begonnen met The Beerbox kwamen we er al gauw achter dat we niet de enigen waren met het starten van een speciaalbier webshop. Webshops vlogen in coronatijd de grond uit, net als de speciaalbier abonnementen.</p>
+<p>We moesten dus zorgen dat we iets anders deden en toen we in juni 2022 officieel online waren hadden we het plan concreet: The Local Experience.</p>
+<p>The Beerbox is eigenlijk The Local Experience (vertaald: De Lokale Ervaring). Alles draait bij ons om dé ultieme bierbeleving met het oog op lokale en traditionele bieren.</p>
+<p>Met The Local Experience maken we aan de hand van een vastgesteld thema een reis langs iedere biercultuur. Op deze manier gaan we op bezoek bij je favoriete lokale brouwerij, proeflokaal in je dorp of stad, of misschien wel je buurman die met al zijn passie geweldige speciaalbieren brouwt.</p>
+<p>Op deze manier zorgen wij met The Beerbox ervoor dat je op een unieke en niet eerder vertoonde manier iedere biercultuur leert kennen. Waarbij je gegarandeerd nieuwe brouwerijen en bieren ontdekt.</p>
+<p>Ook de webshop is helemaal ingericht op The Local Experience. Zo bieden we alleen bieren aan die passen bij het huidige thema.</p>
+<p>Zijn de bieren eenmaal uit het assortiment? Dan moet je geluk hebben dat we ze nogmaals aanbieden, maar voor iedereen kunnen we natuurlijk een uitzondering maken.</p>
+<p>Het doel is om iedereen van brouwer tot kenner en van liefhebber tot fan, met elkaar te kunnen verbinden en op die manier samen The Beerbox te laten groeien tot een mooie en unieke webshop!</p>
+                                        </div>
+                                    </div>
+
+                                                                            <picture class="is-full">
+                                            <img class="lazyload" data-src="https://www.thebeerbox.nl/content/uploads/2022/10/The-Beerbox-How-it-started-835x610-1.jpg" alt="The-Beerbox-How-it-started-835×610">                                        </picture>
+                                                                    </div>
+                            </div>
+                        </div>
+
+                                    </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- footer -->
+
+
+{% endblock content %}

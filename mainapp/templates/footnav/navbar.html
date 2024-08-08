@@ -1,0 +1,164 @@
+{% load static %}
+<header id="header" class="style-default" role="banner">
+  <div class="header-topbar">
+    <div class="container-xxl">
+      <div
+        class="row justify-content-center justify-content-lg-between align-items-center"
+      >
+        <div class="col-24 col-lg-auto">
+          <div class="hstack align-items-center stack-exclude">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <p class="mb-0">
+              Via
+              <a
+                href="https://www.google.com/search?q=thebeerbox&amp;sxsrf=APwXEde2SjAUla_oSgpM_iYa-PMnipNUag%3A1681324091919&amp;ei=O_g2ZPDnN4WXkwXMxpuQDQ&amp;oq=thebeerb&amp;gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgQIIxAnMggIABCABBDLATIICAAQgAQQywEyCAgAEIAEEMsBMgoIABCABBAKEMsBMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeOgcIIxCwAxAnOgoIABBHENYEELADOg0ILhCKBRDHARDRAxBDOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOgsIABCKBRCxAxCDAToFCAAQgAQ6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICC4QgAQQsQM6BwgAEIoFEEM6BwguEIoFEEM6DQgAEIoFELEDEIMBEEM6EAguEIoFEMcBENEDENQCEEM6CgguENQCEIoFEEM6FAguEIAEELEDEIMBEMcBEK8BENQCOgcIABCABBAKOg0ILhCABBDHARCvARAKOhAILhCABBDHARDRAxAKEMsBSgQIQRgAUOsDWMoKYPwPaAFwAXgAgAFkiAHdBJIBAzcuMZgBAKABAcgBCcABAQ&amp;sclient=gws-wiz-serp#lrd=0x87ad4aeee72612d1:0xeb0686204eadc8f1,1,,,,"
+                target="blank"
+                title="Bekijk recensies op Google"
+                >Google</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="col-24 col-lg-auto d-none d-lg-block">
+          <ul class="list-icon is-small">
+            <li><i class="icon icon-check"></i> 100% quality guarantee</li>
+            <li><i class="icon icon-check"></i> Free shipping from €75,-</li>
+            <li><i class="icon icon-check"></i> A fast delivery</li>
+            <li><i class="icon icon-check"></i> Beer voucher</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-xxl">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-auto">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <a href="{% url 'index' %}" class="brand">
+              <picture>
+                <img
+                  src="{% static 'images/habesha.png' %}"
+                  alt="The Beerbox"
+                />
+              </picture>
+            </a>
+          </div>
+          <div class="col-lg d-none d-lg-flex">
+            <div class="nav-wrapper">
+              <nav class="main-nav">
+                <ul class="text-left menu">
+                  <li
+                    id="menu-item-5982"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
+                  >
+                    <a href="{% url 'detail' %}">Beer boxes</a>
+                  </li>
+                  <li
+                    id="menu-item-5983"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
+                  >
+                    <a href="{% url 'allbeer' %}">Beers</a>
+                  </li>
+                  <li
+                    id="menu-item-7427"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
+                  >
+                    <a
+                      href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/"
+                      >Flavor profiles</a
+                    >
+                  </li>
+                  <li
+                    id="menu-item-11160"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
+                  >
+                    <a href="{% url 'aboutus' %}">About Us</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-auto d-none d-lg-flex justify-content-between align-items-center"
+      >
+        <div class="nav-shop">
+          <nav>
+            <ul class="menu">
+              <li>
+                <a
+                  href="javascript:;"
+                  class="mini-cart-count"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#modalMinicart"
+                  aria-controls="modalMinicart"
+                  data-cart-count="0"
+                  ><i class="icon icon-shopping-cart icon-large"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#modalUserAccount"
+                  aria-controls="modalUserAccount"
+                  ><i class="icon icon-user-lock icon-large"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="col-auto d-block d-lg-none">
+        <div class="nav-shop">
+          <nav>
+            <ul class="menu">
+              <li>
+                <button
+                  class="hamburger hamburger--collapse pe-0"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#mobileNav"
+                  aria-controls="mobileNav"
+                >
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                  class="mini-cart-count"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#modalMinicart"
+                  aria-controls="modalMinicart"
+                  data-cart-count="0"
+                  ><i class="icon icon-shopping-cart icon-large"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#modalUserAccount"
+                  aria-controls="modalUserAccount"
+                  ><i class="icon icon-user-lock icon-large"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
