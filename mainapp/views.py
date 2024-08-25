@@ -1,24 +1,33 @@
 from django.shortcuts import render
-from . models import Beer
+from . models import Items,Category
+from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
 def index(request):
-    beer=Beer.objects.all()
+    food = Category.objects.get(name='food')
+    items_in_category = Items.objects.filter(category=food)
+    alchol_drink = Category.objects.get(name='alcholic')
+    beer=Items.objects.filter(category=alchol_drink)
     context={
-        'beer':beer
+        'beer':beer,
+        'food':items_in_category
     }
     return render(request,'mainapp/index.html',context)
 
 
-def detail(request):
-    return render(request,'main/lol.html')
+def alldetail(request,id):
+    obj = get_object_or_404(Items,pk=id)
+    context={
+        'obj':obj
+    }
+    return render(request,'mainapp/detail.html',context)
 
 def allbeer(request):
     return render(request,'main/allbeer.html')
 
 
-def alldetail(request):
-    return render(request,'main/alldetail.html')
+def detail(request):
+    return render(request,'mainapp/lol.html')
 
 def about(request):
     return render(request,'main/about.html')

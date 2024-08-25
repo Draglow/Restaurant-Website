@@ -21,7 +21,7 @@
   <div class="offcanvas-header">
     <a href="" class="brand">
       <picture>
-        <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
+        <img src="{% static 'images/habesha.png' %}" alt="The Beerbox" />
       </picture>
     </a>
 
@@ -59,14 +59,14 @@
           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
         >
           <a
-            href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/"
-            >Flavor profiles</a
+            href="#section-collection"
+            >Our Menu</a
           >
         </li>
         <li
           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
         >
-          <a href="https://www.thebeerbox.nl/over-ons/">About Us</a>
+          <a href="{}">About Us</a>
         </li>
       </ul>
     </div>
@@ -429,33 +429,33 @@
     </div>
   </div>
 
-  <section class="section-hero-cta pt-0 pb-0" data-bgcolor="dark">
-    <picture>
+  <section class="section-hero-cta pt-0 pb-0 p-5" data-bgcolor="dark">
+    <picture class=''>
       <img
-        src="{% static 'images/banner1.jpg' %}"
+        src="{% static 'images/banner2.jpg' %}"
         alt="Bierbox op een plateau in de stad Groningen gevuld met 6 lokale speciaalbieren"
       />
     </picture>
 
     <div class="section-content">
       <div class="container-xxl">
-        <h1
+        {% comment %} <h1
           class="text-warning bold"
-          style="background-color: black; border: yellow"
+          
         >
           Local specialty beers and specialty beer boxes
-        </h1>
+        </h1> {% endcomment %}
 
-        <div class="lead">
+        {% comment %} <div class="lead">
           <p>Discover the taste of locally brewed specialty beer</p>
-        </div>
+        </div> {% endcomment %}
 
         <a
-          class="button"
-          href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+          class="button text-center justify-content-center " style="justify-content: center; align-items: center; margin-top:300px "
+          href=""
           target="_self"
           title="Ontdek alle speciaalbieren"
-          >Discover all special beers</a
+          >Discover items</a
         >
       </div>
     </div>
@@ -488,7 +488,7 @@
                     </header>
 
                     <a
-                      href="https://www.thebeerbox.nl/bier/weerwater/"
+                      href="{% url 'alldetail' b.id%}"
                       class="picture"
                     >
                       <picture class="ratio ratio-4x3">
@@ -568,10 +568,10 @@
       </div>
     </div>
   </section>
-  <section class="section-collection">
+  <section class="section-collection"  id="section-collection">
     <div class="container-xxl">
       <div class="section-content">
-        <h2>Our collection</h2>
+        <h2>Our Menu</h2>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col">
@@ -724,10 +724,12 @@
       <div class="section-content">
         <div class="row justify-content-center">
           <div class="col-24">
-            <h2 class="text-primary h2">New special drinks</h2>
-
+            <h2 class="text-primary h2">Our special Food</h2>
+            
+            
             <div class="swiper slider-product">
               <div class="swiper-wrapper">
+                {% for f in food  %}
                 <div class="swiper-slide product-beers">
                   <div class="card-beerbox">
                     <header>
@@ -738,21 +740,21 @@
                         <picture class="taste">
                           <img
                             class="lazyload"
-                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Strong-Dark.svg"
-                            alt="Hopbel in bruine kleur als aanwijzing van het smaakprofiel Strong &amp; Dark"
+                            data-src="/static/images/habesha2.png"
+                            alt=""
                           />
                         </picture>
                       </div>
                     </header>
 
                     <a
-                      href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                      href="{% url 'alldetail' f.id %}"
                       class="picture"
                     >
                       <picture class="ratio ratio-4x3">
                         <img
                           class="lazyload"
-                          data-src="/static/images/arada.png"
+                          data-src="{{f.image.url}}"
                           alt=""
                         />
                       </picture>
@@ -761,9 +763,9 @@
                     <a
                       href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
                       class="h4 text-base text-white"
-                      >Arada</a
+                      >{{f.name}}</a
                     >
-                    <p class="pricing"><s>40 birr</s> <span>35 birr</span></p>
+                    <p class="pricing"><s>{{f.abv}} birr</s> <span>{{f.price}} birr</span></p>
                     <div class="add-to-cart-wrapper">
                       <form
                         class="cart cell"
@@ -771,7 +773,7 @@
                         method="post"
                         enctype="multipart/form-data"
                       >
-                        <div class="d-none">
+                        {% comment %} <div class="d-none">
                           <div class="quantity">
                             <label
                               class="screen-reader-text"
@@ -794,12 +796,12 @@
                               autocomplete="off"
                             />
                           </div>
-                        </div>
-                        <input type="hidden" name="add-to-cart" value="11989" />
+                        </div> {% endcomment %}
+                        <input type="hidden" name="add-to-cart" value="" />
                         <button
                           type="submit"
                           name="add-to-cart"
-                          value="11989"
+                          value=""
                           class="single_add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
                         >
                           Add
@@ -807,17 +809,18 @@
                       </form>
                     </div>
                     <a
-                      href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
+                      href=""
                       class="button is-hollow is-compact is-border-compact"
                       title="Bekijken"
                       >See More</a
                     >
                   </div>
                 </div>
-                
+                {% endfor %}
                
               </div>
             </div>
+        
             <div class="slider-product-pagination"></div>
           </div>
         </div>

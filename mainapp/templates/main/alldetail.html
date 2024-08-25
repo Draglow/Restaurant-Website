@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl-NL">
+  {% load static %}
   <head>
-    {% load static %}
+    <!-- Google Tag Manager -->
     <script async="" src="{% static 'js/fbevents.js' %}"></script>
     <script src="{% static 'js/diffuser.js' %}" async=""></script>
-    <script
-      type="text/javascript"
-      async=""
-      src="{% static 'js/tune.js' %}"
-    ></script>
+    <script type="text/javascript" async="" src="{% static 'js/tune.js' %}"></script>
     <script async="" src="{% static 'js/gtm.js' %}"></script>
     <script>
       (function (w, d, s, l, i) {
@@ -96,17 +93,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--
- _____ _____  ______ _   _ _______ _________     __
-|_   _|  __ \|  ____| \ | |__   __|__   __\ \   / /
-  | | | |  | | |__  |  \| |  | |     | |   \ \_/ / 
-  | | | |  | |  __| | . ` |  | |     | |    \   /  
- _| |_| |__| | |____| |\  |  | |     | |     | |   
-|_____|_____/|______|_| \_|  |_|     |_|     |_|   
-                                                     
-www.identty.nl
-hallo@identty.nl
-050-5690417
--->
+         _____ _____  ______ _   _ _______ _________     __
+        |_   _|  __ \|  ____| \ | |__   __|__   __\ \   / /
+          | | | |  | | |__  |  \| |  | |     | |   \ \_/ / 
+          | | | |  | |  __| | . ` |  | |     | |    \   /  
+         _| |_| |__| | |____| |\  |  | |     | |     | |   
+        |_____|_____/|______|_| \_|  |_|     |_|     |_|   
+                                                             
+        www.identty.nl
+        hallo@identty.nl
+        050-5690417
+		-->
 
     <link
       rel="apple-touch-icon"
@@ -127,11 +124,11 @@ hallo@identty.nl
     />
     <link
       rel="manifest"
-      href="/content/themes/thebeerbox/build/favicons/site.webmanifest"
+      href="https://www.thebeerbox.nl/content/themes/thebeerbox/build/favicons/site.webmanifest"
     />
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="5bbad5" />
-    <meta name="msapplication-TileColor" content="da532c" />
-    <meta name="theme-color" content="ffffff" />
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="{% static 'css/oxz5lkp.css' %}" />
 
     <title>Weerwater - Lentebok | The Beerbox</title>
@@ -156,7 +153,7 @@ hallo@identty.nl
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
-    <link rel="canonical" href="/bier/weerwater/" />
+    <link rel="canonical" href="https://www.thebeerbox.nl/bier/weerwater/" />
     <link
       rel="stylesheet"
       id="wc-blocks-integration-css"
@@ -179,7 +176,7 @@ hallo@identty.nl
     <style id="classic-theme-styles-inline-css" type="text/css">
       /*! This file is auto-generated */
       .wp-block-button__link {
-        color: fff;
+        color: #fff;
         background-color: #32373c;
         border-radius: 9999px;
         box-shadow: none;
@@ -431,7 +428,176 @@ hallo@identty.nl
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    {% include 'footnav/navbar.html' %}
+    <header id="header" class="style-default" role="banner">
+      <div class="header-topbar">
+        <div class="container-xxl">
+          <div
+            class="row justify-content-center justify-content-lg-between align-items-center"
+          >
+            <div class="col-24 col-lg-auto">
+              <div class="hstack align-items-center stack-exclude">
+                <i class="icon icon-star"></i>
+                <i class="icon icon-star"></i>
+                <i class="icon icon-star"></i>
+                <i class="icon icon-star"></i>
+                <i class="icon icon-star"></i>
+                <p class="mb-0">
+                  Via
+                  <a
+                    href="https://www.google.com/search?q=thebeerbox&amp;sxsrf=APwXEde2SjAUla_oSgpM_iYa-PMnipNUag%3A1681324091919&amp;ei=O_g2ZPDnN4WXkwXMxpuQDQ&amp;oq=thebeerb&amp;gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgQIIxAnMggIABCABBDLATIICAAQgAQQywEyCAgAEIAEEMsBMgoIABCABBAKEMsBMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeOgcIIxCwAxAnOgoIABBHENYEELADOg0ILhCKBRDHARDRAxBDOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOgsIABCKBRCxAxCDAToFCAAQgAQ6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICC4QgAQQsQM6BwgAEIoFEEM6BwguEIoFEEM6DQgAEIoFELEDEIMBEEM6EAguEIoFEMcBENEDENQCEEM6CgguENQCEIoFEEM6FAguEIAEELEDEIMBEMcBEK8BENQCOgcIABCABBAKOg0ILhCABBDHARCvARAKOhAILhCABBDHARDRAxAKEMsBSgQIQRgAUOsDWMoKYPwPaAFwAXgAgAFkiAHdBJIBAzcuMZgBAKABAcgBCcABAQ&amp;sclient=gws-wiz-serp#lrd=0x87ad4aeee72612d1:0xeb0686204eadc8f1,1,,,,"
+                    target="blank"
+                    title="Bekijk recensies op Google"
+                    >Google</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-24 col-lg-auto d-none d-lg-block">
+              <ul class="list-icon is-small">
+                <li><i class="icon icon-check"></i> 100% kwaliteitsgarantie</li>
+                <li>
+                  <i class="icon icon-check"></i> Gratis verzending vanaf €75,-
+                </li>
+                <li><i class="icon icon-check"></i> Een snelle levering</li>
+                <li><i class="icon icon-check"></i> Biercheque</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-xxl">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-auto">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <a href="https://www.thebeerbox.nl" class="brand">
+                  <picture>
+                    <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
+                  </picture>
+                </a>
+              </div>
+              <div class="col-lg d-none d-lg-flex">
+                <div class="nav-wrapper">
+                  <nav class="main-nav">
+                    <ul class="text-left menu">
+                      <li
+                        id="menu-item-5982"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
+                      >
+                        <a
+                          href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/"
+                          >Bierboxen</a
+                        >
+                      </li>
+                      <li
+                        id="menu-item-5983"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
+                      >
+                        <a
+                          href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+                          >Bieren</a
+                        >
+                      </li>
+                      <li
+                        id="menu-item-7427"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
+                      >
+                        <a
+                          href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/"
+                          >Smaakprofielen</a
+                        >
+                      </li>
+                      <li
+                        id="menu-item-11160"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
+                      >
+                        <a href="https://www.thebeerbox.nl/over-ons/"
+                          >Over ons</a
+                        >
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-auto d-none d-lg-flex justify-content-between align-items-center"
+          >
+            <div class="nav-shop">
+              <nav>
+                <ul class="menu">
+                  <li>
+                    <a
+                      href="javascript:;"
+                      class="mini-cart-count"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#modalMinicart"
+                      aria-controls="modalMinicart"
+                      data-cart-count="0"
+                      ><i class="icon icon-shopping-cart icon-large"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:;"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#modalUserAccount"
+                      aria-controls="modalUserAccount"
+                      ><i class="icon icon-user-lock icon-large"></i
+                    ></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="col-auto d-block d-lg-none">
+            <div class="nav-shop">
+              <nav>
+                <ul class="menu">
+                  <li>
+                    <button
+                      class="hamburger hamburger--collapse pe-0"
+                      type="button"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#mobileNav"
+                      aria-controls="mobileNav"
+                    >
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                    </button>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:;"
+                      class="mini-cart-count"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#modalMinicart"
+                      aria-controls="modalMinicart"
+                      data-cart-count="0"
+                      ><i class="icon icon-shopping-cart icon-large"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:;"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#modalUserAccount"
+                      aria-controls="modalUserAccount"
+                      ><i class="icon icon-user-lock icon-large"></i
+                    ></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <div
       class="offcanvas offcanvas-end"
@@ -440,7 +606,7 @@ hallo@identty.nl
       aria-labelledby="mobileNavLabel"
     >
       <div class="offcanvas-header">
-        <a href="#" class="brand">
+        <a href="https://www.thebeerbox.nl" class="brand">
           <picture>
             <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
           </picture>
@@ -464,24 +630,30 @@ hallo@identty.nl
             <li
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
             >
-              <a href="#/bierboxen-speciaalbierbox-bestellen/">Bierboxen</a>
+              <a
+                href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/"
+                >Bierboxen</a
+              >
             </li>
             <li
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
             >
-              <a href="#/bieren-speciaalbier-bestellen/">Bieren</a>
+              <a href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+                >Bieren</a
+              >
             </li>
             <li
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
             >
-              <a href="#/smaakprofielen-wat-is-mijn-smaakprofiel/"
+              <a
+                href="https://www.thebeerbox.nl/smaakprofielen-wat-is-mijn-smaakprofiel/"
                 >Smaakprofielen</a
               >
             </li>
             <li
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
             >
-              <a href="#/over-ons/">Over ons</a>
+              <a href="https://www.thebeerbox.nl/over-ons/">Over ons</a>
             </li>
           </ul>
         </div>
@@ -549,12 +721,12 @@ hallo@identty.nl
         <div class="modal-content">
           <div class="modal-header">
             <picture>
-              <img src="{% static 'images/habesha.png' %}" alt="The Beerbox" />
+              <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
             </picture>
           </div>
           <div class="modal-body">
-            <p class="h3 text-base d-block">Are you 18 years or older?</p>
-            <p class="h3 text-base d-none">Sorry! You are not yet 18.</p>
+            <p class="h3 text-base d-block">Ben je 18 jaar of ouder?</p>
+            <p class="h3 text-base d-none">Helaas! Je bent nog geen 18.</p>
           </div>
           <div class="modal-footer">
             <button
@@ -563,10 +735,10 @@ hallo@identty.nl
               data-bs-dismiss="modal"
               data-verify=""
             >
-              I am over 18
+              Ik ben ouder dan 18
             </button>
             <a href="https://www.nix18.nl/" class="button is-brown"
-              >I am under 18</a
+              >Ik ben onder de 18</a
             >
           </div>
         </div>
@@ -746,7 +918,7 @@ hallo@identty.nl
                 <form
                   name="loginform"
                   id="loginform"
-                  action="#/beheer/"
+                  action="https://www.thebeerbox.nl/beheer/"
                   method="post"
                 >
                   <p class="login-username">
@@ -796,7 +968,7 @@ hallo@identty.nl
                     <input
                       type="hidden"
                       name="redirect_to"
-                      value="#/mijn-account/"
+                      value="https://www.thebeerbox.nl/mijn-account/"
                     />
                   </p>
                 </form>
@@ -842,7 +1014,11 @@ hallo@identty.nl
               class="button is-hollow"
               >Verder winkelen</a
             >
-            <a href="#/winkelwagen/" class="button is-hollow">Afrekenen</a>
+            <a
+              href="https://www.thebeerbox.nl/winkelwagen/"
+              class="button is-hollow"
+              >Afrekenen</a
+            >
           </div>
         </div>
       </div>
@@ -860,8 +1036,8 @@ hallo@identty.nl
               <picture class="taste">
                 <img
                   class="lazyload"
-                  data-src="#/content/uploads/2023/01/Smooth-Amber.svg"
-                  alt=""
+                  data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                  alt="Hopbel in amber/oranje kleur als aanwijzing van het smaakprofiel Smooth &amp; amber"
                 />
               </picture>
               <!-- </a> -->
@@ -873,31 +1049,10 @@ hallo@identty.nl
                 style="opacity: 0; transition: opacity 0.25s ease-in-out"
               >
                 <div class="woocommerce-product-gallery__wrapper">
-                  <img
-                    width="580"
-                    height="733"
-                    src="{% static 'images/De-Kemphaan-Weerwater.png' %}"
-                    class="wp-post-image"
-                    alt="De Kemphaan - Weerwater lentebok"
-                    title="De Kemphaan - Weerwater"
-                    data-caption=""
-                    data-src="#/content/uploads/2023/04/De-Kemphaan-Weerwater.png"
-                    data-large_image="#/content/uploads/2023/04/De-Kemphaan-Weerwater.png"
-                    data-large_image_width="580"
-                    data-large_image_height="733"
-                    decoding="async"
-                    fetchpriority="high"
-                    srcset="
-                      images/De-Kemphaan-Weerwater.png         580w,
-                      images/De-Kemphaan-Weerwater-570x720.png 570w,
-                      images/De-Kemphaan-Weerwater-79x100.png   79w,
-                      images/De-Kemphaan-Weerwater-277x350.png 277w,
-                      images/De-Kemphaan-Weerwater-229x290.png 229w,
-                      images/De-Kemphaan-Weerwater-92x116.png   92w
-                    "
-                    sizes="(max-width: 580px) 100vw, 580px"
-                  />
+
+                  <img src="/static/images/heni.png" sizes="(max-width: 580px) 100vw, 580px"/>
                 </div>
+                
               </div>
 
               <div class="summary entry-summary">
@@ -950,7 +1105,7 @@ hallo@identty.nl
 
                 <form
                   class="cart"
-                  action="#/bier/weerwater/"
+                  action="https://www.thebeerbox.nl/bier/weerwater/"
                   method="post"
                   enctype="multipart/form-data"
                 >
@@ -1020,7 +1175,7 @@ hallo@identty.nl
                     <picture>
                       <img
                         class="lazyload"
-                        data-src="#/content/uploads/2023/06/Flevoland.svg"
+                        data-src="https://www.thebeerbox.nl/content/uploads/2023/06/Flevoland.svg"
                         alt="Uitsnede van de provincie Flevoland met alle bierbrouwerijen die in Flevoland te vinden zijn."
                       />
                     </picture>
@@ -1071,31 +1226,36 @@ hallo@identty.nl
                           <picture class="taste">
                             <img
                               class="lazyload"
-                              data-src="#/content/uploads/2023/01/Smooth-Amber.svg"
-                              alt="#"
+                              data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                              alt="Hopbel in amber/oranje kleur als aanwijzing van het smaakprofiel Smooth &amp; amber"
                             />
                           </picture>
                         </div>
                       </header>
 
-                      <a href="#/bier/winter/" class="picture">
+                      <a
+                        href="https://www.thebeerbox.nl/bier/winter/"
+                        class="picture"
+                      >
                         <picture class="ratio ratio-4x3">
                           <img
                             class="lazyload"
-                            data-src="#/content/uploads/2023/04/De-Kemphaan-Winter.png"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/04/De-Kemphaan-Winter.png"
                             alt="De Kemphaan - Winter winterbier"
                           />
                         </picture>
                       </a>
 
-                      <a href="#/bier/winter/" class="h4 text-base text-white"
+                      <a
+                        href="https://www.thebeerbox.nl/bier/winter/"
+                        class="h4 text-base text-white"
                         >De Kemphaan – Winter</a
                       >
                       <p class="pricing"><s>€ 2.79</s> <span>€ 2.59</span></p>
                       <div class="add-to-cart-wrapper">
                         <form
                           class="cart cell"
-                          action="#/bier/winter/"
+                          action="https://www.thebeerbox.nl/bier/winter/"
                           method="post"
                           enctype="multipart/form-data"
                         >
@@ -1139,7 +1299,7 @@ hallo@identty.nl
                         </form>
                       </div>
                       <a
-                        href="#/bier/winter/"
+                        href="https://www.thebeerbox.nl/bier/winter/"
                         class="button is-hollow is-compact is-border-compact"
                         title="Bekijken"
                         >Bekijken</a
@@ -1156,25 +1316,28 @@ hallo@identty.nl
                           <picture class="taste">
                             <img
                               class="lazyload"
-                              data-src="#/content/uploads/2023/01/Smooth-Amber.svg"
-                              alt="#"
+                              data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                              alt="Hopbel in amber/oranje kleur als aanwijzing van het smaakprofiel Smooth &amp; amber"
                             />
                           </picture>
                         </div>
                       </header>
 
-                      <a href="/bier/oostvaarders/" class="picture">
+                      <a
+                        href="https://www.thebeerbox.nl/bier/oostvaarders/"
+                        class="picture"
+                      >
                         <picture class="ratio ratio-4x3">
                           <img
                             class="lazyload"
-                            data-src="/content/uploads/2023/04/De-Kemphaan-Oostvaarders.png"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/04/De-Kemphaan-Oostvaarders.png"
                             alt="De Kemphaan - Oostvaarders Pale Ale"
                           />
                         </picture>
                       </a>
 
                       <a
-                        href="/bier/oostvaarders/"
+                        href="https://www.thebeerbox.nl/bier/oostvaarders/"
                         class="h4 text-base text-white"
                         >De Kemphaan – Oostvaarders</a
                       >
@@ -1182,7 +1345,7 @@ hallo@identty.nl
                       <div class="add-to-cart-wrapper">
                         <form
                           class="cart cell"
-                          action="/bier/oostvaarders/"
+                          action="https://www.thebeerbox.nl/bier/oostvaarders/"
                           method="post"
                           enctype="multipart/form-data"
                         >
@@ -1226,7 +1389,7 @@ hallo@identty.nl
                         </form>
                       </div>
                       <a
-                        href="/bier/oostvaarders/"
+                        href="https://www.thebeerbox.nl/bier/oostvaarders/"
                         class="button is-hollow is-compact is-border-compact"
                         title="Bekijken"
                         >Bekijken</a
@@ -1252,37 +1415,43 @@ hallo@identty.nl
                 id="menu-item-46"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"
               >
-                <a href="/over-ons/">Over ons</a>
+                <a href="https://www.thebeerbox.nl/over-ons/">Over ons</a>
               </li>
               <li
                 id="menu-item-5230"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5230"
               >
-                <a href="/blogs/">Blogs</a>
+                <a href="https://www.thebeerbox.nl/blogs/">Blogs</a>
               </li>
               <li
                 id="menu-item-48"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"
               >
-                <a href="/veelgestelde-vragen/">Veelgestelde vragen</a>
+                <a href="https://www.thebeerbox.nl/veelgestelde-vragen/"
+                  >Veelgestelde vragen</a
+                >
               </li>
               <li
                 id="menu-item-464"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"
               >
-                <a href="/refund_returns/">Verzenden en retourneren</a>
+                <a href="https://www.thebeerbox.nl/refund_returns/"
+                  >Verzenden en retourneren</a
+                >
               </li>
               <li
                 id="menu-item-469"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-469"
               >
-                <a href="/partner-worden/">Partner worden?</a>
+                <a href="https://www.thebeerbox.nl/partner-worden/"
+                  >Partner worden?</a
+                >
               </li>
               <li
                 id="menu-item-47"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"
               >
-                <a href="/contact/">Contact</a>
+                <a href="https://www.thebeerbox.nl/contact/">Contact</a>
               </li>
             </ul>
           </nav>
@@ -1339,7 +1508,7 @@ hallo@identty.nl
             </form>
           </div>
 
-          <a href="" class="brand">
+          <a href="https://www.thebeerbox.nl" class="brand">
             <picture>
               <img src="{% static 'images/logo.png' %}" alt="The Beerbox" />
             </picture>
@@ -1403,7 +1572,9 @@ hallo@identty.nl
                       id="menu-item-451"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-451"
                     >
-                      <a rel="privacy-policy" href="/privacy-verklaring/"
+                      <a
+                        rel="privacy-policy"
+                        href="https://www.thebeerbox.nl/privacy-verklaring/"
                         >Privacy verklaring</a
                       >
                     </li>
@@ -1411,13 +1582,16 @@ hallo@identty.nl
                       id="menu-item-458"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"
                     >
-                      <a href="/algemene-voorwaarden/">Algemene voorwaarden</a>
+                      <a href="https://www.thebeerbox.nl/algemene-voorwaarden/"
+                        >Algemene voorwaarden</a
+                      >
                     </li>
                     <li
                       id="menu-item-457"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"
                     >
-                      <a href="/gebruikersvoorwaarden-website/"
+                      <a
+                        href="https://www.thebeerbox.nl/gebruikersvoorwaarden-website/"
                         >Gebruikersvoorwaarden Website</a
                       >
                     </li>
@@ -1439,24 +1613,15 @@ hallo@identty.nl
                 </picture>
 
                 <picture class="icon">
-                  <img
-                    src="{% static 'images/creditcards.svg' %}"
-                    alt="Creditcards"
-                  />
+                  <img src="{% static 'images/creditcards.svg' %}" alt="Creditcards" />
                 </picture>
 
                 <picture class="icon">
-                  <img
-                    src="{% static 'images/klarnapaynow.svg' %}"
-                    alt="Klarna"
-                  />
+                  <img src="{% static 'images/klarnapaynow.svg' %}" alt="Klarna" />
                 </picture>
 
                 <picture class="icon">
-                  <img
-                    src="{% static 'images/bancontact.svg' %}"
-                    alt="Klarna"
-                  />
+                  <img src="{% static 'images/bancontact.svg' %}" alt="Klarna" />
                 </picture>
 
                 <picture class="icon">
@@ -1477,7 +1642,7 @@ hallo@identty.nl
       {
         "@context": "https:\/\/schema.org\/",
         "@type": "Product",
-        "@id": "https:\/\/www.thebeerbox.nl\/bier\/weerwater\/product",
+        "@id": "https:\/\/www.thebeerbox.nl\/bier\/weerwater\/#product",
         "name": "De Kemphaan - Weerwater",
         "url": "https:\/\/www.thebeerbox.nl\/bier\/weerwater\/",
         "description": "Weerwater Bier, een lentebok van Stadsbrouwerij De Kemphaan, is een seizoensgebonden bier dat speciaal is gebrouwen om de komst van de lente te vieren. Met zijn kenmerkende karakter en smaakprofiel is het een geliefde keuze voor bierliefhebbers tijdens het lenteseizoen. Deze lentebok heeft een heldere amberkleurige tint die het optimisme en de warmte van de lente weerspiegelt. Het heeft een verfijnde mix van zoete en moutige tonen, gecombineerd met een subtiele hopbitterheid die zorgt voor een evenwichtige smaakervaring. Het aroma van Weerwater Bier is verleidelijk, met hints van karamel, geroosterde mout en een vleugje kruidigheid. Bij het proeven van dit bier komen de smaken van lichte karamel, broodachtige mout en een subtiele fruitigheid naar voren. De smaak ontwikkelt zich geleidelijk naar een zachte en aangename afdronk.",
@@ -1723,11 +1888,7 @@ hallo@identty.nl
       };
       /* ]]> */
     </script>
-    <script
-      type="text/javascript"
-      src="{% static 'js/utils.min.js' %}"
-      id="utils-js"
-    ></script>
+    <script type="text/javascript" src="{% static 'js/utils.min.js' %}" id="utils-js"></script>
     <script
       type="text/javascript"
       src="{% static 'js/backbone.min.js' %}"
@@ -1778,7 +1939,7 @@ hallo@identty.nl
     <!--[if lt IE 8]>
       <script
         type="text/javascript"
-        src="/core/wp-includes/js/json2.min.js?ver=2015-05-03"
+        src="https://www.thebeerbox.nl/core/wp-includes/js/json2.min.js?ver=2015-05-03"
         id="json2-js"
       ></script>
     <![endif]-->

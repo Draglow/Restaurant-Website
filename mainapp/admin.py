@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import BeerCategory, Beer, Cart, CartItem, Order, OrderItem
+from .models import Category, Items, Cart, CartItem, Order, OrderItem
 
 # Register the BeerCategory model
-@admin.register(BeerCategory)
+@admin.register(Category)
 class BeerCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
     prepopulated_fields = {'slug': ('name',)}
 
 # Register the Beer model
-@admin.register(Beer)
+@admin.register(Items)
 class BeerAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'abv', 'price')
     list_filter = ('category',)
@@ -31,8 +31,8 @@ class CartAdmin(admin.ModelAdmin):
 # Register the CartItem model
 @admin.register(CartItem)
 class CartItemAdmin(admin.ModelAdmin):
-    list_display = ('cart', 'beer', 'quantity')
-    raw_id_fields = ('cart', 'beer')
+    list_display = ('cart', 'items', 'quantity')
+    raw_id_fields = ('cart', 'items')
     search_fields = ('beer__name',)
 
 # Inline model for OrderItem
@@ -51,6 +51,6 @@ class OrderAdmin(admin.ModelAdmin):
 # Register the OrderItem model
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('order', 'beer', 'quantity', 'price')
-    raw_id_fields = ('order', 'beer')
+    list_display = ('order', 'items', 'quantity', 'price')
+    raw_id_fields = ('order', 'items')
     search_fields = ('order__id', 'beer__name')

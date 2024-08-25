@@ -2,64 +2,81 @@
 {% load static %}
 {% block content %}
 
-    
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
     <div class="offcanvas-header">
         <a href="" class="brand">
             <picture>
-
 
                 <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
             </picture>
         </a>
 
-        <button class="hamburger hamburger--collapse is-active pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+        <button class="hamburger hamburger--collapse is-active pe-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileNav" aria-controls="mobileNav">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
     </div>
     <div class="offcanvas-body">
-        <div class="main-nav"><ul class="text-left menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"><a href="bierboxen-speciaalbierbox-bestellen/">Bierboxen</a></li>
-        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-29 current_page_item menu-item-5983"><a href="bieren-speciaalbier-bestellen/" aria-current="page">Bieren</a></li>
-        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"><a href="smaakprofielen-wat-is-mijn-smaakprofiel/">Smaakprofielen</a></li>
-        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"><a href="over-ons/">Over ons</a></li>
-</ul></div>
+        <div class="main-nav">
+            <ul class="text-left menu">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"><a
+                        href="bierboxen-speciaalbierbox-bestellen/">Bierboxen</a></li>
+                <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-29 current_page_item menu-item-5983">
+                    <a href="bieren-speciaalbier-bestellen/" aria-current="page">Bieren</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"><a
+                        href="smaakprofielen-wat-is-mijn-smaakprofiel/">Smaakprofielen</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"><a
+                        href="over-ons/">Over ons</a></li>
+            </ul>
+        </div>
         <ul class="list-unstyled menu additional-nav">
             <li>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#modalUserAccount" aria-controls="modalUserAccount" class="button is-hollow">Inloggen</a>
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#modalUserAccount"
+                    aria-controls="modalUserAccount" class="button is-hollow">Inloggen</a>
             </li>
             <li>
                 <ul class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center">
-                                            <li><a rel="noopener nofollow" href="https://www.facebook.com/thebeerbox.nl" class="link" title="Facebook" target="blank"><i class="icon icon-facebook icon-xxlarge" aria-hidden="true"></i></a></li>
-                                            <li><a rel="noopener nofollow" href="https://www.instagram.com/thebeerbox.nl/" class="link" title="Instagram" target="blank"><i class="icon icon-instagram icon-xxlarge" aria-hidden="true"></i></a></li>
-                                            <li><a rel="noopener nofollow" href="https://www.linkedin.com/company/the-beerbox/" class="link" title="LinkedIn" target="blank"><i class="icon icon-linkedin icon-xxlarge" aria-hidden="true"></i></a></li>
-                                    </ul>
+                    <li><a rel="noopener nofollow" href="https://www.facebook.com/thebeerbox.nl" class="link"
+                            title="Facebook" target="blank"><i class="icon icon-facebook icon-xxlarge"
+                                aria-hidden="true"></i></a></li>
+                    <li><a rel="noopener nofollow" href="https://www.instagram.com/thebeerbox.nl/" class="link"
+                            title="Instagram" target="blank"><i class="icon icon-instagram icon-xxlarge"
+                                aria-hidden="true"></i></a></li>
+                    <li><a rel="noopener nofollow" href="https://www.linkedin.com/company/the-beerbox/" class="link"
+                            title="LinkedIn" target="blank"><i class="icon icon-linkedin icon-xxlarge"
+                                aria-hidden="true"></i></a></li>
+                </ul>
             </li>
         </ul>
     </div>
-</div>        <div class="modal fade" tabindex="-1" id="checkAgeModal">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <picture>
-                        <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
-                    </picture>
-                </div>
-                <div class="modal-body">
-                    <p class="h3 text-base d-block">Ben je 18 jaar of ouder?</p>
-                                            <p class="h3 text-base d-none">Helaas! Je bent nog geen 18.</p>
-                                    </div>
-                <div class="modal-footer">
-                                            <button type="button" class="button" data-bs-dismiss="modal" data-verify="">Ik ben ouder dan 18</button>
-                                            <a href="" class="button is-brown">Ik ben onder de 18</a>
-                                    </div>
+</div>
+<div class="modal fade" tabindex="-1" id="checkAgeModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <picture>
+                    <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
+                </picture>
+            </div>
+            <div class="modal-body">
+                <p class="h3 text-base d-block">Ben je 18 jaar of ouder?</p>
+                <p class="h3 text-base d-none">Helaas! Je bent nog geen 18.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button" data-bs-dismiss="modal" data-verify="">Ik ben ouder dan 18</button>
+                <a href="" class="button is-brown">Ik ben onder de 18</a>
             </div>
         </div>
     </div>
-    <div class="offcanvas offcanvas-account offcanvas-end" tabindex="-1" id="modalUserAccount" aria-labelledby="modalUserAccountLabel">
+</div>
+<div class="offcanvas offcanvas-account offcanvas-end" tabindex="-1" id="modalUserAccount"
+    aria-labelledby="modalUserAccountLabel">
     <div class="offcanvas-header">
-        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalUserAccount" aria-controls="modalUserAccount">
+        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#modalUserAccount" aria-controls="modalUserAccount">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
@@ -71,29 +88,95 @@
                 <div class="col-24 col-lg-12">
                     <h3 class="text-base text-primary">Ik wil een account aanmaken</h3>
                     <div class="section-form">
-                        <form class="kaliforms-form-container bootstrap-wrapper  " data-form-id="41" style="opacity:0"><div id="kaliforms-global-error-message-41" class="global-error-message"></div><div class="row kali-form-field-row"><div class="col-12 col-md-6 "><label for="textbox1">Voornaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox1" type="text" id="textbox1" name="firstname" data-properties.type="text" placeholder="Voornaam" required=""></div><div class="col-12 col-md-6 "><label for="textbox12">Achternaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox2" type="text" id="textbox12" name="lastname" data-properties.type="text" placeholder="Achternaam" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="textbox123">Gebruikersnaam <span class="kali-required-mark"></span></label><input data-internal-id="textbox3" type="text" id="textbox123" name="username" data-properties.type="text" placeholder="Gebruikersnaam" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="email4">E-mail <span class="kali-required-mark"></span></label><input data-internal-id="email4" type="email" id="email4" name="email" placeholder="E-mail" required="" class="input"></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="password5">Wachtwoord <span class="kali-required-mark"></span></label><input data-internal-id="password5" type="password" id="password5" name="password" value="password" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label for="password6">Herhaal wachtwoord <span class="kali-required-mark"></span></label><input data-internal-id="password6" type="password" id="password6" name="passwordr" value="password" required=""></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><label class="checkbox-label"><input data-internal-id="termsandconditions7" type="checkbox" id="termsAndConditions7" name="termsAndConditions" data-termstype="url" data-termsurl="http://www.thebeerbox.test/algemene-voorwaarden" required="" value="yes"><span style="position:relative;bottom:3px"><span class="kali-required-mark"></span> <a href="http://www.thebeerbox.test/algemene-voorwaarden" target="_blank">Ik ga akkoord met de voorwaarden</a></span></label></div></div><div class="row kali-form-field-row"><div class="col-12 col-md-12 "><input data-internal-id="submitbutton8" type="submit" id="submitButton8" data-style="default" name="submitButton8" class="input" value="Aanmelden"></div></div><!-- This form was built using Kali Forms --></form>                    </div>
+                        <form class="kaliforms-form-container bootstrap-wrapper  " data-form-id="41" style="opacity:0">
+                            <div id="kaliforms-global-error-message-41" class="global-error-message"></div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-6 "><label for="textbox1">Voornaam <span
+                                            class="kali-required-mark"></span></label><input data-internal-id="textbox1"
+                                        type="text" id="textbox1" name="firstname" data-properties.type="text"
+                                        placeholder="Voornaam" required=""></div>
+                                <div class="col-12 col-md-6 "><label for="textbox12">Achternaam <span
+                                            class="kali-required-mark"></span></label><input data-internal-id="textbox2"
+                                        type="text" id="textbox12" name="lastname" data-properties.type="text"
+                                        placeholder="Achternaam" required=""></div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><label for="textbox123">Gebruikersnaam <span
+                                            class="kali-required-mark"></span></label><input data-internal-id="textbox3"
+                                        type="text" id="textbox123" name="username" data-properties.type="text"
+                                        placeholder="Gebruikersnaam" required=""></div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><label for="email4">E-mail <span
+                                            class="kali-required-mark"></span></label><input data-internal-id="email4"
+                                        type="email" id="email4" name="email" placeholder="E-mail" required=""
+                                        class="input"></div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><label for="password5">Wachtwoord <span
+                                            class="kali-required-mark"></span></label><input
+                                        data-internal-id="password5" type="password" id="password5" name="password"
+                                        value="password" required=""></div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><label for="password6">Herhaal wachtwoord <span
+                                            class="kali-required-mark"></span></label><input
+                                        data-internal-id="password6" type="password" id="password6" name="passwordr"
+                                        value="password" required=""></div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><label class="checkbox-label"><input
+                                            data-internal-id="termsandconditions7" type="checkbox"
+                                            id="termsAndConditions7" name="termsAndConditions" data-termstype="url"
+                                            data-termsurl="http://www.thebeerbox.test/algemene-voorwaarden" required=""
+                                            value="yes"><span style="position:relative;bottom:3px"><span
+                                                class="kali-required-mark"></span> <a
+                                                href="http://www.thebeerbox.test/algemene-voorwaarden"
+                                                target="_blank">Ik ga akkoord met de voorwaarden</a></span></label>
+                                </div>
+                            </div>
+                            <div class="row kali-form-field-row">
+                                <div class="col-12 col-md-12 "><input data-internal-id="submitbutton8" type="submit"
+                                        id="submitButton8" data-style="default" name="submitButton8" class="input"
+                                        value="Aanmelden"></div>
+                            </div><!-- This form was built using Kali Forms -->
+                        </form>
+                    </div>
                 </div>
 
                 <div class="col-24 col-lg-12">
                     <h3 class="text-base text-primary">Ik heb al een account</h3>
                     <div class="section-form">
-                        <form name="loginform" id="loginform" action="beheer/" method="post"><p class="login-username">
-				<label for="user">Gebruikersnaam of e-mailadres</label>
-				<input type="text" name="log" id="user" autocomplete="username" class="input" value="" size="20">
-			</p><p class="login-password">
-				<label for="pass">Wachtwoord</label>
-				<input type="password" name="pwd" id="pass" autocomplete="current-password" spellcheck="false" class="input" value="" size="20">
-			</p><p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Onthoud mij</label></p><p class="login-submit">
-				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Inloggen">
-				<input type="hidden" name="redirect_to" value="mijn-account/">
-			</p></form>                    </div>
+                        <form name="loginform" id="loginform" action="beheer/" method="post">
+                            <p class="login-username">
+                                <label for="user">Gebruikersnaam of e-mailadres</label>
+                                <input type="text" name="log" id="user" autocomplete="username" class="input" value=""
+                                    size="20">
+                            </p>
+                            <p class="login-password">
+                                <label for="pass">Wachtwoord</label>
+                                <input type="password" name="pwd" id="pass" autocomplete="current-password"
+                                    spellcheck="false" class="input" value="" size="20">
+                            </p>
+                            <p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme"
+                                        value="forever"> Onthoud mij</label></p>
+                            <p class="login-submit">
+                                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary"
+                                    value="Inloggen">
+                                <input type="hidden" name="redirect_to" value="mijn-account/">
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    <div class="offcanvas offcanvas-minicart offcanvas-end" tabindex="-1" id="modalMinicart" aria-labelledby="modalMinicartLabel">
+</div>
+<div class="offcanvas offcanvas-minicart offcanvas-end" tabindex="-1" id="modalMinicart"
+    aria-labelledby="modalMinicartLabel">
     <div class="offcanvas-header">
-        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalMinicart" aria-controls="modalMinicart">
+        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#modalMinicart" aria-controls="modalMinicart">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
@@ -103,1216 +186,1025 @@
         <div class="container-xxl">
             <h3 class="text-base text-primary">Winkelwagen</h3>
             <div class="offcanvas-minicart">
-                
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget ">
-						<li class="woocommerce-mini-cart-item mini_cart_item">
-					<a data-gtm4wp_product_data="{" internal_id":11053,"item_id":11053,"item_name":"de="" kemphaan="" -="" oostvaarders","sku":"fl-3-0028","price":2.29,"stocklevel":2,"stockstatus":"instock","google_business_vertical":"retail","item_category":"bieren","id":11053,"productlink":"https:\="" \="" www.thebeerbox.nl\="" bieren-speciaalbier-bestellen\="" ","item_variant":"","item_brand":""}"="" href="winkelwagen/?remove_item=0d2f28fbfb3c845930a1cba0672950b1&amp;_wpnonce=2b25d8b6be" class="remove remove_from_cart_button" aria-label="Verwijder De Kemphaan - Oostvaarders uit winkelwagen" data-product_id="11053" data-cart_item_key="0d2f28fbfb3c845930a1cba0672950b1" data-product_sku="FL-3-0028">×</a>											<a href="bier/oostvaarders/">
-							<img width="550" height="550" src="{% static 'images/De-Kemphaan-Oostvaarders-550x550.png' %}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="De Kemphaan - Oostvaarders Pale Ale" decoding="async" fetchpriority="high" srcset="images/De-Kemphaan-Oostvaarders-550x550.png 550w, images/De-Kemphaan-Oostvaarders-100x100.png 100w" sizes="(max-width: 550px) 100vw, 550px">De Kemphaan - Oostvaarders						</a>
-															<span class="quantity">1 × <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">€</span>2,29</bdi></span></span>				</li>
-					</ul>
+                <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                    <li class="woocommerce-mini-cart-item mini_cart_item">
+                        <a data-gtm4wp_product_data="{" internal_id":11053,"item_id":11053,"item_name":"de=""
+                            kemphaan="" -=""
+                            oostvaarders","sku":"fl-3-0028","price":2.29,"stocklevel":2,"stockstatus":"instock","google_business_vertical":"retail","item_category":"bieren","id":11053,"productlink":"https:\=""
+                            \="" www.thebeerbox.nl\="" bieren-speciaalbier-bestellen\="" ","
+                            item_variant":"","item_brand":""}"=""
+                            href="winkelwagen/?remove_item=0d2f28fbfb3c845930a1cba0672950b1&amp;_wpnonce=2b25d8b6be"
+                            class="remove remove_from_cart_button"
+                            aria-label="Verwijder De Kemphaan - Oostvaarders uit winkelwagen" data-product_id="11053"
+                            data-cart_item_key="0d2f28fbfb3c845930a1cba0672950b1" data-product_sku="FL-3-0028">×</a> <a
+                            href="bier/oostvaarders/">
+                            <img width="550" height="550"
+                                src="{% static 'images/De-Kemphaan-Oostvaarders-550x550.png' %}"
+                                class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                alt="De Kemphaan - Oostvaarders Pale Ale" decoding="async" fetchpriority="high"
+                                srcset="images/De-Kemphaan-Oostvaarders-550x550.png 550w, images/De-Kemphaan-Oostvaarders-100x100.png 100w"
+                                sizes="(max-width: 550px) 100vw, 550px">De Kemphaan - Oostvaarders </a>
+                        <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><bdi><span
+                                        class="woocommerce-Price-currencySymbol">€</span>2,29</bdi></span></span> </li>
+                </ul>
 
-	<p class="woocommerce-mini-cart__total total">
-		<strong>Subtotaal:</strong> <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">€</span>2,29</bdi></span>	</p>
+                <p class="woocommerce-mini-cart__total total">
+                    <strong>Subtotaal:</strong> <span class="woocommerce-Price-amount amount"><bdi><span
+                                class="woocommerce-Price-currencySymbol">€</span>2,29</bdi></span> </p>
 
-	
-	<p class="woocommerce-mini-cart__buttons buttons"><a href="winkelwagen/" class="button wc-forward">Bekijk winkelwagen</a><a href="afrekenen/" class="button checkout wc-forward">Afrekenen</a></p>
+                <p class="woocommerce-mini-cart__buttons buttons"><a href="winkelwagen/"
+                        class="button wc-forward">Bekijk winkelwagen</a><a href="afrekenen/"
+                        class="button checkout wc-forward">Afrekenen</a></p>
 
-	
-
-    
             </div>
             <div class="vstack woocommerce-buttons">
-                <a href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#modalMinicart" aria-controls="modalMinicart" class="button is-hollow">Verder winkelen</a>
+                <a href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#modalMinicart"
+                    aria-controls="modalMinicart" class="button is-hollow">Verder winkelen</a>
                 <a href="winkelwagen/" class="button is-hollow">Afrekenen</a>
             </div>
         </div>
     </div>
 </div>
-    <main id="main" role="main">
-                    <div class="container-xxl">
-                <div class="section-content">
-                    <div class="woocommerce-notices-wrapper"></div>
-                </div>
-            </div>
-        
-<section class="section-hero-title pb-0">
+<main id="main" role="main">
     <div class="container-xxl">
-        <nav aria-label="kruimelpad"><ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemscope="" itemtype="http://schema.org/WebPage" itemprop="item" itemid="https://www.thebeerbox.nl" href="https://www.thebeerbox.nl"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Bieren</span><meta itemprop="position" content="2"></li></ol></nav>        <h1 class="text-primary">Onze bieren.</h1>
+        <div class="section-content">
+            <div class="woocommerce-notices-wrapper"></div>
+        </div>
     </div>
-</section>    <section class="section-multiple-products" data-bgcolor="dark">
+
+    <section class="section-hero-title pb-0">
+        <div class="container-xxl">
+            <nav aria-label="kruimelpad">
+                <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                        itemtype="https://schema.org/ListItem"><a itemscope="" itemtype="http://schema.org/WebPage"
+                            itemprop="item" itemid="https://www.thebeerbox.nl" href="https://www.thebeerbox.nl"><span
+                                itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope=""
+                        itemtype="https://schema.org/ListItem"><span itemprop="name">Bieren</span>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </nav>
+            <h1 class="text-primary">Onze bieren.</h1>
+        </div>
+    </section>
+    <section class="section-multiple-products" data-bgcolor="dark">
         <div class="container-xxl">
             <div class="section-content">
-                
+
                 <div class="products-container row">
-                                            <div class="col-24 col-lg-5">
-                            <div class="filter-filters-wrapper filter-filters-wrapper-desktop">
-                                <div class="offcanvas offcanvas-filters offcanvas-end" tabindex="-1" id="modalFilters" aria-labelledby="modalFiltersLabel">
-    <div class="offcanvas-header">
-        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalFilters" aria-controls="modalfilters">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
-    </div>
-    <div class="offcanvas-body">
-        <div class="container-xxl">
-            <h3 class="text-base text-primary">Filteren</h3>
-            <div class="filter-filters-wrapper filter-filters-wrapper-mobile">
-                <div class="filter-wrapper filter-search">
-    <div class="input-wrapper">
-        <i class="icon icon-search"></i>
-        <input class="filter-identty filter-input" data-filter-name="search" type="text" placeholder="Vul je zoekterm in..">
-    </div>
-</div>    <div class="filter-wrapper filter-price">
-        <div class="filter-header">
-            <p>Prijs</p>
-        </div>
-                    <div class="range-slider filter-identty filter-input" type="rangeslider" data-filter-range-currency-symbol="€" data-filter-name="price-range-slider">
-                <span class="rangeValues"></span>
-                <input min="1.29" max="5.29" value="1.29" step="0.01" type="range">
-                <input min="1.29" max="5.29" value="5.29" step="0.01" type="range">
-            </div>
-            </div>
-    <div class="filter-wrapper filter-checkbox filter-is-sale">
-        <div class="filter-header">
-            <p>In de aanbieding</p>
-        </div>
-                    <div class="form-check">
-                <input class="form-check-input filter-identty filter-input" data-filter-name="in_sale" type="checkbox" value="1" id="filterinsale">
-                <label class="form-check-label" for="filterinsale">
-                    Ja                </label>
-            </div>
-            </div>
+                    <div class="col-24 col-lg-5">
+                        <div class="filter-filters-wrapper filter-filters-wrapper-desktop">
+                            <div class="offcanvas offcanvas-filters offcanvas-end" tabindex="-1" id="modalFilters"
+                                aria-labelledby="modalFiltersLabel">
+                                <div class="offcanvas-header">
+                                    <button class="hamburger hamburger--collapse is-active" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#modalFilters"
+                                        aria-controls="modalfilters">
+                                        <span class="hamburger-box">
+                                            <span class="hamburger-inner"></span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div class="container-xxl">
+                                        <h3 class="text-base text-primary">Filteren</h3>
+                                        <div class="filter-filters-wrapper filter-filters-wrapper-mobile">
+                                            <div class="filter-wrapper filter-search">
+                                                <div class="input-wrapper">
+                                                    <i class="icon icon-search"></i>
+                                                    <input class="filter-identty filter-input" data-filter-name="search"
+                                                        type="text" placeholder="Vul je zoekterm in..">
+                                                </div>
+                                            </div>
+                                            <div class="filter-wrapper filter-price">
+                                                <div class="filter-header">
+                                                    <p>Prijs</p>
+                                                </div>
+                                                <div class="range-slider filter-identty filter-input" type="rangeslider"
+                                                    data-filter-range-currency-symbol="€"
+                                                    data-filter-name="price-range-slider">
+                                                    <span class="rangeValues"></span>
+                                                    <input min="1.29" max="5.29" value="1.29" step="0.01" type="range">
+                                                    <input min="1.29" max="5.29" value="5.29" step="0.01" type="range">
+                                                </div>
+                                            </div>
+                                            <div class="filter-wrapper filter-checkbox filter-is-sale">
+                                                <div class="filter-header">
+                                                    <p>In de aanbieding</p>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="in_sale" type="checkbox" value="1"
+                                                        id="filterinsale">
+                                                    <label class="form-check-label" for="filterinsale">
+                                                        Ja </label>
+                                                </div>
+                                            </div>
 
-    <div class="chevron-wrapper"></div>
-<div class="filter-wrapper filter-checkbox filter-provincie">
-    <div class="filter-header">
-        <p>Provincie</p>
-    </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="drenthe-speciaalbier-brouwerijen" id="filterbreweries_drenthe-speciaalbier-brouwerijen">
-            <label class="form-check-label" for="filterbreweries_drenthe-speciaalbier-brouwerijen">
-                Drenthe            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="flevoland" id="filterbreweries_flevoland">
-            <label class="form-check-label" for="filterbreweries_flevoland">
-                Flevoland            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="friesland-speciaalbier-brouwerijen" id="filterbreweries_friesland-speciaalbier-brouwerijen">
-            <label class="form-check-label" for="filterbreweries_friesland-speciaalbier-brouwerijen">
-                Friesland            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="gelderland" id="filterbreweries_gelderland">
-            <label class="form-check-label" for="filterbreweries_gelderland">
-                Gelderland            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="groningen-speciaalbier-brouwerijen" id="filterbreweries_groningen-speciaalbier-brouwerijen">
-            <label class="form-check-label" for="filterbreweries_groningen-speciaalbier-brouwerijen">
-                Groningen            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="limburg-speciaalbier-brouwerijen" id="filterbreweries_limburg-speciaalbier-brouwerijen">
-            <label class="form-check-label" for="filterbreweries_limburg-speciaalbier-brouwerijen">
-                Limburg            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="noord-brabant" id="filterbreweries_noord-brabant">
-            <label class="form-check-label" for="filterbreweries_noord-brabant">
-                Noord-Brabant            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="noord-holland" id="filterbreweries_noord-holland">
-            <label class="form-check-label" for="filterbreweries_noord-holland">
-                Noord-Holland            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="overijssel" id="filterbreweries_overijssel">
-            <label class="form-check-label" for="filterbreweries_overijssel">
-                Overijssel            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="utrecht" id="filterbreweries_utrecht">
-            <label class="form-check-label" for="filterbreweries_utrecht">
-                Utrecht            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="custom-provincie" data-filter-mode="javascript" data-filter-target="field-beer_product_right_brewerie" type="checkbox" value="zuid-holland" id="filterbreweries_zuid-holland">
-            <label class="form-check-label" for="filterbreweries_zuid-holland">
-                Zuid-Holland            </label>
-        </div>
-    </div>
+                                            <div class="chevron-wrapper"></div>
+                                            <div class="filter-wrapper filter-checkbox filter-provincie">
+                                                <div class="filter-header">
+                                                    <p>Provincie</p>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="drenthe-speciaalbier-brouwerijen"
+                                                        id="filterbreweries_drenthe-speciaalbier-brouwerijen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_drenthe-speciaalbier-brouwerijen">
+                                                        Drenthe </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="flevoland"
+                                                        id="filterbreweries_flevoland">
+                                                    <label class="form-check-label" for="filterbreweries_flevoland">
+                                                        Flevoland </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="friesland-speciaalbier-brouwerijen"
+                                                        id="filterbreweries_friesland-speciaalbier-brouwerijen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_friesland-speciaalbier-brouwerijen">
+                                                        Friesland </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="gelderland"
+                                                        id="filterbreweries_gelderland">
+                                                    <label class="form-check-label" for="filterbreweries_gelderland">
+                                                        Gelderland </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="groningen-speciaalbier-brouwerijen"
+                                                        id="filterbreweries_groningen-speciaalbier-brouwerijen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_groningen-speciaalbier-brouwerijen">
+                                                        Groningen </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="limburg-speciaalbier-brouwerijen"
+                                                        id="filterbreweries_limburg-speciaalbier-brouwerijen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_limburg-speciaalbier-brouwerijen">
+                                                        Limburg </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="noord-brabant"
+                                                        id="filterbreweries_noord-brabant">
+                                                    <label class="form-check-label" for="filterbreweries_noord-brabant">
+                                                        Noord-Brabant </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="noord-holland"
+                                                        id="filterbreweries_noord-holland">
+                                                    <label class="form-check-label" for="filterbreweries_noord-holland">
+                                                        Noord-Holland </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="overijssel"
+                                                        id="filterbreweries_overijssel">
+                                                    <label class="form-check-label" for="filterbreweries_overijssel">
+                                                        Overijssel </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="utrecht" id="filterbreweries_utrecht">
+                                                    <label class="form-check-label" for="filterbreweries_utrecht">
+                                                        Utrecht </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="custom-provincie"
+                                                        data-filter-mode="javascript"
+                                                        data-filter-target="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="zuid-holland"
+                                                        id="filterbreweries_zuid-holland">
+                                                    <label class="form-check-label" for="filterbreweries_zuid-holland">
+                                                        Zuid-Holland </label>
+                                                </div>
+                                            </div>
 
-<div class="chevron-wrapper"></div><div class="filter-wrapper filter-checkbox filter-beer-type">
-    <div class="filter-header">
-        <p>Bier Soort</p>
-    </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="11685" id="filterbeertypes_blonde-amber">
-            <label class="form-check-label" for="filterbeertypes_blonde-amber">
-                Blonde Amber            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="11662" id="filterbeertypes_dubbelbock">
-            <label class="form-check-label" for="filterbeertypes_dubbelbock">
-                Dubbelbock            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="11546" id="filterbeertypes_gruitbier">
-            <label class="form-check-label" for="filterbeertypes_gruitbier">
-                Gruitbier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="11482" id="filterbeertypes_pilsner-2">
-            <label class="form-check-label" for="filterbeertypes_pilsner-2">
-                Pilsner            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="10795" id="filterbeertypes_session-ipa">
-            <label class="form-check-label" for="filterbeertypes_session-ipa">
-                Session IPA            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="7463" id="filterbeertypes_wei-bier">
-            <label class="form-check-label" for="filterbeertypes_wei-bier">
-                Weibier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6889" id="filterbeertypes_baltic-porter">
-            <label class="form-check-label" for="filterbeertypes_baltic-porter">
-                Baltic Porter            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6780" id="filterbeertypes_pastry-stout">
-            <label class="form-check-label" for="filterbeertypes_pastry-stout">
-                Pastry Stout            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6132" id="filterbeertypes_barley-wine">
-            <label class="form-check-label" for="filterbeertypes_barley-wine">
-                Barley Wine            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6178" id="filterbeertypes_wheat">
-            <label class="form-check-label" for="filterbeertypes_wheat">
-                Wheat            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6172" id="filterbeertypes_ale">
-            <label class="form-check-label" for="filterbeertypes_ale">
-                Ale            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6129" id="filterbeertypes_alcoholarm">
-            <label class="form-check-label" for="filterbeertypes_alcoholarm">
-                Alcoholarm            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6126" id="filterbeertypes_amber">
-            <label class="form-check-label" for="filterbeertypes_amber">
-                Amber            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6122" id="filterbeertypes_sour">
-            <label class="form-check-label" for="filterbeertypes_sour">
-                Sour            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="6119" id="filterbeertypes_bock">
-            <label class="form-check-label" for="filterbeertypes_bock">
-                Bock            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5736" id="filterbeertypes_barrel-aged">
-            <label class="form-check-label" for="filterbeertypes_barrel-aged">
-                Barrel Aged            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5402" id="filterbeertypes_zwaar-blond">
-            <label class="form-check-label" for="filterbeertypes_zwaar-blond">
-                Zwaar Blond            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5372" id="filterbeertypes_saison">
-            <label class="form-check-label" for="filterbeertypes_saison">
-                Saison            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5342" id="filterbeertypes_dubbel">
-            <label class="form-check-label" for="filterbeertypes_dubbel">
-                Dubbel            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5279" id="filterbeertypes_witbier">
-            <label class="form-check-label" for="filterbeertypes_witbier">
-                Witbier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5275" id="filterbeertypes_weizen">
-            <label class="form-check-label" for="filterbeertypes_weizen">
-                Weizen            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5273" id="filterbeertypes_tripel">
-            <label class="form-check-label" for="filterbeertypes_tripel">
-                Tripel            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5271" id="filterbeertypes_stout">
-            <label class="form-check-label" for="filterbeertypes_stout">
-                Stout            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5269" id="filterbeertypes_russian-imperial-stout">
-            <label class="form-check-label" for="filterbeertypes_russian-imperial-stout">
-                Russian Imperial Stout            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5267" id="filterbeertypes_quadruppel">
-            <label class="form-check-label" for="filterbeertypes_quadruppel">
-                Quadrupel            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5263" id="filterbeertypes_pale-ale">
-            <label class="form-check-label" for="filterbeertypes_pale-ale">
-                Pale Ale            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5259" id="filterbeertypes_neipa">
-            <label class="form-check-label" for="filterbeertypes_neipa">
-                NEIPA            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5255" id="filterbeertypes_lager">
-            <label class="form-check-label" for="filterbeertypes_lager">
-                Lager            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5253" id="filterbeertypes_ipa">
-            <label class="form-check-label" for="filterbeertypes_ipa">
-                IPA            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_right_beer_type" type="checkbox" value="5164" id="filterbeertypes_blond">
-            <label class="form-check-label" for="filterbeertypes_blond">
-                Blond            </label>
-        </div>
-    </div>
+                                            <div class="chevron-wrapper"></div>
+                                            <div class="filter-wrapper filter-checkbox filter-beer-type">
+                                                <div class="filter-header">
+                                                    <p>Bier Soort</p>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="11685" id="filterbeertypes_blonde-amber">
+                                                    <label class="form-check-label" for="filterbeertypes_blonde-amber">
+                                                        Blonde Amber </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="11662" id="filterbeertypes_dubbelbock">
+                                                    <label class="form-check-label" for="filterbeertypes_dubbelbock">
+                                                        Dubbelbock </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="11546" id="filterbeertypes_gruitbier">
+                                                    <label class="form-check-label" for="filterbeertypes_gruitbier">
+                                                        Gruitbier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="11482" id="filterbeertypes_pilsner-2">
+                                                    <label class="form-check-label" for="filterbeertypes_pilsner-2">
+                                                        Pilsner </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="10795" id="filterbeertypes_session-ipa">
+                                                    <label class="form-check-label" for="filterbeertypes_session-ipa">
+                                                        Session IPA </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="7463" id="filterbeertypes_wei-bier">
+                                                    <label class="form-check-label" for="filterbeertypes_wei-bier">
+                                                        Weibier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6889" id="filterbeertypes_baltic-porter">
+                                                    <label class="form-check-label" for="filterbeertypes_baltic-porter">
+                                                        Baltic Porter </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6780" id="filterbeertypes_pastry-stout">
+                                                    <label class="form-check-label" for="filterbeertypes_pastry-stout">
+                                                        Pastry Stout </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6132" id="filterbeertypes_barley-wine">
+                                                    <label class="form-check-label" for="filterbeertypes_barley-wine">
+                                                        Barley Wine </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6178" id="filterbeertypes_wheat">
+                                                    <label class="form-check-label" for="filterbeertypes_wheat">
+                                                        Wheat </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6172" id="filterbeertypes_ale">
+                                                    <label class="form-check-label" for="filterbeertypes_ale">
+                                                        Ale </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6129" id="filterbeertypes_alcoholarm">
+                                                    <label class="form-check-label" for="filterbeertypes_alcoholarm">
+                                                        Alcoholarm </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6126" id="filterbeertypes_amber">
+                                                    <label class="form-check-label" for="filterbeertypes_amber">
+                                                        Amber </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6122" id="filterbeertypes_sour">
+                                                    <label class="form-check-label" for="filterbeertypes_sour">
+                                                        Sour </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="6119" id="filterbeertypes_bock">
+                                                    <label class="form-check-label" for="filterbeertypes_bock">
+                                                        Bock </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5736" id="filterbeertypes_barrel-aged">
+                                                    <label class="form-check-label" for="filterbeertypes_barrel-aged">
+                                                        Barrel Aged </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5402" id="filterbeertypes_zwaar-blond">
+                                                    <label class="form-check-label" for="filterbeertypes_zwaar-blond">
+                                                        Zwaar Blond </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5372" id="filterbeertypes_saison">
+                                                    <label class="form-check-label" for="filterbeertypes_saison">
+                                                        Saison </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5342" id="filterbeertypes_dubbel">
+                                                    <label class="form-check-label" for="filterbeertypes_dubbel">
+                                                        Dubbel </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5279" id="filterbeertypes_witbier">
+                                                    <label class="form-check-label" for="filterbeertypes_witbier">
+                                                        Witbier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5275" id="filterbeertypes_weizen">
+                                                    <label class="form-check-label" for="filterbeertypes_weizen">
+                                                        Weizen </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5273" id="filterbeertypes_tripel">
+                                                    <label class="form-check-label" for="filterbeertypes_tripel">
+                                                        Tripel </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5271" id="filterbeertypes_stout">
+                                                    <label class="form-check-label" for="filterbeertypes_stout">
+                                                        Stout </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5269"
+                                                        id="filterbeertypes_russian-imperial-stout">
+                                                    <label class="form-check-label"
+                                                        for="filterbeertypes_russian-imperial-stout">
+                                                        Russian Imperial Stout </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5267" id="filterbeertypes_quadruppel">
+                                                    <label class="form-check-label" for="filterbeertypes_quadruppel">
+                                                        Quadrupel </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5263" id="filterbeertypes_pale-ale">
+                                                    <label class="form-check-label" for="filterbeertypes_pale-ale">
+                                                        Pale Ale </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5259" id="filterbeertypes_neipa">
+                                                    <label class="form-check-label" for="filterbeertypes_neipa">
+                                                        NEIPA </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5255" id="filterbeertypes_lager">
+                                                    <label class="form-check-label" for="filterbeertypes_lager">
+                                                        Lager </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5253" id="filterbeertypes_ipa">
+                                                    <label class="form-check-label" for="filterbeertypes_ipa">
+                                                        IPA </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_right_beer_type"
+                                                        type="checkbox" value="5164" id="filterbeertypes_blond">
+                                                    <label class="form-check-label" for="filterbeertypes_blond">
+                                                        Blond </label>
+                                                </div>
+                                            </div>
 
-<div class="chevron-wrapper"></div><div class="filter-wrapper filter-checkbox filter-breweries">
-    <div class="filter-header">
-        <p>Brouwerijen</p>
-    </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="11032" id="filterbreweries_breugem-bier">
-            <label class="form-check-label" for="filterbreweries_breugem-bier">
-                Breugem bier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="11034" id="filterbreweries_berging-brouwerij">
-            <label class="form-check-label" for="filterbreweries_berging-brouwerij">
-                Berging Brouwerij            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="11033" id="filterbreweries_brouwerij-lost">
-            <label class="form-check-label" for="filterbreweries_brouwerij-lost">
-                Brouwerij LOST            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="flevoland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="10881" id="filterbreweries_de-kemphaan-almere">
-            <label class="form-check-label" for="filterbreweries_de-kemphaan-almere">
-                De Kemphaan Almere            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="gelderland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6588" id="filterbreweries_hert-bier">
-            <label class="form-check-label" for="filterbreweries_hert-bier">
-                Hert Bier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="8938" id="filterbreweries_papas-aan-de-fles">
-            <label class="form-check-label" for="filterbreweries_papas-aan-de-fles">
-                Papa's aan de fles            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="overijssel" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6598" id="filterbreweries_othmar-bierbrouwerij">
-            <label class="form-check-label" for="filterbreweries_othmar-bierbrouwerij">
-                Othmar bierbrouwerij            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="zuid-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6602" id="filterbreweries_kaapse-brouwers">
-            <label class="form-check-label" for="filterbreweries_kaapse-brouwers">
-                Kaapse Brouwers            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="utrecht" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6584" id="filterbreweries_brouwerij-eleven">
-            <label class="form-check-label" for="filterbreweries_brouwerij-eleven">
-                Brouwerij Eleven            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="gelderland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6589" id="filterbreweries_brouwerij-durs">
-            <label class="form-check-label" for="filterbreweries_brouwerij-durs">
-                Brouwerij Durs            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="limburg-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="7014" id="filterbreweries_brouwerij-rolduc">
-            <label class="form-check-label" for="filterbreweries_brouwerij-rolduc">
-                Brouwerij Rolduc            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="7013" id="filterbreweries_bruut-bier">
-            <label class="form-check-label" for="filterbreweries_bruut-bier">
-                Bruut Bier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-brabant" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6880" id="filterbreweries_brouwerij-de-koningshoeven-la-trappe">
-            <label class="form-check-label" for="filterbreweries_brouwerij-de-koningshoeven-la-trappe">
-                Brouwerij de Koningshoeven "La Trappe"            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="utrecht" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6587" id="filterbreweries_vandestreek-bier">
-            <label class="form-check-label" for="filterbreweries_vandestreek-bier">
-                vandeStreek bier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="overijssel" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6595" id="filterbreweries_davo-bieren">
-            <label class="form-check-label" for="filterbreweries_davo-bieren">
-                DAVO Bieren            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6601" id="filterbreweries_low-five-brewing">
-            <label class="form-check-label" for="filterbreweries_low-five-brewing">
-                Low Five Brewing            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="gelderland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6583" id="filterbreweries_achterhoeksgenot">
-            <label class="form-check-label" for="filterbreweries_achterhoeksgenot">
-                Achterhoeksgenot            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="overijssel" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6592" id="filterbreweries_berghoeve-brouwerij">
-            <label class="form-check-label" for="filterbreweries_berghoeve-brouwerij">
-                Berghoeve Brouwerij            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6563" id="filterbreweries_moersleutel">
-            <label class="form-check-label" for="filterbreweries_moersleutel">
-                Moersleutel            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6471" id="filterbreweries_brouwerij-volendam">
-            <label class="form-check-label" for="filterbreweries_brouwerij-volendam">
-                Brouwerij Volendam            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6275" id="filterbreweries_graansilo">
-            <label class="form-check-label" for="filterbreweries_graansilo">
-                Graansilo            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6270" id="filterbreweries_brouwerij-deprael">
-            <label class="form-check-label" for="filterbreweries_brouwerij-deprael">
-                Brouwerij De Prael            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="6254" id="filterbreweries_het-zotte-kalf">
-            <label class="form-check-label" for="filterbreweries_het-zotte-kalf">
-                Het Zotte Kalf            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="noord-brabant" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5912" id="filterbreweries_van-moll-craft-beer">
-            <label class="form-check-label" for="filterbreweries_van-moll-craft-beer">
-                Van Moll Craft Beer            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="zuid-holland" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5902" id="filterbreweries_brouwerij-de-molen">
-            <label class="form-check-label" for="filterbreweries_brouwerij-de-molen">
-                Brouwerij De Molen            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="drenthe-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5894" id="filterbreweries_gula-beers">
-            <label class="form-check-label" for="filterbreweries_gula-beers">
-                Gula Beers            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="utrecht" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5888" id="filterbreweries_brouwerij-bello">
-            <label class="form-check-label" for="filterbreweries_brouwerij-bello">
-                Brouwerij Bello            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="limburg-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5713" id="filterbreweries_gulpener">
-            <label class="form-check-label" for="filterbreweries_gulpener">
-                Gulpener ''De Vrije Brouwer''            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="drenthe-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5153" id="filterbreweries_brouwerij-maallust">
-            <label class="form-check-label" for="filterbreweries_brouwerij-maallust">
-                Brouwerij Maallust            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3881" id="filterbreweries_grunnbier-groningse-bierbrouwerij">
-            <label class="form-check-label" for="filterbreweries_grunnbier-groningse-bierbrouwerij">
-                Grunn bier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="friesland-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5125" id="filterbreweries_het-brouwdok">
-            <label class="form-check-label" for="filterbreweries_het-brouwdok">
-                Het Brouwdok            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="friesland-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5127" id="filterbreweries_brouwerij-dokkum">
-            <label class="form-check-label" for="filterbreweries_brouwerij-dokkum">
-                Brouwerij Dockum            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="friesland-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="5121" id="filterbreweries_gruttepier-brouwerij">
-            <label class="form-check-label" for="filterbreweries_gruttepier-brouwerij">
-                Grutte Pier brouwerij            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3892" id="filterbreweries_floem-craft-beer-brouwerij">
-            <label class="form-check-label" for="filterbreweries_floem-craft-beer-brouwerij">
-                Floem Craft Beer            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3725" id="filterbreweries_brouwerij-hoogkerk-groningen">
-            <label class="form-check-label" for="filterbreweries_brouwerij-hoogkerk-groningen">
-                Brouwerij Hoogkerk            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3207" id="filterbreweries_de-vrolijcke-joncker-brouwerij-groningen">
-            <label class="form-check-label" for="filterbreweries_de-vrolijcke-joncker-brouwerij-groningen">
-                Vrolijcke Joncker            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3200" id="filterbreweries_folkingebrew-brouwerij-groningen">
-            <label class="form-check-label" for="filterbreweries_folkingebrew-brouwerij-groningen">
-                Folkingebrew            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="3209" id="filterbreweries_eggens-craft-beer-brouwerij-groningen">
-            <label class="form-check-label" for="filterbreweries_eggens-craft-beer-brouwerij-groningen">
-                Eggens Craft Beer            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="overijssel" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="1906" id="filterbreweries_brouwerij-allema-groningen">
-            <label class="form-check-label" for="filterbreweries_brouwerij-allema-groningen">
-                Brouwerij Allema            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="1904" id="filterbreweries_baxbier-groningen-brouwerij">
-            <label class="form-check-label" for="filterbreweries_baxbier-groningen-brouwerij">
-                Baxbier            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-javascript-value="groningen-speciaalbier-brouwerijen" data-filter-name="field-beer_product_right_brewerie" type="checkbox" value="795" id="filterbreweries_martinus-brouwerij-groningen">
-            <label class="form-check-label" for="filterbreweries_martinus-brouwerij-groningen">
-                Brouwerij Martinus            </label>
-        </div>
-    </div>
+                                            <div class="chevron-wrapper"></div>
+                                            <div class="filter-wrapper filter-checkbox filter-breweries">
+                                                <div class="filter-header">
+                                                    <p>Brouwerijen</p>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="11032" id="filterbreweries_breugem-bier">
+                                                    <label class="form-check-label" for="filterbreweries_breugem-bier">
+                                                        Breugem bier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="11034"
+                                                        id="filterbreweries_berging-brouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_berging-brouwerij">
+                                                        Berging Brouwerij </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="11033"
+                                                        id="filterbreweries_brouwerij-lost">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-lost">
+                                                        Brouwerij LOST </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="flevoland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="10881"
+                                                        id="filterbreweries_de-kemphaan-almere">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_de-kemphaan-almere">
+                                                        De Kemphaan Almere </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="gelderland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6588" id="filterbreweries_hert-bier">
+                                                    <label class="form-check-label" for="filterbreweries_hert-bier">
+                                                        Hert Bier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="8938"
+                                                        id="filterbreweries_papas-aan-de-fles">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_papas-aan-de-fles">
+                                                        Papa's aan de fles </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="overijssel"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6598"
+                                                        id="filterbreweries_othmar-bierbrouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_othmar-bierbrouwerij">
+                                                        Othmar bierbrouwerij </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="zuid-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6602"
+                                                        id="filterbreweries_kaapse-brouwers">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_kaapse-brouwers">
+                                                        Kaapse Brouwers </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="utrecht"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6584"
+                                                        id="filterbreweries_brouwerij-eleven">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-eleven">
+                                                        Brouwerij Eleven </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="gelderland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6589"
+                                                        id="filterbreweries_brouwerij-durs">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-durs">
+                                                        Brouwerij Durs </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="limburg-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="7014"
+                                                        id="filterbreweries_brouwerij-rolduc">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-rolduc">
+                                                        Brouwerij Rolduc </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="7013" id="filterbreweries_bruut-bier">
+                                                    <label class="form-check-label" for="filterbreweries_bruut-bier">
+                                                        Bruut Bier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-brabant"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6880"
+                                                        id="filterbreweries_brouwerij-de-koningshoeven-la-trappe">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-de-koningshoeven-la-trappe">
+                                                        Brouwerij de Koningshoeven "La Trappe" </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="utrecht"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6587"
+                                                        id="filterbreweries_vandestreek-bier">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_vandestreek-bier">
+                                                        vandeStreek bier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="overijssel"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6595" id="filterbreweries_davo-bieren">
+                                                    <label class="form-check-label" for="filterbreweries_davo-bieren">
+                                                        DAVO Bieren </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6601"
+                                                        id="filterbreweries_low-five-brewing">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_low-five-brewing">
+                                                        Low Five Brewing </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="gelderland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6583"
+                                                        id="filterbreweries_achterhoeksgenot">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_achterhoeksgenot">
+                                                        Achterhoeksgenot </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="overijssel"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6592"
+                                                        id="filterbreweries_berghoeve-brouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_berghoeve-brouwerij">
+                                                        Berghoeve Brouwerij </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6563" id="filterbreweries_moersleutel">
+                                                    <label class="form-check-label" for="filterbreweries_moersleutel">
+                                                        Moersleutel </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6471"
+                                                        id="filterbreweries_brouwerij-volendam">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-volendam">
+                                                        Brouwerij Volendam </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6275" id="filterbreweries_graansilo">
+                                                    <label class="form-check-label" for="filterbreweries_graansilo">
+                                                        Graansilo </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6270"
+                                                        id="filterbreweries_brouwerij-deprael">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-deprael">
+                                                        Brouwerij De Prael </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="6254"
+                                                        id="filterbreweries_het-zotte-kalf">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_het-zotte-kalf">
+                                                        Het Zotte Kalf </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="noord-brabant"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5912"
+                                                        id="filterbreweries_van-moll-craft-beer">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_van-moll-craft-beer">
+                                                        Van Moll Craft Beer </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="zuid-holland"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5902"
+                                                        id="filterbreweries_brouwerij-de-molen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-de-molen">
+                                                        Brouwerij De Molen </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="drenthe-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5894" id="filterbreweries_gula-beers">
+                                                    <label class="form-check-label" for="filterbreweries_gula-beers">
+                                                        Gula Beers </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="utrecht"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5888"
+                                                        id="filterbreweries_brouwerij-bello">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-bello">
+                                                        Brouwerij Bello </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="limburg-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5713" id="filterbreweries_gulpener">
+                                                    <label class="form-check-label" for="filterbreweries_gulpener">
+                                                        Gulpener ''De Vrije Brouwer'' </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="drenthe-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5153"
+                                                        id="filterbreweries_brouwerij-maallust">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-maallust">
+                                                        Brouwerij Maallust </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3881"
+                                                        id="filterbreweries_grunnbier-groningse-bierbrouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_grunnbier-groningse-bierbrouwerij">
+                                                        Grunn bier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="friesland-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5125" id="filterbreweries_het-brouwdok">
+                                                    <label class="form-check-label" for="filterbreweries_het-brouwdok">
+                                                        Het Brouwdok </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="friesland-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5127"
+                                                        id="filterbreweries_brouwerij-dokkum">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-dokkum">
+                                                        Brouwerij Dockum </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="friesland-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="5121"
+                                                        id="filterbreweries_gruttepier-brouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_gruttepier-brouwerij">
+                                                        Grutte Pier brouwerij </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3892"
+                                                        id="filterbreweries_floem-craft-beer-brouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_floem-craft-beer-brouwerij">
+                                                        Floem Craft Beer </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3725"
+                                                        id="filterbreweries_brouwerij-hoogkerk-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-hoogkerk-groningen">
+                                                        Brouwerij Hoogkerk </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3207"
+                                                        id="filterbreweries_de-vrolijcke-joncker-brouwerij-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_de-vrolijcke-joncker-brouwerij-groningen">
+                                                        Vrolijcke Joncker </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3200"
+                                                        id="filterbreweries_folkingebrew-brouwerij-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_folkingebrew-brouwerij-groningen">
+                                                        Folkingebrew </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="3209"
+                                                        id="filterbreweries_eggens-craft-beer-brouwerij-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_eggens-craft-beer-brouwerij-groningen">
+                                                        Eggens Craft Beer </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="overijssel"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="1906"
+                                                        id="filterbreweries_brouwerij-allema-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_brouwerij-allema-groningen">
+                                                        Brouwerij Allema </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="1904"
+                                                        id="filterbreweries_baxbier-groningen-brouwerij">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_baxbier-groningen-brouwerij">
+                                                        Baxbier </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-javascript-value="groningen-speciaalbier-brouwerijen"
+                                                        data-filter-name="field-beer_product_right_brewerie"
+                                                        type="checkbox" value="795"
+                                                        id="filterbreweries_martinus-brouwerij-groningen">
+                                                    <label class="form-check-label"
+                                                        for="filterbreweries_martinus-brouwerij-groningen">
+                                                        Brouwerij Martinus </label>
+                                                </div>
+                                            </div>
 
-<div class="chevron-wrapper"></div><div class="filter-wrapper filter-checkbox filter-taste-profile">
-    <div class="filter-header">
-        <p>Smaakprofiel</p>
-    </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="6010" id="filtertasteprofile_strong-dark">
-            <label class="form-check-label" for="filtertasteprofile_strong-dark">
-                Strong &amp; Dark            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="6006" id="filtertasteprofile_smooth-amber">
-            <label class="form-check-label" for="filtertasteprofile_smooth-amber">
-                Smooth &amp; Amber            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="6002" id="filtertasteprofile_intense-bold">
-            <label class="form-check-label" for="filtertasteprofile_intense-bold">
-                Intense &amp; Bold            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="5998" id="filtertasteprofile_elegant-light">
-            <label class="form-check-label" for="filtertasteprofile_elegant-light">
-                Elegant &amp; Light            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="5994" id="filtertasteprofile_easy-fresh">
-            <label class="form-check-label" for="filtertasteprofile_easy-fresh">
-                Easy &amp; Fresh            </label>
-        </div>
-            <div class="form-check">
-            <input class="form-check-input filter-identty filter-input" data-filter-name="field-beer_product_tasteprofile" type="checkbox" value="5989" id="filtertasteprofile_blond-hoppy">
-            <label class="form-check-label" for="filtertasteprofile_blond-hoppy">
-                Blond &amp; Hoppy            </label>
-        </div>
-    </div>
+                                            <div class="chevron-wrapper"></div>
+                                            <div class="filter-wrapper filter-checkbox filter-taste-profile">
+                                                <div class="filter-header">
+                                                    <p>Smaakprofiel</p>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="6010"
+                                                        id="filtertasteprofile_strong-dark">
+                                                    <label class="form-check-label"
+                                                        for="filtertasteprofile_strong-dark">
+                                                        Strong &amp; Dark </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="6006"
+                                                        id="filtertasteprofile_smooth-amber">
+                                                    <label class="form-check-label"
+                                                        for="filtertasteprofile_smooth-amber">
+                                                        Smooth &amp; Amber </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="6002"
+                                                        id="filtertasteprofile_intense-bold">
+                                                    <label class="form-check-label"
+                                                        for="filtertasteprofile_intense-bold">
+                                                        Intense &amp; Bold </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="5998"
+                                                        id="filtertasteprofile_elegant-light">
+                                                    <label class="form-check-label"
+                                                        for="filtertasteprofile_elegant-light">
+                                                        Elegant &amp; Light </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="5994" id="filtertasteprofile_easy-fresh">
+                                                    <label class="form-check-label" for="filtertasteprofile_easy-fresh">
+                                                        Easy &amp; Fresh </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input filter-identty filter-input"
+                                                        data-filter-name="field-beer_product_tasteprofile"
+                                                        type="checkbox" value="5989"
+                                                        id="filtertasteprofile_blond-hoppy">
+                                                    <label class="form-check-label"
+                                                        for="filtertasteprofile_blond-hoppy">
+                                                        Blond &amp; Hoppy </label>
+                                                </div>
+                                            </div>
 
-<div class="chevron-wrapper"></div>                <button class="button button-filter-mobile is-secondary d-lg-none is-hollow" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalFilters" aria-controls="modalFilters">Filteren
-            </button></div>
-        </div>
-    </div>
-</div>                            </div>
-                        </div>                    <div class="col-24 col-lg-19 ">
+                                            <div class="chevron-wrapper"></div> <button
+                                                class="button button-filter-mobile is-secondary d-lg-none is-hollow"
+                                                type="button" data-bs-toggle="offcanvas" data-bs-target="#modalFilters"
+                                                aria-controls="modalFilters">Filteren
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-24 col-lg-19 ">
                         <div class="products-wrapper">
-                                                        <div class="row row-cols-1 row-cols-md-2 filter-container" data-filter-type="product" data-filter-additional-data="{" slugs":["speciaal-bieren"],"loadmore":true,"limit":"12"}"="" data-filter-endpoint="multiple_product_filter" data-filter-load-more="1" data-filter-load-more-txt="Meer bieren" data-filter-load-more-active="1" id="load-more-product-container">
-                                                                        <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="12126">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 filter-container" data-filter-type="product"
+                                data-filter-additional-data="{"
+                                slugs":["speciaal-bieren"],"loadmore":true,"limit":"12"}"=""
+                                data-filter-endpoint="multiple_product_filter" data-filter-load-more="1"
+                                data-filter-load-more-txt="Meer bieren" data-filter-load-more-active="1"
+                                id="load-more-product-container">
+                               
+                                    <div class="col">
+
+                                        <article class="card-product-beer" data-filter-post-id="12126">
+                                            <header>
+                                                <div class="hstack stack-exclude gap-2">
+                                                    <label>Aanbieding</label>
+                                                </div>
 
                                                 <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Easy-Fresh.svg" alt="&amp; fresh">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/baxbier-kayak-v1/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2024/04/661f98ec1a199b8ebe252656_BB_223_MOCKUP_VOOR_LQ.png" alt="KAYAK V1 Baxbier non alcoholic IPA via The Beerbox">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Baxbier – KAYAK V1                                            <p class="pricing"><s>€ 2.49</s> <span>€ 2.19</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Alcoholarm</li>
-                                            <li>ABV 0.5%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/baxbier-kayak-v1/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab98307c77a">Baxbier - KAYAK V1 aantal</label>
-	<input type="number" id="quantity_66ab98307c77a" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="11" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="12126">
-                    <button type="submit" name="add-to-cart" value="12126" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="12003">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                            </div>
-
-                                                </header>
-
-        <main>
-            <a href="bier/hopster-16/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2024/07/Hopster-magazine-18.webp" alt="Hopster #18 is een onafhankelijk magazine met verhalen over de wereld van het Nederlandse craft bier met informatie over speciaalbieren. zomereditie, juni cover afbeelding, cover">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Hopster #18                                            <p class="pricing">€ 1.29</p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Magazine</li>
-                                            <li>#18</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/hopster-16/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab98307df1e">Hopster #18 aantal</label>
-	<input type="number" id="quantity_66ab98307df1e" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="12003">
-                    <button type="submit" name="add-to-cart" value="12003" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11989">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Strong-Dark.svg" alt="&amp; Dark">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/maallust-veldwachter-bock/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/11/Maallust-Veldwachter-Bock.png" alt="Maallust - Veldwachter Bock is een herfstbock speciaalbier">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Maallust – Veldwachter Bock                                            <p class="pricing"><s>€ 2.95</s> <span>€ 2.75</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Bock</li>
-                                            <li>ABV 6.7%</li>
-                                            <li>30cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/maallust-veldwachter-bock/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab98307f41f">Maallust - Veldwachter Bock aantal</label>
-	<input type="number" id="quantity_66ab98307f41f" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="16" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11989">
-                    <button type="submit" name="add-to-cart" value="11989" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11985">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Strong-Dark.svg" alt="&amp; Dark">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/martinus-de-5e-klok/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/11/Martinus-5e-Klok-herfstbock.png" alt="Martinus - 5e Klok herfstbock is een bock speciaalbier voor in de hersft">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Martinus – De 5e Klok                                            <p class="pricing"><s>€ 2.99</s> <span>€ 2.79</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Bock</li>
-                                            <li>ABV 7%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/martinus-de-5e-klok/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab9830808fd">Martinus - De 5e Klok aantal</label>
-	<input type="number" id="quantity_66ab9830808fd" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="9" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11985">
-                    <button type="submit" name="add-to-cart" value="11985" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11825">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Strong-Dark.svg" alt="&amp; Dark">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/gudzekop-op-de-helling/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/10/Gudzekop-Op-de-Helling.png" alt="Ontdek de Gudzekop Dubbelbok, een krachtige en smaakvolle interpretatie van een klassiek bokbier.">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Gudzekop – Op de Helling                                            <p class="pricing"><s>€ 2.99</s> <span>€ 2.79</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Dubbelbock</li>
-                                            <li>ABV 8.5%</li>
-                                            <li>35cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/gudzekop-op-de-helling/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab9830819ec">Gudzekop - Op de Helling aantal</label>
-	<input type="number" id="quantity_66ab9830819ec" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="5" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11825">
-                    <button type="submit" name="add-to-cart" value="11825" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11405">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Intense-Bold.svg" alt="&amp; bold">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/all-black/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/07/All-Black-Stanislaus-Brewskovitch.png" alt="All Black - Stanislaus Brewskovitch American stout speciaalbier">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Stanislaus Brewskovitch – All Black                                            <p class="pricing"><s>€ 3.20</s> <span>€ 3.09</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Stout</li>
-                                            <li>ABV 7.6%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/all-black/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab983082dca">Stanislaus Brewskovitch - All Black aantal</label>
-	<input type="hidden" id="quantity_66ab983082dca" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="1" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11405">
-                    <button type="submit" name="add-to-cart" value="11405" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11138">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Intense-Bold.svg" alt="">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/valreep/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/07/Homeland-Valreep.png" alt="Homeland - Valreep Pastry Stout">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Homeland – Valreep                                            <p class="pricing"><s>€ 5.59</s> <span>€ 5.29</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Pastry Stout</li>
-                                            <li>ABV 13%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/valreep/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab983083d6c">Homeland - Valreep aantal</label>
-	<input type="number" id="quantity_66ab983083d6c" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="3" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11138">
-                    <button type="submit" name="add-to-cart" value="11138" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11130">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Easy-Fresh.svg" alt="&amp; fresh">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/okura-wit/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/07/Homeland-Okura-Wit.png" alt="Homeland - Okura Wit witbier">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Homeland – Okura Wit                                            <p class="pricing"><s>€ 3.19</s> <span>€ 2.79</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Witbier</li>
-                                            <li>ABV 4.8%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/okura-wit/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab983084e36">Homeland - Okura Wit aantal</label>
-	<input type="number" id="quantity_66ab983084e36" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="2" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11130">
-                    <button type="submit" name="add-to-cart" value="11130" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11056">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Smooth-Amber.svg" alt="&amp; amber">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/winter/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/04/De-Kemphaan-Winter.png" alt="De Kemphaan - Winter winterbier">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>De Kemphaan – Winter                                            <p class="pricing"><s>€ 2.79</s> <span>€ 2.59</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Ale</li>
-                                            <li>ABV 10%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/winter/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab9830861bb">De Kemphaan - Winter aantal</label>
-	<input type="hidden" id="quantity_66ab9830861bb" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="1" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11056">
-                    <button type="submit" name="add-to-cart" value="11056" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11055">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Smooth-Amber.svg" alt="&amp; amber">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/weerwater/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/04/De-Kemphaan-Weerwater.png" alt="De Kemphaan - Weerwater lentebok">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>De Kemphaan – Weerwater                                            <p class="pricing"><s>€ 2.79</s> <span>€ 2.29</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Bock</li>
-                                            <li>ABV 7%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/weerwater/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab9830871e1">De Kemphaan - Weerwater aantal</label>
-	<input type="number" id="quantity_66ab9830871e1" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="5" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11055">
-                    <button type="submit" name="add-to-cart" value="11055" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="11053">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                    <label>Aanbieding</label>
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Smooth-Amber.svg" alt="&amp; amber">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/oostvaarders/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/04/De-Kemphaan-Oostvaarders.png" alt="De Kemphaan - Oostvaarders Pale Ale">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>De Kemphaan – Oostvaarders                                            <p class="pricing"><s>€ 2.79</s> <span>€ 2.29</span></p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Pale Ale</li>
-                                            <li>ABV 7%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/oostvaarders/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab983087653">De Kemphaan - Oostvaarders aantal</label>
-	<input type="number" id="quantity_66ab983087653" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="2" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="11053">
-                    <button type="submit" name="add-to-cart" value="11053" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                            <div class="col">
-                                            
-    <article class="card-product-beer" data-filter-post-id="10963">
-        <header>
-            <div class="hstack stack-exclude gap-2">
-                                            </div>
-
-                                                <!-- <a href=""> -->
-                    <picture class="taste">
-                        <img class="lazyload" data-src="content/uploads/2023/01/Strong-Dark.svg" alt="&amp; Dark">                    </picture>
-                    <!-- </a> -->
-                                    </header>
-
-        <main>
-            <a href="bier/de-dude/">
-                <picture class="product-image">
-                    <img class="lazyload" data-src="content/uploads/2023/01/De-Dude-Het-Brouwdok.png" alt="De Dude van Het Brouwdok is een Stout voor de echte zoetekauw. Het bier geeft een aroma van vanille, chocola, room en geroosterde mout.">                </picture>
-            </a>
-
-            <div class="product-info">
-                <h2>Het Brouwdok – De Dude                                            <p class="pricing">€ 3.09</p>
-                                    </h2>
-
-                <ul class="list-unstyled">
-                                            <li>Russian Imperial Stout</li>
-                                            <li>ABV 10%</li>
-                                            <li>33cl</li>
-                                    </ul>
-            </div>
-        </main>
-
-        <footer>
-                            <div class="cell">
-                    <div class="hstack stack-exclude">
-                        <button class="button icon-box" id="quantity-min">-</button>
-                        <span id="quantity">1</span>
-                        <button class="button icon-box" id="quantity-plus">+</button>
-                    </div>
-                </div>
-
-                <form class="cart cell" action="bier/de-dude/" method="post" enctype="multipart/form-data">
-                    <div class="quantity">
-		<label class="screen-reader-text" for="quantity_66ab983088ba2">Het Brouwdok - De Dude aantal</label>
-	<input type="hidden" id="quantity_66ab983088ba2" class="input-text qty text" name="quantity" value="1" aria-label="Productaantal" size="4" min="1" max="1" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-	</div>
-                    <input type="hidden" name="add-to-cart" value="10963">
-                    <button type="submit" name="add-to-cart" value="10963" class="single_add_to_cart_button button  alt">
-                        Toevoegen                    </button>
-                </form>
-                    </footer>
-    </article>
-
-                                        </div>
-                                                                </div>
+                                                <picture class="taste">
+                                                    <img class="lazyload" data-src=""
+                                                        alt="&amp; fresh"> </picture>
+                                                <!-- </a> -->
+                                            </header>
+
+                                            <main>
+                                                <a href="bier/baxbier-kayak-v1/">
+                                                    <picture class="product-image">
+                                                        <img class="lazyload"
+                                                            data-src="/static/images/walya.png"
+                                                            alt="KAYAK V1 Baxbier non alcoholic IPA via The Beerbox">
+                                                    </picture>
+                                                </a>
+
+                                                <div class="product-info">
+                                                    <h2>Baxbier – KAYAK V1 <p class="pricing"><s>€ 2.49</s> <span>€
+                                                                2.19</span></p>
+                                                    </h2>
+
+                                                    <ul class="list-unstyled">
+                                                        <li>Alcoholarm</li>
+                                                        <li>ABV 0.5%</li>
+                                                        <li>33cl</li>
+                                                    </ul>
+                                                </div>
+                                            </main>
+
+                                            <footer>
+                                                <div class="cell">
+                                                    <div class="hstack stack-exclude">
+                                                        <button class="button icon-box" id="quantity-min">-</button>
+                                                        <span id="quantity">1</span>
+                                                        <button class="button icon-box" id="quantity-plus">+</button>
+                                                    </div>
+                                                </div>
+
+                                                <form class="cart cell" action="bier/baxbier-kayak-v1/" method="post"
+                                                    enctype="multipart/form-data">
+                                                    <div class="quantity">
+                                                        <label class="screen-reader-text"
+                                                            for="quantity_66ab98307c77a">Baxbier - KAYAK V1 aantal</label>
+                                                        <input type="number" id="quantity_66ab98307c77a"
+                                                            class="input-text qty text" name="quantity" value="1"
+                                                            aria-label="Productaantal" size="4" min="1" max="11" step="1"
+                                                            placeholder="" inputmode="numeric" autocomplete="off">
+                                                    </div>
+                                                    <input type="hidden" name="add-to-cart" value="12126">
+                                                    <button type="submit" name="add-to-cart" value="12126"
+                                                        class="single_add_to_cart_button button  alt">
+                                                        Toevoegen </button>
+                                                </form>
+                                            </footer>
+                                        </article>
+
+                                    </div>
+                              
+                               
+                            </div>
                             <div class="filter-item-hint">
                                 <span class="filter-item-count">12 van de 19 producten</span>
                             </div>
                         </div>
                     </div>
 
-                                        <a href="javascript:;" class="button button-filter-mobile is-secondary d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#modalFilters" aria-controls="modalFilters">Filteren</a>
+                    <a href="javascript:;" class="button button-filter-mobile is-secondary d-lg-none"
+                        data-bs-toggle="offcanvas" data-bs-target="#modalFilters"
+                        aria-controls="modalFilters">Filteren</a>
                 </div>
             </div>
-    </div></section>
+        </div>
+    </section>
 </main>
 <!-- footer -->
-
-
 
 {% endblock content %}
