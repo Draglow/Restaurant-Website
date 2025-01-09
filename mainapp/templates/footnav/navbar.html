@@ -95,16 +95,23 @@
             <ul class="menu">
               <li>
                 <a
-                  href="javascript;"
-                  
-                  ><i class="icon icon-shopping-cart icon-large"></i
-                ></a>
+                href="javascript:;"
+                class="mini-cart-count cart-item-count"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#modalMinicart"
+                aria-controls="modalMinicart"
+                data-cart-count="0"
+                id="mini-cart-link"
+            >
+                <i class="icon icon-shopping-cart icon-large"></i>
+                
+            </a>
               </li>
               <li>
                 <a
-                  href=""
-                  
-                  ><i class="icon icon-user-lock icon-large"></i
+                  href="javascript:void(0);" 
+                   
+                  ><i class="icon icon-user-lock icon-large" id="cart-icon"></i
                 ></a>
               </li>
             </ul>
@@ -140,19 +147,359 @@
                   ><i class="icon icon-shopping-cart icon-large"></i
                 ></a>
               </li>
-              <li>
+              {% comment %} <li>
                 <a
-                  href="javascript:;"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#modalUserAccount"
-                  aria-controls="modalUserAccount"
-                  ><i class="icon icon-user-lock icon-large"></i
+                  href="javascript:void(0);" 
+                   id="cart-icon"
+                  ><i class="icon icon-user-lock icon-large" id="cart-icon"></i
                 ></a>
-              </li>
+              </li> {% endcomment %}
             </ul>
           </nav>
         </div>
       </div>
     </div>
   </div>
+
+
+  
 </header>
+
+
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="mobileNav"
+  aria-labelledby="mobileNavLabel"
+>
+  <div class="offcanvas-header">
+    <a href="" class="brand">
+      <picture>
+        <img src="{% static 'images/habesha.png' %}" alt="The Beerbox" />
+      </picture>
+    </a>
+
+    <button
+      class="hamburger hamburger--collapse is-active pe-0"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileNav"
+      aria-controls="mobileNav"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="main-nav">
+      <ul class="text-left menu">
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
+        >
+          <a
+            href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/"
+            >Beerbox</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
+        >
+          <a href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
+            >Beers</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
+        >
+          <a
+            href="#section-collection"
+            >Our Menu</a
+          >
+        </li>
+        <li
+          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
+        >
+          <a href="{}">About Us</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="list-unstyled menu additional-nav">
+      <ul>
+        {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'logoutt' %}" class="button is-hollow">Log Out</a>
+          </li>
+        {% else %}
+          <li>
+            <a
+              href="{% url 'signup' %}"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#modalUserAccount"
+              aria-controls="modalUserAccount"
+              class="button is-hollow"
+            >Sign Up</a>
+          </li>
+          <li class="mt-2">
+            <a
+              href="{% url 'login' %}"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#modalUserAccount"
+              aria-controls="modalUserAccount"
+              class="button is-hollow"
+            >Log In</a>
+          </li>
+        {% endif %}
+      </ul>
+      
+      <li>
+        <ul
+          class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center"
+        >
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.facebook.com/thebeerbox.nl"
+              class="link"
+              title="Facebook"
+              target="blank"
+              ><i class="icon icon-facebook icon-xxlarge" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.instagram.com/thebeerbox.nl/"
+              class="link"
+              title="Instagram"
+              target="blank"
+              ><i
+                class="icon icon-instagram icon-xxlarge"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </li>
+          <li>
+            <a
+              rel="noopener nofollow"
+              href="https://www.linkedin.com/company/the-beerbox/"
+              class="link"
+              title="LinkedIn"
+              target="blank"
+              ><i class="icon icon-linkedin icon-xxlarge" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div
+  class="offcanvas offcanvas-minicart offcanvas-end"
+  tabindex="-1"
+  id="modalMinicart"
+  aria-labelledby="modalMinicartLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      class="hamburger hamburger--collapse is-active"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#modalMinicart"
+      aria-controls="modalMinicart"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="container-xxl">
+      <h3 class="text-base text-primary">Shopping cart</h3>
+      <div class="offcanvas-minicart">
+        <p class="woocommerce-mini-cart__empty-message">
+          No products in the shopping cart.
+        </p>
+
+        <div id="cart-container">
+          <!-- Cart items will be dynamically added here -->
+      </div>
+      <div id="grand-total">0.00 birr</div>
+      
+      
+      </div>
+      
+      
+      </div>
+      <div class="vstack woocommerce-buttons">
+        <a
+          href="javascript:;"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#modalMinicart"
+          aria-controls="modalMinicart"
+          class="button is-hollow"
+          >Continue shopping</a
+        >
+        <a
+          href="https://www.thebeerbox.nl/winkelwagen/"
+          class="button is-hollow"
+          >To settle</a
+        >
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+<style>
+ /* Cart Icon Styling */
+#cart-icon {
+  
+
+  cursor: pointer;
+  
+  
+  
+}
+
+
+/* Cart Popup Styling */
+.cart-popup {
+  width: 400px; /* Wider cart */
+  max-width: 90%; /* Responsive width */
+  height: auto;
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  position: fixed;
+  top: 70px;
+  right: -450px; /* Hidden initially */
+  transition: right 0.4s ease, opacity 0.4s ease;
+  z-index: 999;
+  padding: 20px;
+  opacity: 0; /* Hidden by opacity */
+  display: none;
+}
+
+/* Show cart when active */
+.cart-popup.active {
+  right: 20px; /* Slide into view */
+  opacity: 1; /* Make it visible */
+  display: block;
+}
+
+/* Cart Popup Header Styling */
+.cart-popup h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Cart Items Styling */
+#cart-items {
+  max-height: 300px; /* Scrollable if too many items */
+  overflow-y: auto;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Checkout Button Styling */
+#checkout-btn {
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+#checkout-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Custom Scrollbar for Cart Items */
+#cart-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+#cart-items::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+#cart-items::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+</style>
+
+<div id="cart-popup" class="cart-popup bg-dark border border-warning bold">
+  <h4 class="text-warning">Welcome</h4>
+  <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+  </div>
+  <div class="cart-total">
+    
+      
+    {% if user.is_authenticated %}
+            <!-- Show logout button if user is logged in -->
+            <div class="mt-2">
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" id="checkout-btn" class="btn btn-danger">Log Out</button>
+                </form>
+            </div>
+        {% else %}
+            <!-- Show Signup and Log In buttons if user is not logged in -->
+            <div>
+                <a href="{% url 'signup' %}">
+                    <button id="checkout-btn">Signup</button>
+                </a>
+            </div>
+            <div class="mt-2">
+                <a href="{% url 'login' %}">
+                    <button id="checkout-btn">Log In</button>
+                </a>
+            </div>
+        {% endif %}
+  </div>
+</div>
+
+<script> 
+  // Get the cart icon and popup elements
+const cartIcon = document.getElementById('cart-icon');
+const cartPopup = document.getElementById('cart-popup');
+
+// Add click event listener to the cart icon
+cartIcon.addEventListener('click', function () {
+    // Toggle the active class on the cart popup
+    cartPopup.classList.toggle('active');
+});
+
+// Close the cart popup when clicking outside of it
+document.addEventListener('click', function (event) {
+    if (!cartPopup.contains(event.target) && !cartIcon.contains(event.target)) {
+        cartPopup.classList.remove('active');
+    }
+});
+
+
+</script>

@@ -12,117 +12,7 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div
-  class="offcanvas offcanvas-end"
-  tabindex="-1"
-  id="mobileNav"
-  aria-labelledby="mobileNavLabel"
->
-  <div class="offcanvas-header">
-    <a href="" class="brand">
-      <picture>
-        <img src="{% static 'images/habesha.png' %}" alt="The Beerbox" />
-      </picture>
-    </a>
 
-    <button
-      class="hamburger hamburger--collapse is-active pe-0"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileNav"
-      aria-controls="mobileNav"
-    >
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="main-nav">
-      <ul class="text-left menu">
-        <li
-          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"
-        >
-          <a
-            href="https://www.thebeerbox.nl/bierboxen-speciaalbierbox-bestellen/"
-            >Beerbox</a
-          >
-        </li>
-        <li
-          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5983"
-        >
-          <a href="https://www.thebeerbox.nl/bieren-speciaalbier-bestellen/"
-            >Beers</a
-          >
-        </li>
-        <li
-          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"
-        >
-          <a
-            href="#section-collection"
-            >Our Menu</a
-          >
-        </li>
-        <li
-          class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"
-        >
-          <a href="{}">About Us</a>
-        </li>
-      </ul>
-    </div>
-    <ul class="list-unstyled menu additional-nav">
-      <li>
-        <a
-          href="#"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#modalUserAccount"
-          aria-controls="modalUserAccount"
-          class="button is-hollow"
-          >Log in</a
-        >
-      </li>
-      <li>
-        <ul
-          class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center"
-        >
-          <li>
-            <a
-              rel="noopener nofollow"
-              href="https://www.facebook.com/thebeerbox.nl"
-              class="link"
-              title="Facebook"
-              target="blank"
-              ><i class="icon icon-facebook icon-xxlarge" aria-hidden="true"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              rel="noopener nofollow"
-              href="https://www.instagram.com/thebeerbox.nl/"
-              class="link"
-              title="Instagram"
-              target="blank"
-              ><i
-                class="icon icon-instagram icon-xxlarge"
-                aria-hidden="true"
-              ></i
-            ></a>
-          </li>
-          <li>
-            <a
-              rel="noopener nofollow"
-              href="https://www.linkedin.com/company/the-beerbox/"
-              class="link"
-              title="LinkedIn"
-              target="blank"
-              ><i class="icon icon-linkedin icon-xxlarge" aria-hidden="true"></i
-            ></a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
 <div class="modal fade" tabindex="-1" id="checkAgeModal">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
@@ -171,211 +61,125 @@
   <div class="offcanvas-body">
     <div class="container-xxl">
       <div class="row g-5">
+        <!-- Signup Form -->
         <div class="col-24 col-lg-12">
-          <h3 class="text-base text-primary">create an account</h3>
+          <h3 class="text-base text-primary">Create an Account</h3>
           <div class="section-form">
             <form
               class="kaliforms-form-container bootstrap-wrapper"
-              data-form-id="41"
-              style="opacity: 0"
+              method="post"
+              action="{% url 'signupp' %}"
             >
-              <div
-                id="kaliforms-global-error-message-41"
-                class="global-error-message"
-              ></div>
+              {% csrf_token %}
               <div class="row kali-form-field-row">
                 <div class="col-12 col-md-6">
-                  <label for="textbox1"
-                    >First name <span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="textbox1"
-                    type="text"
-                    id="textbox1"
-                    name="firstname"
-                    data-properties.type="text"
-                    placeholder="First name"
-                    required=""
-                  />
+                  <label for="full_name">Full Name <span class="kali-required-mark"></span></label>
+                  <input type="text" id="full_name" name="full_name" placeholder="Full name" required />
                 </div>
                 <div class="col-12 col-md-6">
-                  <label for="textbox12"
-                    >Last name <span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="textbox2"
-                    type="text"
-                    id="textbox12"
-                    name="lastname"
-                    data-properties.type="text"
-                    placeholder="Last Name"
-                    required=""
-                  />
+                  <label for="phone_number">Phone Number <span class="kali-required-mark"></span></label>
+                  <input type="text" id="phone_number" name="phone_number" placeholder="Phone number" required />
                 </div>
               </div>
+              
               <div class="row kali-form-field-row">
                 <div class="col-12 col-md-12">
-                  <label for="textbox123"
-                    >User name<span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="textbox3"
-                    type="text"
-                    id="textbox123"
-                    name="username"
-                    data-properties.type="text"
-                    placeholder="User name"
-                    required=""
-                  />
+                  <label for="username">Username <span class="kali-required-mark"></span></label>
+                  <input type="text" id="username" name="username" placeholder="Username" required />
                 </div>
               </div>
+              
               <div class="row kali-form-field-row">
                 <div class="col-12 col-md-12">
-                  <label for="email4"
-                    >E-mail <span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="email4"
-                    type="email"
-                    id="email4"
-                    name="email"
-                    placeholder="E-mail"
-                    required=""
-                    class="input"
-                  />
+                  <label for="email">Email <span class="kali-required-mark"></span></label>
+                  <input type="email" id="email" name="email" placeholder="Email" required />
                 </div>
               </div>
+              
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-6">
+                  <label for="password1">Password <span class="kali-required-mark"></span></label>
+                  <input type="password" id="password1" name="password1" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="password2">Repeat Password <span class="kali-required-mark"></span></label>
+                  <input type="password" id="password2" name="password2" required />
+                </div>
+              </div>
+              
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-6">
+                  <label for="street">Street <span class="kali-required-mark"></span></label>
+                  <input type="text" id="street" name="street" placeholder="Street" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="house_no">House Number <span class="kali-required-mark"></span></label>
+                  <input type="text" id="house_no" name="house_no" placeholder="House number" required />
+                </div>
+              </div>
+              
               <div class="row kali-form-field-row">
                 <div class="col-12 col-md-12">
-                  <label for="password5"
-                    >password<span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="password5"
-                    type="password"
-                    id="password5"
-                    name="password"
-                    value="password"
-                    required=""
-                  />
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="termsAndConditions" name="termsAndConditions" required value="yes" />
+                    <span style="position: relative; bottom: 3px">
+                      <span class="kali-required-mark"></span>
+                      <a href="" target="_blank">I agree to the terms and conditions</a>
+                    </span>
+                  </label>
                 </div>
               </div>
+              
               <div class="row kali-form-field-row">
                 <div class="col-12 col-md-12">
-                  <label for="password6">
-                    repeat password
-                    <span class="kali-required-mark"></span></label
-                  ><input
-                    data-internal-id="password6"
-                    type="password"
-                    id="password6"
-                    name="passwordr"
-                    value="password"
-                    required=""
-                  />
+                  <input type="submit" class="input" value="Register" />
                 </div>
               </div>
-              <div class="row kali-form-field-row">
-                <div class="col-12 col-md-12">
-                  <label class="checkbox-label"
-                    ><input
-                      data-internal-id="termsandconditions7"
-                      type="checkbox"
-                      id="termsAndConditions7"
-                      name="termsAndConditions"
-                      data-termstype="url"
-                      data-termsurl="http://www.thebeerbox.test/algemene-voorwaarden"
-                      required=""
-                      value="yes"
-                    /><span style="position: relative; bottom: 3px"
-                      ><span class="kali-required-mark"></span>
-                      <a
-                        href="http://www.thebeerbox.test/algemene-voorwaarden"
-                        target="_blank"
-                        >I agree to the terms and conditions</a
-                      ></span
-                    ></label
-                  >
-                </div>
-              </div>
-              <div class="row kali-form-field-row">
-                <div class="col-12 col-md-12">
-                  <input
-                    data-internal-id="submitbutton8"
-                    type="submit"
-                    id="submitButton8"
-                    data-style="default"
-                    name="submitButton8"
-                    class="input"
-                    value="Register"
-                  />
-                </div>
-              </div>
-              <!-- This form was built using Kali Forms -->
             </form>
           </div>
         </div>
 
+        <!-- Login Form -->
         <div class="col-24 col-lg-12">
-          <h3 class="text-base text-primary">I already have an account</h3>
+          <h3 class="text-base text-primary">I Already Have an Account</h3>
           <div class="section-form">
             <form
               name="loginform"
-              id="loginform"
-              action="https://www.thebeerbox.nl/beheer/"
+              action="{% url 'loginv' %}"
               method="post"
             >
-              <p class="login-username">
-                <label for="user">User name or e-mail address</label>
-                <input
-                  type="text"
-                  name="log"
-                  id="user"
-                  autocomplete="username"
-                  class="input"
-                  value=""
-                  size="20"
-                />
-              </p>
-              <p class="login-password">
-                <label for="pass">password</label>
-                <input
-                  type="password"
-                  name="pwd"
-                  id="pass"
-                  autocomplete="current-password"
-                  spellcheck="false"
-                  class="input"
-                  value=""
-                  size="20"
-                />
-              </p>
-              <p class="login-remember">
-                <label
-                  ><input
-                    name="rememberme"
-                    type="checkbox"
-                    id="rememberme"
-                    value="forever"
-                  />
-                  Remember me</label
-                >
-              </p>
-              <p class="login-submit">
-                <input
-                  type="submit"
-                  name="wp-submit"
-                  id="wp-submit"
-                  class="button button-primary"
-                  value="Log In"
-                />
-                <input
-                  type="hidden"
-                  name="redirect_to"
-                  value="https://www.thebeerbox.nl/mijn-account/"
-                />
-              </p>
+              {% csrf_token %}
+                <div class="row kali-form-field-row">
+                  <div class="col-12 col-md-12">
+                    <label for="login_email">Email Address</label>
+                    <input type="email" id="login_email" name="email" class="input" placeholder="Email" required />
+                  </div>
+                </div>
+                <div class="row kali-form-field-row">
+                  <div class="col-12 col-md-12">
+                    <label for="login_password">Password</label>
+                    <input type="password" id="login_password" name="password1" class="input" placeholder="Password" required />
+                  </div>
+                </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <label>
+                    <input type="checkbox" name="rememberme" value="forever" /> Remember me
+                  </label>
+                </div>
+              </div>
+              <div class="row kali-form-field-row">
+                <div class="col-12 col-md-12">
+                  <input type="submit" class="button button-primary" value="Log In" />
+                </div>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
+
 </div>
 <div
   class="offcanvas offcanvas-minicart offcanvas-end"
@@ -403,6 +207,16 @@
         <p class="woocommerce-mini-cart__empty-message">
           No products in the shopping cart.
         </p>
+
+        <div id="cart-container">
+          <!-- Cart items will be dynamically added here -->
+      </div>
+      <div id="grand-total">0.00 birr</div>
+      
+      
+      </div>
+      
+      
       </div>
       <div class="vstack woocommerce-buttons">
         <a
@@ -520,38 +334,29 @@
                               for="quantity_66a646aa0fa7b"
                               >De Kemphaan - Weerwater aantal</label
                             >
-                            <input
-                              type="number"
-                              id="quantity_66a646aa0fa7b"
-                              class="input-text qty text"
-                              name="quantity"
-                              value="1"
-                              aria-label="Productaantal"
-                              size="4"
-                              min="1"
-                              max="5"
-                              step="1"
-                              placeholder=""
-                              inputmode="numeric"
-                              autocomplete="off"
-                            />
+                            
                           </div>
                         </div>
-                        <input type="hidden" name="add-to-cart" value="11055" />
+                        <input type="hidden" name="add-to-cart" value="" />
+                        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+                        <div class="add-to-cart-wrapper">
                         <button
-                          type="submit"
+                          type="button"
                           name="add-to-cart"
-                          value="11055"
-                          class="single_add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                          value=""
+                          class="add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                          onclick="addToCart('{{ b.id }}')"
                         >
                           Add
                         </button>
+                      </div>
                       </form>
                     </div>
                     <a
-                      href="https://www.thebeerbox.nl/bier/weerwater/"
+                      href=""
                       class="button is-hollow is-compact is-border-compact"
-                      title="Bekijken"
+                      title=""
                       >look More</a
                     >
                   </div>
@@ -820,7 +625,7 @@
                
               </div>
             </div>
-        
+         
             <div class="slider-product-pagination"></div>
           </div>
         </div>
@@ -868,7 +673,7 @@
   <section class="section-slider-partners" data-bgcolor="cream">
     <div class="container-xxl">
       <h2 class="text-base">
-        De <span>brouwerijen</span> waar wij mee samenwerken
+        The breweries we work with
       </h2>
       <div class="swiper slider-partners">
         <div class="swiper-wrapper">
@@ -886,7 +691,7 @@
               </picture>
             </a>
           </div>
-          <div class="swiper-slide">
+          {% comment %} <div class="swiper-slide">
             <a
               href="https://www.thebeerbox.nl/brouwerijen/berging-brouwerij/"
               class="card-partner-logo"
@@ -927,8 +732,8 @@
                 />
               </picture>
             </a>
-          </div>
-          <div class="swiper-slide">
+          </div> {% endcomment %}
+          {% comment %} <div class="swiper-slide">
             <a
               href="https://www.thebeerbox.nl/brouwerijen/hert-bier/"
               class="card-partner-logo"
@@ -1429,7 +1234,7 @@
                 />
               </picture>
             </a>
-          </div>
+          </div> {% endcomment %}
         </div>
 
         <div class="swiper-pagination"></div>
@@ -1440,7 +1245,7 @@
           class="button"
           href="https://www.thebeerbox.nl/brouwerijen/"
           target="_self"
-          >Ontdek alle brouwerijen</a
+          >Discover all breweries</a
         >
       </div>
 
@@ -1454,5 +1259,141 @@
   </section>
 </main>
 <!-- footer -->
+<style>
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color:gold;
+}
 
+</style>
+
+  // Add product to cart
+ // Add to cart
+ <script>
+  
+  function addToCart(itemId) {
+    const cartContainer = document.getElementById('cart-container');
+    const existingItem = Array.from(cartContainer.children).find(item => item.dataset.itemId === itemId);
+
+    // Check if the item is already in the cart
+    if (existingItem) {
+        // Show an alert if the item is already in the cart
+        alert("You have already added this product to the cart.");
+        return; // Exit the function to prevent duplicate addition
+    }
+
+    // Proceed with adding the item to the cart if it's not already present
+    fetch('/add-to-cart/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}',
+        },
+        body: JSON.stringify({ item_id: itemId })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        updateCartDisplay(data); // Update the cart display with new item data
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+    });
+}
+
+function updateCartDisplay(data) {
+  const cartContainer = document.getElementById('cart-container');
+
+  // Check if the cart item already exists
+  const existingItem = Array.from(cartContainer.children).find(item => item.dataset.itemId === data.item_id);
+
+  if (existingItem) {
+      alert(You have already added ${data.item_name} to the cart.);
+  } else {
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+      cartItem.dataset.itemId = data.item_id;
+
+      cartItem.innerHTML = 
+          <div>${data.item_name}</div>
+          <div class="price">${data.item_price} birr</div>
+          <div class="quantity">${data.quantity}</div>
+          <div class="total">${data.item_total_price} birr</div>
+          <button class="remove-button" onclick="removeFromCart('${data.item_id}')">✖</button>
+      ;
+
+      cartContainer.appendChild(cartItem);
+  }
+
+  // Update grand total in UI
+  updateGrandTotal();
+}
+
+function updateGrandTotal() {
+    const cartContainer = document.getElementById('cart-container');
+    const items = cartContainer.getElementsByClassName('cart-item');
+    let grandTotal = 0;
+
+    // Loop through each cart item to calculate the grand total
+    for (let item of items) {
+        // Extract the price from the total field, stripping "birr" and converting to float
+        const totalText = item.querySelector('.total').innerText.split(' ')[0]; // Extract numeric value
+        const total = parseFloat(totalText);
+
+        if (!isNaN(total)) {
+            grandTotal += total; // Accumulate grand total
+        } else {
+            console.error(Invalid total value: ${totalText});
+        }
+    }
+
+    document.getElementById('grand-total').innerText = grandTotal.toFixed(2) + ' birr'; // Display grand total
+}
+
+function removeFromCart(itemId) {
+    fetch('/remove-from-cart/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}',
+        },
+        body: JSON.stringify({ item_id: itemId })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            // Remove the item from the cart display
+            const cartContainer = document.getElementById('cart-container');
+            const itemToRemove = Array.from(cartContainer.children).find(item => item.dataset.itemId === data.item_id);
+            if (itemToRemove) {
+                cartContainer.removeChild(itemToRemove);
+                updateGrandTotal(); // Update grand total after removing
+            }
+        } else {
+            console.error(data.error);
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+    });
+} 
+
+  </script>
+  
+  
+  
+  
+  
 {% endblock content %}

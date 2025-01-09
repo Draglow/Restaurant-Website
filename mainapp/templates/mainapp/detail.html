@@ -239,14 +239,21 @@
             </div>
         </div>
         <div class="col-md-12 col-lg-6 mt-5">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
-                     <div class="input-group">
-                        <span class="input-group-text" id="decrement">-</span>
-                        <input type="text" id="numberInput" class="form-control" value="1" readonly>
-                        <span class="input-group-text" id="increment">+</span>
-                    </div>
-                    <button class="custom-button">Add to cart</button> 
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+            <div class="input-group">
+                <span class="input-group-text" id="decrement">-</span>
+                <input type="text" id="numberInput" class="form-control p-quantity" value="1" readonly>
+                <span class="input-group-text" id="increment">+</span>
+            </div>
+            
+            <input type="hidden" class="cardd-price" value="{{ obj.price }}" name="">
+            <input type="hidden" class="obj_id" value="{{ obj.id }}" name="">
+            <input type="hidden" class="cardd-title" value="{{ obj.name }}" name="">
+            
+            <button class="custom-button" id="add_too_cart">Add to cart</button>
         </div>
+        
     </div>
 </div>
 
@@ -257,6 +264,7 @@
     
 
 </div>
+
 <script>
     document.getElementById('increment').addEventListener('click', function() {
         var input = document.getElementById('numberInput');
@@ -270,7 +278,51 @@
             input.value = value - 1;
         }
     });
+
+
+    $(document).ready(function() { 
+        $('#add_too_cart').on("click", function() {
+            let qty = $('#numberInput').val();  // Quantity input
+            let price = $('.cardd-price').val(); // Price hidden input
+            let title = $('.cardd-title').val(); // Title hidden input
+            let product_id = $(".obj_id").val(); // Product ID hidden input
+            let this_val = $(this);
+    
+            console.log("Quantity:", qty);
+            console.log("Price:", price);
+            console.log("Title:", title);
+            console.log("Product ID:", product_id);
+            console.log("Button:", this_val);
+            let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    
+            $.ajax({
+                url: '/add_too_cart/',
+                method: 'POST',
+                headers: { "X-CSRFToken": csrfToken },
+         // Specify the HTTP method, assuming it is a POST request
+                data: {
+                    "id": product_id,
+                    "qty": qty,
+                    "price": price,
+                    "title": title,
+                    "csrfmiddlewaretoken": $('input[name="csrfmiddlewaretoken"]').val()
+                },
+                dataType: 'json', // Moved dataType inside the $.ajax settings
+                beforeSend: function() {
+                    console.log("Adding product to the cart...");
+                },
+                success: function(response) {
+                    this_val.html("Item Added To Cart")
+                    console.log("Added product to the cart:");
+                    $('#mini-cart-count').text(response.totalcartitem);  // Update count
+                    $('#mini-cart-link').attr('data-cart-count', response.totalcartitem);
+                },
+                
+            });
+        });
+    });
+    
+
+    
 </script>
 {% endblock content %}
-
-

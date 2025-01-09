@@ -141,74 +141,83 @@
         }
       }
 
+      .custom-button {
+        background-color:#333333;/* A deep purple color */
+        color: #ffffff; /* White text for contrast */
+        border: none; /* Remove default border */
+        padding: 12px 24px; /* Add some padding for better feel */
+        border-radius: 30px; /* Rounded corners */
+        font-size: 16px; /* Adjust font size */
+        font-weight: bold; /* Bold text for emphasis */
+        cursor: pointer; /* Pointer cursor on hover */
+        width: 100%; /* Make the button full-width */
+        max-width: 400px; /* Limit the maximum width */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+    
+    .custom-button:hover {
+        background-color: #3700b3; /* Darker shade on hover */
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        transform: translateY(-3px); /* Slight lift on hover */
+    }
+    
+    .custom-button:active {
+        transform: translateY(-1px); /* Less lift on click */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Slight shadow on click */
+    }
+    
+
 </style>
 
-
-  <div class="container text-dark">
-    <div class="title text-center bg-dark text-white">Registration</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+<div class="container text-dark">
+  <div class="title text-center bg-dark text-white">Registration</div>
+  <div class="content">
+      <form action="{% url 'signup' %}" method="POST">
+          {% csrf_token %}
+          <div class="user-details">
+              <div class="input-box">
+                  <span class="details">Full Name</span>
+                  <input type="text" name="full_name" placeholder="Enter your full name" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Username</span>
+                  <input type="text" name="username" placeholder="Enter your username" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Email</span>
+                  <input type="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input type="text" name="phone_number" placeholder="Enter your phone number" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Street</span>
+                  <input type="text" name="street" placeholder="Enter your street" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">House No</span>
+                  <input type="text" name="house_no" placeholder="Enter your house number" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Password</span>
+                  <input type="password" name="password1" placeholder="Enter your password" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Confirm Password</span>
+                  <input type="password" name="password2" placeholder="Confirm your password" required>
+              </div>
           </div>
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+          
+          <div class="p-3 text-center">
+              <button type="submit" class="custom-button">Register</button>
           </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
-          </div>
-        </div>
-        {% comment %} <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div> {% endcomment %}
-        <div class="button text-center">
-          <input type="submit" value="Register" class=" text-center btn btn-dark">
+          <div class="signup-link">
+            already have an account? <a href="{% url 'login' %}">Log In</a>
         </div>
       </form>
-    </div>
   </div>
+</div>
+
   {% endblock content %}

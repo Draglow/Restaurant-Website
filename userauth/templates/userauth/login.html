@@ -29,7 +29,7 @@
           color: #fff;
           user-select: none;
           border-radius: 15px 15px 0 0;
-          background: #b5a351;
+          background: #333333;
         }
         .wrapper form{
           padding: 10px 30px 50px 30px;
@@ -107,7 +107,7 @@
           font-size: 20px;
           font-weight: 500;
           cursor: pointer;
-          background:#a68844;
+          background:#333333;
           transition: all 0.3s ease;
         }
         form .field input[type="submit"]:active{
@@ -135,32 +135,38 @@
             <div class="title">
               <image src="/static/images/habesha2.png" width=100px height=100px>
             </div>
-            <form action="#">
-               <div class="field">
-                  <input type="text" required>
-                  <label>Email Address</label>
-               </div>
-               <div class="field">
-                  <input type="password" required>
-                  <label>Password</label>
-               </div>
-               <div class="content">
-                  <div class="checkbox">
-                     <input type="checkbox" id="remember-me">
-                     <label for="remember-me">Remember me</label>
+            {% for message in messages %}
+                    <div class=" text-dark alert {% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+            {% endfor %}
+            <form  method="post">
+              {% csrf_token %}
+                  <div class="field">
+                      <input type="email" name="email" required>
+                      <label>Email Address</label>
                   </div>
-                  <div class="pass-link">
-                     <a href="#">Forgot password?</a>
+                  <div class="field">
+                      <input type="password"  name="password1" required>
+                      <label>Password</label>
                   </div>
-               </div>
-               <div class="field">
-                  <input type="submit" value="Login">
-               </div>
-               <div class="signup-link">
-                  Not a member? <a href="#">Signup now</a>
-               </div>
-            </form>
+                  <div class="content">
+                      <div class="checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                      </div>
+                      <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                      </div>
+                  </div>
+                  <div class="field">
+                      <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                      Not a member? <a href="{% url 'signup' %}">Signup now</a>
+                  </div>
+                </form>
+            </div>
         </div>
-    </div>
 
 {% endblock content %}
