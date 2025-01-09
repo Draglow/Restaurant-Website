@@ -8,15 +8,15 @@
 # from django.contrib.auth.models import AbstractUser,Group
 
 
-from django.db import models
-from django.contrib.auth.models import User
+# from django.db import models
+# from django.contrib.auth.models import User
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=15)
-    street = models.CharField(max_length=255)
-    house_no = models.CharField(max_length=10)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     full_name = models.CharField(max_length=100)
+#     phone_number = models.CharField(max_length=15)
+#     street = models.CharField(max_length=255)
+#     house_no = models.CharField(max_length=10)
 
 # from django.contrib.auth.models import AbstractUser, Permission
 

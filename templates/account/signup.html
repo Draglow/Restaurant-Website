@@ -1,0 +1,29 @@
+{% extends "mainapp/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+<main style="color:white;">
+  <div class="login-container d-flex justify-content-center align-items-center" style="height: 100vh; background-color: rgb(0, 0, 0); margin-top:50px; margin-bottom:50px;">
+    <div class="login-box text-center shadow rounded p-4" style="background: rgb(20, 19, 19); max-width: 400px; width: 100%; border-radius: 10px;">
+      <h2 class="mb-4" style="font-size: 20px; color: white;">{% trans "Sign Up" %}</h2>
+      
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="d-grid gap-2 mt-3">
+          <button class="btn btn-primary w-100" type="submit" style="background-color: #007bff; border: none; padding: 10px 0; font-size: 16px;">{% trans "Sign Up" %}</button>
+        </div>
+        <p style="font-size: 14px; color: white;">
+          {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" style="color: #007bff;">sign in</a>.{% endblocktrans %}
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

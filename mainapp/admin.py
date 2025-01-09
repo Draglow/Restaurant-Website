@@ -1,56 +1,65 @@
 from django.contrib import admin
-from .models import Category, Items, Cart, CartItem, Order, OrderItem
 
-# Register the BeerCategory model
-@admin.register(Category)
-class BeerCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
-    prepopulated_fields = {'slug': ('name',)}
+from .models import Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile
 
-# Register the Beer model
-@admin.register(Items)
-class BeerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'abv', 'price')
-    list_filter = ('category',)
-    search_fields = ('name', 'category__name')
-    prepopulated_fields = {'slug': ('name',)}
 
-# Inline model for CartItem
-class CartItemInline(admin.TabularInline):
-    model = CartItem
-    extra = 1
+def make_refund_accepted(modeladmin, request, queryset):
+    queryset.update(refund_requested=False, refund_granted=True)
 
-# Register the Cart model
-@admin.register(Cart)
-class CartAdmin(admin.ModelAdmin):
-    list_display = ('user', 'created_at')
-    search_fields = ('user__username',)
-    inlines = [CartItemInline]
 
-# Register the CartItem model
-@admin.register(CartItem)
-class CartItemAdmin(admin.ModelAdmin):
-    list_display = ('cart', 'items', 'quantity')
-    raw_id_fields = ('cart', 'items')
-    search_fields = ('beer__name',)
+make_refund_accepted.short_description = 'Update orders to refund granted'
 
-# Inline model for OrderItem
-class OrderItemInline(admin.TabularInline):
-    model = OrderItem
-    extra = 1
 
-# Register the Order model
-@admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('user', 'total_amount', 'status', 'created_at')
-    list_filter = ('status', 'created_at')
-    search_fields = ('user__username', 'id')
-    inlines = [OrderItemInline]
+    list_display = ['user',
+                    'ordered',
+                    'being_delivered',
+                    'received',
+                    'refund_requested',
+                    'refund_granted',
+                    'shipping_address',
+                    'billing_address',
+                    'payment',
+                    'coupon'
+                    ]
+    list_display_links = [
+        'user',
+        'shipping_address',
+        'billing_address',
+        'payment',
+        'coupon'
+    ]
+    list_filter = ['ordered',
+                   'being_delivered',
+                   'received',
+                   'refund_requested',
+                   'refund_granted']
+    search_fields = [
+        'user__username',
+        'ref_code'
+    ]
+    actions = [make_refund_accepted]
 
-# Register the OrderItem model
-@admin.register(OrderItem)
-class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('order', 'items', 'quantity', 'price')
-    raw_id_fields = ('order', 'items')
-    search_fields = ('order__id', 'beer__name')
+
+class AddressAdmin(admin.ModelAdmin):
+    list_display = [
+        'user',
+        'street_address',
+        'apartment_address',
+        'country',
+        'zip',
+        'address_type',
+        'default'
+    ]
+    list_filter = ['default', 'address_type', 'country']
+    search_fields = ['user', 'street_address', 'apartment_address', 'zip']
+
+
+admin.site.register(Item)
+admin.site.register(OrderItem)
+admin.site.register(Order, OrderAdmin)
+admin.site.register(Payment)
+admin.site.register(Coupon)
+admin.site.register(Refund)
+admin.site.register(Address, AddressAdmin)
+admin.site.register(UserProfile)

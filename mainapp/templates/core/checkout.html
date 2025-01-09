@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color:rgb(236, 233, 231);
+    }
+    main {
+      padding: 2rem 0;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+      padding: 2rem;
+    }
+    h2 {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      font-weight: bold;
+    }
+    label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color:rgb(44, 42, 42);
+      border-color: #ff6f61;
+    }
+    .btn-primary:hover {
+      background-color:rgb(71, 66, 65);
+      border-color: #e65c50;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Responsive Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"> <img
+    width="100"
+    heigh="100"
+    src="{% static 'images/habesha2.png' %}"
+    alt="x"
+  />
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      
+      
+      
+      {% comment %} <li class="nav-item">
+        <a class="nav-link" href="#">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Checkout</a>
+      </li> {% endcomment %}
+    </ul>
+  </div>
+</nav>
+
+<main class="text-black">
+  <div class="container wow fadeIn">
+    {% comment %} <h2 class="my-5 h2 text-center">Checkout form</h2> {% endcomment %}
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <div class="card">
+          
+          <form method="POST" class="card-body">
+            {% csrf_token %}
+
+            <h3>Shipping address</h3>
+
+            <div class='hideable_shipping_form'>
+
+              <div class="form-group mb-3">
+                <label for="shipping_address">Address</label>
+                <input type='text' placeholder='1234 Main St' id='shipping_address' name='shipping_address' class='form-control' />
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="shipping_address2">Address 2 (optional)</label>
+                <input type='text' placeholder='Apartment or suite' id='shipping_address2' name='shipping_address2' class='form-control' />
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="country">Country</label>
+                  {{ form.shipping_country }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="shipping_zip">Zip</label>
+                  <input type='text' placeholder='Zip code' id='shipping_zip' name='shipping_zip' class='form-control' />
+                </div>
+              </div>
+
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" name="same_billing_address" id="same_billing_address">
+                <label class="form-check-label" for="same_billing_address">Billing address is the same as my shipping address</label>
+              </div>
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" name="set_default_shipping" id="set_default_shipping">
+                <label class="form-check-label" for="set_default_shipping">Save as default shipping address</label>
+              </div>
+
+            </div>
+
+            {% if default_shipping_address %}
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" name="use_default_shipping" id="use_default_shipping">
+              <label class="form-check-label" for="use_default_shipping">Use default shipping address: {{ default_shipping_address.street_address|truncatechars:10 }}</label>
+            </div>
+            {% endif %}
+
+            <hr>
+
+            <h3>Billing address</h3>
+
+            <div class='hideable_billing_form'>
+              <div class="form-group mb-3">
+                <label for="billing_address">Address</label>
+                <input type='text' placeholder='1234 Main St' id='billing_address' name='billing_address' class='form-control' />
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="billing_address2">Address 2 (optional)</label>
+                <input type='text' placeholder='Apartment or suite' id='billing_address2' name='billing_address2' class='form-control' />
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="country">Country</label>
+                  {{ form.billing_country }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="billing_zip">Zip</label>
+                  <input type='text' placeholder='Zip code' id='billing_zip' name='billing_zip' class='form-control' />
+                </div>
+
+              </div>
+
+              <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" name="set_default_billing" id="set_default_billing">
+                <label class="form-check-label" for="set_default_billing">Save as default billing address</label>
+              </div>
+
+            </div>
+
+            {% if default_billing_address %}
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" name="use_default_billing" id="use_default_billing">
+              <label class="form-check-label" for="use_default_billing">Use default billing address: {{ default_billing_address.street_address|truncatechars:10 }}</label>
+            </div>
+            {% endif %}
+            <hr>
+
+            <h3>Payment option</h3>
+
+            <div class="d-block my-3">
+              {% for value, name in form.fields.payment_option.choices %}
+              <div class="form-check">
+                <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="{{ name }}">{{ name }}</label>
+              </div>
+              {% endfor %}
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        {% include "core/order_snippet.html" %}
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  var hideable_shipping_form = $('.hideable_shipping_form');
+  var hideable_billing_form = $('.hideable_billing_form');
+
+  var use_default_shipping = document.querySelector("input[name=use_default_shipping]");
+  var use_default_billing = document.querySelector("input[name=use_default_billing]");
+
+  use_default_shipping.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_shipping_form.hide();
+    } else {
+      hideable_shipping_form.show();
+    }
+  })
+
+  use_default_billing.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_billing_form.hide();
+    } else {
+      hideable_billing_form.show();
+    }
+  })
+</script>
+</body>
+</html>

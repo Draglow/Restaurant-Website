@@ -228,14 +228,15 @@
 
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-md-12 col-lg-6">
-            <div class="card">
+        <div class="col-md-12 col-lg-6 justify-content-start">
+            <div class="card ">
                 <img src="{{ obj.image.url }}" class="card-img-top" alt="Product Image">
                 <div class="card-body">
                     <h5 class="card-title">{{obj.name}}</h5>
-                     <h3 class="card-price">{{obj.price}} Birr</h3>
+                     <h2 class="card-price">{{obj.price}} Birr</h2>
                     
                 </div>
+                
             </div>
         </div>
         <div class="col-md-12 col-lg-6 mt-5">
@@ -254,75 +255,183 @@
             <button class="custom-button" id="add_too_cart">Add to cart</button>
         </div>
         
+        <div class="col-md-12 col-lg-6 mt-3 ">
+            
+            
+            <div class="map-container " style="height:300px; width:300px;">
+                
+                        
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252230.25579936645!2d38.613324460400946!3d8.963140366266584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1723612842308!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+
+            </div>
+            <h2 style="color:gold" class="mt-2">Delivering Area</h1>
+
+        </div>
     </div>
 </div>
 
-<div class="map-container">
+
+
+<section class="section-product-slider" data-bgcolor="dark">
+    <div class="container-xxl">
+      <div class="section-content">
+        <div class="row justify-content-center">
+          <div class="col-24">
+            <h2 class="text-primary h2">You May Also Like</h2>
+            
+            <div class="swiper slider-product">
+              <div class="swiper-wrapper">
+                {% for item in related_items %}
+                <div class="swiper-slide product-beers">
+                  <div class="card-beerbox">
+                    <header>
+                      <div>
+                        <div class="hstack stack-exclude gap-2">
+                          <label>Offer</label>
+                        </div>
+                        <picture class="taste">
+                          <img
+                            class="lazyload"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                            alt="Related Product"
+                          />
+                        </picture>
+                      </div>
+                    </header>
+  
+                    <a href="" class="picture">
+                      <picture class="ratio ratio-4x3">
+                        <img
+                          class="lazyload"
+                          data-src="{{ item.image.url }}"
+                          alt="{{ item.name }}"
+                        />
+                      </picture>
+                    </a>
+  
+                    <a href="" class="h4 text-base text-white">
+                      {{ item.name }}
+                    </a>
+                    <p class="pricing">
+                      <s>{{ item.abv }} birr</s> <span>{{ item.price }} birr</span>
+                    </p>
+  
+                    <div class="add-to-cart-wrapper">
+                      <form class="cart cell" method="post">
+                        {% csrf_token %}
+                        <button
+                          type="button"
+                          class="add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                          onclick="addToCart('{{ item.id }}')"
+                        >
+                          Add
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+            <div class="slider-product-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<div class="map-container mt-3">
     
             
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252230.25579936645!2d38.613324460400946!3d8.963140366266584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1723612842308!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
 
 </div>
+<style>
+  
+  .hidden {
+  display: none;
+}
 
+#popup-card {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  width: 250px;
+}
+
+#popup-card .card {
+  text-align: center;
+}
+
+#popup-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+#popup-card p {
+  margin: 8px 0;
+  color: #666;
+}
+
+#popup-card .btn {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#popup-card .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#popup-card .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+#popup-card .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#popup-card .btn-secondary:hover {
+  background-color: #5a6268;
+}
+</style>
 <script>
-    document.getElementById('increment').addEventListener('click', function() {
-        var input = document.getElementById('numberInput');
-        input.value = parseInt(input.value) + 1;
-    });
-
-    document.getElementById('decrement').addEventListener('click', function() {
-        var input = document.getElementById('numberInput');
-        var value = parseInt(input.value);
-        if (value > 1) {
-            input.value = value - 1;
-        }
-    });
-
-
-    $(document).ready(function() { 
-        $('#add_too_cart').on("click", function() {
-            let qty = $('#numberInput').val();  // Quantity input
-            let price = $('.cardd-price').val(); // Price hidden input
-            let title = $('.cardd-title').val(); // Title hidden input
-            let product_id = $(".obj_id").val(); // Product ID hidden input
-            let this_val = $(this);
+  document.getElementById('cart-icon-link').addEventListener('click', function () {
+    const popupCard = document.getElementById('popup-card');
+    if (popupCard.style.display === 'block') {
+      popupCard.style.display = 'none';
+    } else {
+      popupCard.style.display = 'block';
+    }
+  });
+  
+  // Close the popup when clicking outside
+  document.addEventListener('click', function (event) {
+    const popupCard = document.getElementById('popup-card');
+    const cartIconLink = document.getElementById('cart-icon-link');
     
-            console.log("Quantity:", qty);
-            console.log("Price:", price);
-            console.log("Title:", title);
-            console.log("Product ID:", product_id);
-            console.log("Button:", this_val);
-            let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    
-            $.ajax({
-                url: '/add_too_cart/',
-                method: 'POST',
-                headers: { "X-CSRFToken": csrfToken },
-         // Specify the HTTP method, assuming it is a POST request
-                data: {
-                    "id": product_id,
-                    "qty": qty,
-                    "price": price,
-                    "title": title,
-                    "csrfmiddlewaretoken": $('input[name="csrfmiddlewaretoken"]').val()
-                },
-                dataType: 'json', // Moved dataType inside the $.ajax settings
-                beforeSend: function() {
-                    console.log("Adding product to the cart...");
-                },
-                success: function(response) {
-                    this_val.html("Item Added To Cart")
-                    console.log("Added product to the cart:");
-                    $('#mini-cart-count').text(response.totalcartitem);  // Update count
-                    $('#mini-cart-link').attr('data-cart-count', response.totalcartitem);
-                },
-                
-            });
-        });
-    });
-    
-
-    
+    if (!popupCard.contains(event.target) && !cartIconLink.contains(event.target)) {
+      popupCard.style.display = 'none';
+    }
+  });
+   
 </script>
 {% endblock content %}

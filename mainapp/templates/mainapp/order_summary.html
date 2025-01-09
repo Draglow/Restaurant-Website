@@ -1,0 +1,202 @@
+{% comment %} {% extends "mainapp/base.html" %}
+
+{% block content %}
+
+<style>
+    * {
+        color: white;
+    }
+
+    h2 {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 12px;
+    }
+
+    .table thead th {
+        background-color: #333;
+        border-bottom: 2px solid #fff;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #444;
+    }
+
+    .table tbody tr:hover {
+        background-color: #555;
+    }
+
+    .badge-primary {
+        background-color: #007bff;
+    }
+
+    /* Stylish buttons */
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 25px; /* Rounded buttons */
+        transition: all 0.3s ease-in-out; /* Smooth animation */
+        text-transform: uppercase; /* Capitalize button text */
+        letter-spacing: 1px; /* Add some spacing between letters */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-primary:hover,
+    .btn-warning:hover {
+        opacity: 0.8;
+        transform: scale(1.1); /* Slightly enlarge on hover */
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Add a shadow effect on hover */
+    }
+
+    .btn-primary:active,
+    .btn-warning:active {
+        transform: scale(1); /* Reset the scale when button is pressed */
+    }
+
+    /* Flex container for buttons */
+    .button-container {
+        display: flex;
+        justify-content: space-between; /* Space between buttons */
+        gap: 10px; /* Space between buttons */
+        flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    .text-nowrap {
+        white-space: nowrap;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        th, td {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        /* Make buttons full-width on small screens */
+        .btn {
+            width: 100%;
+            margin: 5px 0;
+        }
+    }
+
+    /* Style for item images */
+    .item-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+</style>
+
+<main class="mt-5">
+    <div class="container text-white">
+
+        <div class="table-responsive text-nowrap">
+            <h2>Order Summary</h2>
+            <table class="table">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">Image</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total Item Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order_item in object.items.all %}
+                    <tr>
+                        <td>
+                            <img src="{{ order_item.item.image.url }}" alt="{{ order_item.item.title }}" class="item-image">
+                        </td>
+                        <td>${{ order_item.item.price }}</td>
+                        <td>
+                            <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}">
+                                <i class="fas fa-minus mr-2"></i>
+                            </a>
+                            {{ order_item.quantity }}
+                            <a href="{% url 'core:add-to-cart' order_item.item.slug %}">
+                                <i class="fas fa-plus ml-2"></i>
+                            </a>
+                        </td>
+                        <td>
+                            {% if order_item.item.discount_price %}
+                                ${{ order_item.get_total_discount_item_price }}
+                                <span class="badge badge-primary">Saving ${{ order_item.get_amount_saved }}</span>
+                            {% else %}
+                                ${{ order_item.get_total_item_price }}
+                            {% endif %}
+                            <a style="color: red;" href="{% url 'core:remove-from-cart' order_item.item.id %}">
+                                <i class="fas fa-trash float-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">Your cart is empty</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <a class="btn btn-primary float-right" href="/">Continue shopping</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% if object.coupon %}
+                    <tr>
+                        <td colspan="3"><b>Coupon</b></td>
+                        <td><b>-${{ object.coupon.amount }}</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.get_total %}
+                    <tr>
+                        <td colspan="3"><b>Order Total</b></td>
+                        <td><b>${{ object.get_total }}</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="button-container">
+                                <a class="btn btn-warning" href="/checkout/">Proceed to checkout</a>
+                                <a class="btn btn-primary" href="/">Continue shopping</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+
+{% endblock content %} {% endcomment %}

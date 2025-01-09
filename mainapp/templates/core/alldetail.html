@@ -1,0 +1,357 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        margin: 0; /* Ensure no extra margin */
+    }
+
+    .col-12 {
+        padding: 0 15px; /* Add horizontal padding */
+    }
+
+    .card {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background-color: #333; /* Dark background color */
+        padding: 10px; /* Reduce padding to make the card smaller */
+        max-height: 600px; /* Set a maximum height to control the size */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-img-top {
+         width: 100%;
+        height:auto; /* Adjust height to auto to maintain aspect ratio */
+        /* Ensure the image covers the area */
+        border-bottom: 4px solid #ff5722;
+        border-top: 4px solid #ff5722;
+
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+    }   
+
+    .card-body {
+        padding: 15px; /* Adjust padding for a more compact look */
+        color: #fff; /* Text color to contrast with the dark background */
+        flex-grow: 1; /* Allow the body to take up remaining space */
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-price {
+        font-size: 1.4rem;
+        color: #ff5722;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #ccc; /* Lighter text color for better readability */
+        margin-bottom: 1.5rem;
+    }
+
+    .custom-button {
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        padding: 12px 24px; /* Adjust padding for smaller screens */
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.2s;
+        width: 100%;
+    }
+
+    .custom-button:hover {
+        background-color: #e64a19;
+        transform: scale(1.05);
+    }
+    
+    .custom-button:active {
+        background-color: #e64a19;
+        transform: scale(0.95);
+    }
+
+    .input-group {
+        display: flex;
+        width: 100%; /* Make input group responsive */
+        max-width: 200px;
+        margin: 0 auto;
+        border: 2px solid #ff5722;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group-text {
+        cursor: pointer;
+        background-color: #ff5722;
+        border: none;
+        color: white;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    #numberInput {
+        border: 2px solid #ff5722;
+        background-color: #fff;
+        color: #000;
+        font-size: 18px;
+        padding: 12px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            max-height: none; /* Allow card to expand naturally on smaller screens */
+            padding: 10px;
+        }
+
+        .card-img-top {
+            max-height: 150px; /* Adjust the maximum height for the image */
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+        }
+
+        .card-price {
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+        }
+
+        .custom-button {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            width: 100%; /* Full width on smaller screens */
+            max-width: 100%; /* Ensure full width */
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .card-title {
+            font-size: 1.3rem;
+        }
+
+        .card-price {
+            font-size: 1.1rem;
+        }
+
+        .card-text {
+            font-size: 0.8rem;
+        }
+
+        .custom-button {
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .input-group {
+            max-width: 100%; /* Ensure full width on extra small screens */
+        }
+    }
+
+
+    .map-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Aspect ratio of 16:9 (height/width * 100%) */
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        
+    }
+    
+
+    #map {
+        width: 100%; /* Make the map responsive */
+        height: 500px; /* Set the desired height */
+        border: 2px solid #ccc; /* Add a border */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        border-radius: 8px; /* Rounded corners */
+    }
+
+    #map {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+        position: relative;
+    }
+    
+    #map iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+</style>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-6 justify-content-start">
+            <div class="card ">
+                <img src="{{ obj.image.url }}" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{obj.name}}</h5>
+                     <h2 class="card-price">{{obj.price}} Birr</h2>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 mt-5">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+            <div class="input-group">
+                <span class="input-group-text" id="decrement">-</span>
+                <input type="text" id="numberInput" class="form-control p-quantity" value="1" readonly>
+                <span class="input-group-text" id="increment">+</span>
+            </div>
+            
+            <input type="hidden" class="cardd-price" value="{{ obj.price }}" name="">
+            <input type="hidden" class="obj_id" value="{{ obj.id }}" name="">
+            <input type="hidden" class="cardd-title" value="{{ obj.name }}" name="">
+            
+            <button class="custom-button" id="add_too_cart">Add to cart</button>
+        </div>
+        
+        <div class="col-md-12 col-lg-6 mt-3 ">
+            
+            
+            <div class="map-container " style="height:300px; width:300px;">
+                
+                        
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252230.25579936645!2d38.613324460400946!3d8.963140366266584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1723612842308!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+
+            </div>
+            <h2 style="color:gold" class="mt-2">Delivering Area</h1>
+
+        </div>
+    </div>
+</div>
+
+
+
+<section class="section-product-slider" data-bgcolor="dark">
+    <div class="container-xxl">
+      <div class="section-content">
+        <div class="row justify-content-center">
+          <div class="col-24">
+            <h2 class="text-primary h2">You May Also Like</h2>
+            
+            <div class="swiper slider-product">
+              <div class="swiper-wrapper">
+                {% for item in related_items %}
+                <div class="swiper-slide product-beers">
+                  <div class="card-beerbox">
+                    <header>
+                      <div>
+                        <div class="hstack stack-exclude gap-2">
+                          <label>Offer</label>
+                        </div>
+                        <picture class="taste">
+                          <img
+                            class="lazyload"
+                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
+                            alt="Related Product"
+                          />
+                        </picture>
+                      </div>
+                    </header>
+  
+                    <a href="" class="picture">
+                      <picture class="ratio ratio-4x3">
+                        <img
+                          class="lazyload"
+                          data-src="{{ item.image.url }}"
+                          alt="{{ item.name }}"
+                        />
+                      </picture>
+                    </a>
+  
+                    <a href="" class="h4 text-base text-white">
+                      {{ item.name }}
+                    </a>
+                    <p class="pricing">
+                      <s>{{ item.abv }} birr</s> <span>{{ item.price }} birr</span>
+                    </p>
+  
+                    <div class="add-to-cart-wrapper">
+                      <form class="cart cell" method="post">
+                        {% csrf_token %}
+                        <button
+                          type="button"
+                          class="add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
+                          onclick="addToCart('{{ item.id }}')"
+                        >
+                          Add
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+            <div class="slider-product-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<div class="map-container mt-3">
+    
+            
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252230.25579936645!2d38.613324460400946!3d8.963140366266584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1723612842308!5m2!1sen!2set" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+
+</div>
+
+<script>
+    
+</script>
+{% endblock content %}

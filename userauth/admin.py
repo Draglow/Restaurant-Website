@@ -1,6 +1,6 @@
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import User, UserProfile
+# from django.contrib import admin
+# from django.contrib.auth.admin import UserAdmin
+# from .models import User, UserProfile
 
 # # Customizing the User admin interface
 # class CustomUserAdmin(UserAdmin):
@@ -44,8 +44,8 @@ from .models import User, UserProfile
 # # Register the Profile model with the admin site
 
 
-class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'full_name', 'phone_number', 'street', 'house_no')
-    search_fields = ('user__username', 'full_name', 'phone_number')
+# class UserProfileAdmin(admin.ModelAdmin):
+#     list_display = ('user', 'full_name', 'phone_number', 'street', 'house_no')
+#     search_fields = ('user__username', 'full_name', 'phone_number')
 
-admin.site.register(UserProfile)
+# admin.site.register(UserProfile)

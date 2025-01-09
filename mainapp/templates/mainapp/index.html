@@ -68,7 +68,7 @@
             <form
               class="kaliforms-form-container bootstrap-wrapper"
               method="post"
-              action="{% url 'signupp' %}"
+              action=""
             >
               {% csrf_token %}
               <div class="row kali-form-field-row">
@@ -145,7 +145,7 @@
           <div class="section-form">
             <form
               name="loginform"
-              action="{% url 'loginv' %}"
+              action=""
               method="post"
             >
               {% csrf_token %}
@@ -283,7 +283,7 @@
             
             <div class="swiper slider-product">
               <div class="swiper-wrapper">
-                {% for b in beer %}
+                {% for f in food %}
                 <div class="swiper-slide product-beers">
                   <div class="card-beerbox">
                     <header>
@@ -294,21 +294,21 @@
                         <picture class="taste">
                           <img
                             class="lazyload"
-                            data-src="https://www.thebeerbox.nl/content/uploads/2023/01/Smooth-Amber.svg"
-                            alt="Hopbel in amber/oranje kleur als aanwijzing van het smaakprofiel Smooth &amp; amber"
+                            data-src="/static/images/habesha2.png"
+                            alt=""
                           />
                         </picture>
                       </div>
                     </header>
 
                     <a
-                      href="{% url 'alldetail' b.id%}"
+                      href=""
                       class="picture"
                     >
                       <picture class="ratio ratio-4x3">
                         <img
                           class="lazyload"
-                          data-src="{{b.image.url}}"
+                          data-src="{{f.image.url}}"
                           alt="De Kemphaan - Weerwater lentebok"
                         />
                       </picture>
@@ -317,9 +317,9 @@
                     <a
                       href="https://www.thebeerbox.nl/bier/weerwater/"
                       class="h4 text-base text-white"
-                      >{{b.name}} </a
+                      >{{f.title}} </a
                     >
-                    <p class="pricing"><s>{{b.abv}} birr</s> <span>{{b.price}} birr</span></p>
+                    <p class="pricing"><s>{{f.discount_price}} birr</s> <span>{{f.price}} birr</span></p>
                     <div class="add-to-cart-wrapper">
                       <form
                         class="cart cell"
@@ -329,29 +329,32 @@
                       >
                         <div class="d-none">
                           <div class="quantity">
-                            <label
-                              class="screen-reader-text"
-                              for="quantity_66a646aa0fa7b"
-                              >De Kemphaan - Weerwater aantal</label
-                            >
+
                             
                           </div>
                         </div>
-                        <input type="hidden" name="add-to-cart" value="" />
                         <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
                         <div class="add-to-cart-wrapper">
-                        <button
-                          type="button"
-                          name="add-to-cart"
-                          value=""
-                          class="add_to_cart_button button w-100 mb-3 is-compact is-border-compact"
-                          onclick="addToCart('{{ b.id }}')"
-                        >
-                          Add
-                        </button>
+                          
+                          
+                              <button
+                                type="button"
+                                class="button w-100 mb-3 is-compact is-border-compact"
+                                data-item-id="{{ f.id }}"
+                                data-item-slug="{{ f.slug }}"
+                                data-item-title="{{ f.title }}"
+                                data-item-price="{{ f.price }}"
+                                data-item-discount-price="{{ f.discount_price }}"
+                                data-item-image="{{ f.image.url }}"
+                                onclick="addToCart('{{ f.slug }}', '{{ f.title }}', '{{ f.price }}', '{{ f.discount_price }}', '{{ f.image.url }}')"
+                              >
+                                Add To Cart
+                              </button>
+                       
+                      
                       </div>
-                      </form>
+                      
                     </div>
                     <a
                       href=""
@@ -534,7 +537,7 @@
             
             <div class="swiper slider-product">
               <div class="swiper-wrapper">
-                {% for f in food  %}
+              {% for b in beer  %}
                 <div class="swiper-slide product-beers">
                   <div class="card-beerbox">
                     <header>
@@ -553,13 +556,13 @@
                     </header>
 
                     <a
-                      href="{% url 'alldetail' f.id %}"
+                      href=""
                       class="picture"
                     >
                       <picture class="ratio ratio-4x3">
                         <img
                           class="lazyload"
-                          data-src="{{f.image.url}}"
+                          data-src="{{b.image.url}}"
                           alt=""
                         />
                       </picture>
@@ -568,9 +571,9 @@
                     <a
                       href="https://www.thebeerbox.nl/bier/maallust-veldwachter-bock/"
                       class="h4 text-base text-white"
-                      >{{f.name}}</a
+                      >{{b.title}}</a
                     >
-                    <p class="pricing"><s>{{f.abv}} birr</s> <span>{{f.price}} birr</span></p>
+                    <p class="pricing"><s>{{b.discount_price}} birr</s> <span>{{b.price}} birr</span></p>
                     <div class="add-to-cart-wrapper">
                       <form
                         class="cart cell"
@@ -621,8 +624,8 @@
                     >
                   </div>
                 </div>
-                {% endfor %}
                
+              {% endfor %}
               </div>
             </div>
          
@@ -1260,12 +1263,158 @@
 </main>
 <!-- footer -->
 <style>
+  /* Container for Cart Items */
   .cart-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    color:gold;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f3f3f3,rgb(97, 93, 93));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .cart-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #e5e5e5;
+  }
+  
+  .cart-item-details {
+    flex: 1;
+    margin-left: 15px;
+    color: #333;
+  }
+  
+  .cart-item-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .cart-item-details .quantity {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 10px;
+  }
+  
+  button {
+    background-color:rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+  }
+  
+  .increment-btn,
+  .decrement-btn,
+  .remove-btn {
+    margin-right: 10px;
+  }
+  
+  .increment-btn,
+  .decrement-btn {
+    background: #28a745;
+  }
+  
+  .increment-btn:hover,
+  .decrement-btn:hover {
+    background: #218838;
+  }
+  
+  .remove-btn {
+    background: #dc3545;
+  }
+  
+  .remove-btn:hover {
+    background: #c82333;
+  }
+  
+  @media (max-width: 600px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-item-image {
+      margin-bottom: 10px;
+    }
+  
+    .cart-item-details {
+      margin-left: 0;
+    }
+  
+    button {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  
+    .increment-btn,
+    .decrement-btn,
+    .remove-btn {
+      margin-right: 0;
+    }
+  }
+
+  #cart-total-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 15px;
+    background-color:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    justify-content:left;
+  }
+  
+  #cart-total {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  .checkout-btn {
+    outline: none;
+    background-color:rgb(165, 99, 6); /* Custom yellow/orange color */
+    color: white; /* White text */
+    padding: 15px 30px; /* Increased padding */
+     /* Larger text */
+    border-radius: 7px; /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.checkout-btn:hover {
+    background-color: #e68a00; /* Darken on hover */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+.checkout-btn:focus {
+    outline: none; /* Remove outline when focused */
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* Glow effect on focus */
 }
 
 </style>
@@ -1273,122 +1422,171 @@
   // Add product to cart
  // Add to cart
  <script>
-  
-  function addToCart(itemId) {
-    const cartContainer = document.getElementById('cart-container');
-    const existingItem = Array.from(cartContainer.children).find(item => item.dataset.itemId === itemId);
-
-    // Check if the item is already in the cart
-    if (existingItem) {
-        // Show an alert if the item is already in the cart
-        alert("You have already added this product to the cart.");
-        return; // Exit the function to prevent duplicate addition
-    }
-
-    // Proceed with adding the item to the cart if it's not already present
-    fetch('/add-to-cart/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': '{{ csrf_token }}',
+ function addToCart(itemSlug, title, price, discountPrice, imageUrl) {
+    $.ajax({
+        url: `/add-to-cart/${itemSlug}/`,
+        type: 'POST',
+        data: {
+            csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
         },
-        body: JSON.stringify({ item_id: itemId })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        updateCartDisplay(data); // Update the cart display with new item data
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-    });
-}
+        success: function (response) {
+            const existingItem = $(`.cart-item[data-item-id="${response.item_id}"]`);
 
-function updateCartDisplay(data) {
-  const cartContainer = document.getElementById('cart-container');
+            if (existingItem.length) {
+                // Update quantity and total price if the item is already in the cart
+                const quantityElem = existingItem.find('.quantity');
+                const updatedQuantity = response.quantity;
+                quantityElem.text(updatedQuantity);
 
-  // Check if the cart item already exists
-  const existingItem = Array.from(cartContainer.children).find(item => item.dataset.itemId === data.item_id);
-
-  if (existingItem) {
-      alert(You have already added ${data.item_name} to the cart.);
-  } else {
-      const cartItem = document.createElement('div');
-      cartItem.classList.add('cart-item');
-      cartItem.dataset.itemId = data.item_id;
-
-      cartItem.innerHTML = 
-          <div>${data.item_name}</div>
-          <div class="price">${data.item_price} birr</div>
-          <div class="quantity">${data.quantity}</div>
-          <div class="total">${data.item_total_price} birr</div>
-          <button class="remove-button" onclick="removeFromCart('${data.item_id}')">✖</button>
-      ;
-
-      cartContainer.appendChild(cartItem);
-  }
-
-  // Update grand total in UI
-  updateGrandTotal();
-}
-
-function updateGrandTotal() {
-    const cartContainer = document.getElementById('cart-container');
-    const items = cartContainer.getElementsByClassName('cart-item');
-    let grandTotal = 0;
-
-    // Loop through each cart item to calculate the grand total
-    for (let item of items) {
-        // Extract the price from the total field, stripping "birr" and converting to float
-        const totalText = item.querySelector('.total').innerText.split(' ')[0]; // Extract numeric value
-        const total = parseFloat(totalText);
-
-        if (!isNaN(total)) {
-            grandTotal += total; // Accumulate grand total
-        } else {
-            console.error(Invalid total value: ${totalText});
-        }
-    }
-
-    document.getElementById('grand-total').innerText = grandTotal.toFixed(2) + ' birr'; // Display grand total
-}
-
-function removeFromCart(itemId) {
-    fetch('/remove-from-cart/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': '{{ csrf_token }}',
-        },
-        body: JSON.stringify({ item_id: itemId })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success) {
-            // Remove the item from the cart display
-            const cartContainer = document.getElementById('cart-container');
-            const itemToRemove = Array.from(cartContainer.children).find(item => item.dataset.itemId === data.item_id);
-            if (itemToRemove) {
-                cartContainer.removeChild(itemToRemove);
-                updateGrandTotal(); // Update grand total after removing
+                const totalPriceElem = existingItem.find('.cart-item-details p:nth-child(2)');
+                totalPriceElem.text(`${response.item_price} x ${updatedQuantity} = ${response.total_price}`);
+            } else {
+                // Add new cart item if it doesn't exist
+                const cartItem = `
+                    <div class="cart-item" data-item-id="${response.item_id}">
+                        <img src="${response.item_image_url}" alt="${response.item_title}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <p>${response.item_title}</p>
+                            <p>${response.item_price} x ${response.quantity} = ${response.total_price}</p>
+                            <button class="decrement-btn">-</button>
+                            <span class="quantity">${response.quantity}</span>
+                            <button class="increment-btn">+</button>
+                            <button class="remove-btn">Remove</button>
+                        </div>
+                      
+                    </div>`;
+                $('#cart-items').append(cartItem);
+               $('#cart-count').text(response.cart_count);
+                
             }
-        } else {
-            console.error(data.error);
+
+            if (!$('#checkout-container').length) {
+              const checkoutButton = `
+                  <div id="checkout-container">
+                      <a class="btn btn-success checkout-btn" href="/checkout/">Proceed to checkout</a>
+                  </div>`;
+              $('#cart-items').after(checkoutButton);
+
+          }
+          // Update cart count
+          $('#cart-count').text(response.cart_count);
+
+          if (response.cart_count === 0) {
+            $('#cart-items').html('<p>No items added</p>');
+            $('#checkout-container').remove(); // Hide checkout button if no items
         }
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
+
+            updateCartTotal();
+        },
+        error: function () {
+            alert("An error occurred. Please try again.");
+        }
     });
-} 
+}
+
+$(document).on('click', '.increment-btn', function () {
+  const itemId = $(this).closest('.cart-item').data('item-id');
+  $.ajax({
+      url: `/add-single-item-to-cart/${itemId}/`,
+      type: 'POST',
+      data: {
+          csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+      },
+      success: function (response) {
+          const itemElem = $(`.cart-item[data-item-id="${response.item_id}"]`);
+          // Update quantity
+          itemElem.find('.quantity').text(response.quantity);
+          // Calculate and update the line total (item price x quantity)
+          const lineTotal = response.item_price * response.quantity;
+          itemElem.find('.cart-item-details p:nth-child(2)').text(
+              `${response.item_price} x ${response.quantity} = ${lineTotal}`
+          );
+          // Update cart total (if displayed elsewhere)
+          updateCartTotal(response.cart_count, response.total_price);
+      },
+      error: function (xhr) {
+          console.error("Error details:", xhr.responseText);
+          alert("Failed to add item to the cart.");
+      }
+  });
+});
+
+$(document).on('click', '.decrement-btn', function () {
+  const itemId = $(this).closest('.cart-item').data('item-id');
+  $.ajax({
+      url: `/remove-item-from-cart/${itemId}/`,
+      type: 'POST',
+      data: {
+          csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+      },
+      success: function (response) {
+          const itemElem = $(`.cart-item[data-item-id="${response.item_id}"]`);
+          if (response.quantity === 0) {
+              // Remove the item from the cart if the quantity is 0
+              itemElem.remove();
+          } else {
+              // Update the item's quantity and price
+              itemElem.find('.quantity').text(response.quantity);
+              itemElem.find('.cart-item-details p:nth-child(2)').text(
+                  `${response.item_price} x ${response.quantity} = ${response.total_price}`
+              );
+          }
+          // Update cart total (if displayed elsewhere)
+          updateCartTotal(response.cart_count, response.total_price);
+      },
+      error: function (xhr) {
+          console.error("Error details:", xhr.responseText);
+          alert("Failed to update item quantity.");
+      }
+  });
+});
+
+$(document).on('click', '.remove-btn', function () { 
+  const itemId = $(this).closest('.cart-item').data('item-id');
+  $.ajax({
+      url: `/remove-from-cart/${itemId}/`,
+      type: 'POST',
+      data: {
+          csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+      },
+      success: function (response) {
+          $(`.cart-item[data-item-id="${itemId}"]`).remove();
+          // Update cart count and total price using response data
+          $('#cart-count').text(response.cart_count);
+          $('#cart-total').text(`Total: ${response.total_price.toFixed(2)}`);
+      },
+      error: function () {
+          alert("Failed to remove item from cart.");
+      }
+  });
+});
+
+function updateCartTotal() {
+  let total = 0;
+
+  // Calculate total price of all cart items
+  $('.cart-item').each(function () {
+      const lineTotal = parseFloat(
+          $(this).find('.cart-item-details p:nth-child(2)').text().split('=')[1].trim()
+      );
+      total += lineTotal;
+  });
+
+  // Update the total price with bold styling in a card
+  if (!$('#cart-total-card').length) {
+      // Create the card dynamically if it doesn't exist
+      const totalCard = `
+        <div id="cart-total-card" class="card mt-3">
+            <div class="card-body text-center">
+                <span id="cart-total" class="font-weight-bold text-white">Total: ${total.toFixed(2)}</span>
+            </div>
+        </div>`;
+      $('#cart-items').before(totalCard);
+  } else {
+      // Update the existing card
+      $('#cart-total').text(`Total: ${total.toFixed(2)}`);
+  }
+}
 
   </script>
   

@@ -6,11 +6,9 @@
     <div class="offcanvas-header">
         <a href="" class="brand">
             <picture>
-
                 <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
             </picture>
         </a>
-
         <button class="hamburger hamburger--collapse is-active pe-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#mobileNav" aria-controls="mobileNav">
             <span class="hamburger-box">
@@ -22,14 +20,13 @@
         <div class="main-nav">
             <ul class="text-left menu">
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5982"><a
-                        href="bierboxen-speciaalbierbox-bestellen/">Bierboxen</a></li>
-                <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-29 current_page_item menu-item-5983">
-                    <a href="bieren-speciaalbier-bestellen/" aria-current="page">Bieren</a></li>
+                        href="">Bierboxen</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-29 current_page_item menu-item-5983">
+                    <a href="" aria-current="page">Bieren</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7427"><a
-                        href="smaakprofielen-wat-is-mijn-smaakprofiel/">Smaakprofielen</a></li>
+                        href="">Smaakprofielen</a></li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"><a
-                        href="over-ons/">Over ons</a></li>
+                        href="">Over ons</a></li>
             </ul>
         </div>
         <ul class="list-unstyled menu additional-nav">
@@ -39,71 +36,74 @@
             </li>
             <li>
                 <ul class="menu list-unstyled hstack gap-4 stack-exclude justify-content-center">
-                    <li><a rel="noopener nofollow" href="https://www.facebook.com/thebeerbox.nl" class="link"
-                            title="Facebook" target="blank"><i class="icon icon-facebook icon-xxlarge"
+                    <li><a rel="noopener nofollow" href="" class="link" title="Facebook" target="blank"><i class="icon icon-facebook icon-xxlarge"
                                 aria-hidden="true"></i></a></li>
-                    <li><a rel="noopener nofollow" href="https://www.instagram.com/thebeerbox.nl/" class="link"
-                            title="Instagram" target="blank"><i class="icon icon-instagram icon-xxlarge"
+                    <li><a rel="noopener nofollow" href="" class="link" title="Instagram" target="blank"><i class="icon icon-instagram icon-xxlarge"
                                 aria-hidden="true"></i></a></li>
-                    <li><a rel="noopener nofollow" href="https://www.linkedin.com/company/the-beerbox/" class="link"
-                            title="LinkedIn" target="blank"><i class="icon icon-linkedin icon-xxlarge"
+                    <li><a rel="noopener nofollow" href="" class="link" title="LinkedIn" target="blank"><i class="icon icon-linkedin icon-xxlarge"
                                 aria-hidden="true"></i></a></li>
                 </ul>
             </li>
         </ul>
     </div>
 </div>
-<div class="modal fade" tabindex="-1" id="checkAgeModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <picture>
-                    <img src="{% static 'images/logo.png' %}" alt="The Beerbox">
-                </picture>
-            </div>
-            <div class="modal-body">
-                <p class="h3 text-base d-block">Ben je 18 jaar of ouder?</p>
-                <p class="h3 text-base d-none">Helaas! Je bent nog geen 18.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="button" data-bs-dismiss="modal" data-verify="">Ik ben ouder dan 18</button>
-                <a href="" class="button is-brown">Ik ben onder de 18</a>
+
+<main id="main" role="main">
+    <div class="container-xxl">
+        <div class="section-content">
+            <h2 class="text-primary">Onze bieren.</h2>
+            <div class="products-container row">
+                {% for b in beer %}
+                <div class="col-24 col-lg-19 ">
+                    <div class="products-wrapper">
+                        <article class="card-product-beer" data-filter-post-id="{{ b.id }}">
+                            <header>
+                                <div>
+                                    <div class="hstack stack-exclude gap-2">
+                                        <label>Aanbieding</label>
+                                    </div>
+                                    <picture class="taste">
+                                        <img class="lazyload" data-src="{{ b.image.url }}" alt="{{ b.title }}">
+                                    </picture>
+                                </div>
+                            </header>
+                            <main>
+                                <a href="">
+                                    <picture class="product-image">
+                                        <img class="lazyload" data-src="{{ b.image.url }}" alt="{{ b.title }}">
+                                    </picture>
+                                </a>
+                                <div class="product-info">
+                                    <h2>{{ b.title }} <p class="pricing"><s>{{ b.discount_price }} birr</s> <span>{{ b.price }} birr</span></p></h2>
+                                    <ul class="list-unstyled">
+                                        <li>Alcoholarm</li>
+                                        <li>ABV {{ b.abv }}%</li>
+                                        <li>33cl</li>
+                                    </ul>
+                                </div>
+                            </main>
+                            <footer>
+                                <div class="cell">
+                                    <div class="hstack stack-exclude">
+                                        <button class="button icon-box" id="quantity-min">-</button>
+                                        <span id="quantity">1</span>
+                                        <button class="button icon-box" id="quantity-plus">+</button>
+                                    </div>
+                                </div>
+                                <form class="cart cell" action="" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="add-to-cart" value="{{ b.id }}">
+                                    <button type="submit" name="add-to-cart" value="{{ b.id }}" class="single_add_to_cart_button button w-100 mb-3 is-compact is-border-compact">
+                                        Toevoegen
+                                    </button>
+                                </form>
+                            </footer>
+                        </article>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-</div>
-<div class="offcanvas offcanvas-account offcanvas-end" tabindex="-1" id="modalUserAccount"
-    aria-labelledby="modalUserAccountLabel">
-    <div class="offcanvas-header">
-        <button class="hamburger hamburger--collapse is-active" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#modalUserAccount" aria-controls="modalUserAccount">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
-    </div>
-    <div class="offcanvas-body">
-        <div class="container-xxl">
-            <div class="row g-5">
-                <div class="col-24 col-lg-12">
-                    <h3 class="text-base text-primary">Ik wil een account aanmaken</h3>
-                    <div class="section-form">
-                        <form class="kaliforms-form-container bootstrap-wrapper  " data-form-id="41" style="opacity:0">
-                            <div id="kaliforms-global-error-message-41" class="global-error-message"></div>
-                            <div class="row kali-form-field-row">
-                                <div class="col-12 col-md-6 "><label for="textbox1">Voornaam <span
-                                            class="kali-required-mark"></span></label><input data-internal-id="textbox1"
-                                        type="text" id="textbox1" name="firstname" data-properties.type="text"
-                                        placeholder="Voornaam" required=""></div>
-                                <div class="col-12 col-md-6 "><label for="textbox12">Achternaam <span
-                                            class="kali-required-mark"></span></label><input data-internal-id="textbox2"
-                                        type="text" id="textbox12" name="lastname" data-properties.type="text"
-                                        placeholder="Achternaam" required=""></div>
-                            </div>
-                            <div class="row kali-form-field-row">
-                                <div class="col-12 col-md-12 "><label for="textbox123">Gebruikersnaam <span
-                                            class="kali-required-mark"></span></label><input data-internal-id="textbox3"
-                                        type="text" id="textbox123" name="username" data-properties.type="text"
                                         placeholder="Gebruikersnaam" required=""></div>
                             </div>
                             <div class="row kali-form-field-row">
@@ -1125,7 +1125,7 @@
                    
                         
                    
-                      
+                    {% for b in beer %}
                     <div class="col-24 col-lg-19 ">
                         
                         <div class="products-wrapper">
@@ -1210,6 +1210,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {% endfor %}
 
                     
 

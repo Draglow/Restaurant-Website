@@ -1,0 +1,57 @@
+{% extends "mainapp/base.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<main style="color:black;">
+  <div class=" login-container d-flex justify-content-center align-items-center" style="height: 100vh; background-color:rgb(0, 0, 0); margin-top:50px; margin-bottom:50px;">
+    <div class="login-box text-center shadow rounded p-4" style="background: rgb(20, 19, 19); max-width: 400px; width: 100%; border-radius: 10px;">
+      {% comment %} <div class="user-icon mb-3">
+        <img src="https://via.placeholder.com/64?text=User" alt="User Icon" class="rounded-circle">
+      </div> {% endcomment %}
+       <h2 class="mb-4" style="font-size: 20px; color: white;">{% trans "Sign In" %}</h2> 
+
+      {% get_providers as socialaccount_providers %}
+
+   
+
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="d-grid gap-2 mt-3">
+          {% comment %} <a class="btn btn-link text-decoration-none" href="{% url 'account_reset_password' %}" style="color: #007bff; font-size: 14px;">{% trans "Forgot Password?" %}</a> {% endcomment %}
+          <button class="btn btn-primary w-100" type="submit" style="background-color: #007bff; border: none; padding: 10px 0; font-size: 16px;">{% trans "Sign In" %}</button>
+        </div>
+        {% if socialaccount_providers %}
+        <p style="font-size: 14px; color: white;">
+          {% blocktrans with site.name as site_name %}Please sign in with one
+          of your existing third party accounts. Or, <a href="{{ signup_url }}" style="color: #007bff;">sign up</a>
+          for a {{ site_name }} account and sign in below:{% endblocktrans %}
+        </p>
+  
+        <div class="socialaccount_ballot mb-4">
+          <ul class="socialaccount_providers list-unstyled">
+            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+          </ul>
+          <div class="login-or mb-3" style="color: #777;">{% trans "or" %}</div>
+        </div>
+  
+        {% include "socialaccount/snippets/login_extra.html" %}
+  
+        {% else %}
+        <p style="font-size: 14px; color: white;">
+          {% blocktrans %}If you have not created an account yet, then please
+          <a href="{{ signup_url }}" style="color: #007bff;">sign up</a> first.{% endblocktrans %}
+        </p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

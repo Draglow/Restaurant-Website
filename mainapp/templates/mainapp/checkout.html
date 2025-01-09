@@ -1,0 +1,206 @@
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f8fd;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            padding: 15px;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            flex: 2;
+            padding: 15px;
+        }
+
+        .right-section {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 1px solid #ddd;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .shipping-address {
+            margin-top: 20px;
+        }
+
+        .payment-info {
+            margin-top: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-summary {
+            margin-top: 20px;
+        }
+
+        .order-summary ul {
+            list-style: none;
+        }
+
+        .order-summary ul li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .confirm-btn {
+            background: #7a5af8;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .right-section {
+                border-left: none;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        <div class="header">
+          
+            <a href="#">Saba</a>
+            <nav>
+                <a href="#">New arrival</a>
+                <a href="#">Women</a>
+                <a href="#">Men</a>
+                <a href="#">Outlet</a>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="left-section">
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="delivery" checked>
+                        Get it delivered in only 30 minutes
+                    </label>
+                    <label>
+                        <input type="radio" name="delivery">
+                        Pickup available in 3 stores near you
+                    </label>
+                </div>
+
+                <div class="shipping-address">
+                    <label for="address">Shipping address</label>
+                    <input type="text" id="address" value="98 Kile Close, 8-3, Marsfield, Sydney Australia 2723">
+                </div>
+
+                <div class="payment-info">
+                    <label>Payment Information</label>
+                    <div class="input-group">
+                        <input type="text" placeholder="Name on card">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Card number">
+                    </div>
+                    <div class="input-group" style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="MM/YY">
+                        <input type="text" placeholder="CVV">
+                    </div>
+                </div>
+
+                <button class="confirm-btn">Confirm Payment $570.98</button>
+            </div>
+
+            <div class="right-section">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <ul>
+                        <li><span>Franklin Merino Wool V-Neck Knit</span><span>$199.00</span></li>
+                        <li><span>Judd Slim Dress Chino Pant</span><span>$159.00</span></li>
+                        <li><span>Angus Shawl Cardigan</span><span>$199.99</span></li>
+                        <li><span>Delivery</span><span>$16.99</span></li>
+                        <li><span>Discount</span><span>$0.00</span></li>
+                        <li><span>Total (exc tax)</span><span>$557.99</span></li>
+                        <li><span>Tax</span><span>$12.99</span></li>
+                        <li><strong>Order Total</strong><strong>$570.98</strong></li>
+                    </ul>
+                </div>
+
+                <div class="coupon">
+                    <input type="text" placeholder="Coupon code">
+                    <button>Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> {% endcomment %}
