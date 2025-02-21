@@ -12,10 +12,10 @@ This is a fully functional e-commerce website built with Django. The platform al
 - Responsive and modern UI design
 
 ## Tech Stack
-- **Backend**: Django, Django REST Framework
-- **Frontend**: HTML, CSS, Bootstrap, JavaScript
+- **Backend**: Django
+- **Frontend**: HTML, CSS, Bootstrap, Jquery
 - **Database**: PostgreSQL
-- **Payment Gateway**: Telebirr Integration
+- **Payment Gateway**: Telebirr Integration,Paypal,Strip
 
 ## Installation
 
@@ -28,7 +28,7 @@ This is a fully functional e-commerce website built with Django. The platform al
 1. Clone the repository:
    ```sh
    git clone https://github.com/Draglow/eCommerce-website.git
-   cd eCommerce-website
+   
    ```
 2. Create and activate a virtual environment:
    ```sh
@@ -70,29 +70,9 @@ TELEBIRR_CONFIG = {
 }
 ```
 
-## API Endpoints
-### Product Endpoints
-- `GET /api/products/` - List all products
-- `GET /api/products/<id>/` - Retrieve product details
 
-### Cart Endpoints
-- `POST /api/cart/add/` - Add item to cart
-- `DELETE /api/cart/remove/` - Remove item from cart
-- `GET /api/cart/` - Retrieve cart details
 
-### Order Endpoints
-- `POST /api/order/create/` - Create a new order
-- `GET /api/order/<id>/` - Retrieve order details
 
-## Contribution
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`feature-name`).
-3. Commit changes and push to your branch.
-4. Open a pull request.
-
-## License
-This project is licensed under the MIT License.
 
 ## Contact
 For any inquiries, reach out via email or open an issue on GitHub.
