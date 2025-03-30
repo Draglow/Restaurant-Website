@@ -1,3 +1,5 @@
+![Alt Text](ecom2.png)
+
 # E-Commerce Website
 
 ## Overview
