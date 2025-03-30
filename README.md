@@ -1,5 +1,5 @@
 
-![Alt Text](homepage.png)
+![Alt Text](Homepage.png)
 
 # E-Commerce Website
 
