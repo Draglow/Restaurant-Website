@@ -1,6 +1,8 @@
 
+![Alt Text](images/ecom.png)
 ![Alt Text](Homepage.png)
-
+![Alt Text](images/Summary.png)
+![Alt Text](images/Telebirr.png)
 # E-Commerce Website
 
 ## Overview
