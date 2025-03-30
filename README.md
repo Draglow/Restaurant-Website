@@ -1,4 +1,5 @@
-![Alt Text](ecom2 (1).png)
+
+![Alt Text](homepage.png)
 
 # E-Commerce Website
 
