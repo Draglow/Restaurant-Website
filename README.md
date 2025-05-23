@@ -3,10 +3,10 @@
 ![Alt Text](Homepage.png)
 ![Alt Text](images/Summary.png)
 ![Alt Text](images/Telebirr.png)
-# restuarant Website
+# Restaurant Website
 
 ## Overview
-This is a fully functional restuarant website built with Django. The platform allows users to browse, add items to their cart, and complete purchases securely. The website supports soft drinks and alcoholic beverages, with a smooth shopping experience.
+This is a fully functional restaurant website built with Django. The platform allows users to browse, add items to their cart, and complete purchases securely. The website supports soft drinks and alcoholic beverages, with a smooth shopping experience.
 
 ## Features
 - User authentication (email-based login & registration)
